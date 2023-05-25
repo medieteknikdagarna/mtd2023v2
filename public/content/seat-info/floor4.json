@@ -1,0 +1,169 @@
+[
+  {
+    "id": "platsbokning_svg___1",
+    "status": "available",
+    "seat": 1,
+    "floor": 4,
+    "type": "Sponsor"
+  },
+  {
+    "id": "platsbokning_svg___2",
+    "status": "available",
+    "seat": 2,
+    "floor": 4,
+    "type": "Sponsor"
+  },
+  {
+    "id": "platsbokning_svg___3",
+    "status": "available",
+    "seat": 3,
+    "floor": 4,
+    "type": "Sponsor"
+  },
+  {
+    "id": "platsbokning_svg___4",
+    "status": "available",
+    "seat": 4,
+    "floor": 4,
+    "type": "Sponsor"
+  },
+  {
+    "id": "platsbokning_svg___5",
+    "status": "available",
+    "seat": 5,
+    "floor": 4,
+    "type": "Sponsor"
+  },
+  {
+    "id": "platsbokning_svg___6",
+    "status": "available",
+    "seat": 6,
+    "floor": 4,
+    "type": "Sponsor"
+  },
+  {
+    "id": "platsbokning_svg___7",
+    "status": "available",
+    "seat": 7,
+    "floor": 4,
+    "type": "Sponsor"
+  },
+  {
+    "id": "platsbokning_svg___8",
+    "status": "available",
+    "seat": 8,
+    "floor": 4,
+    "type": "Mässplats"
+  },
+  {
+    "id": "platsbokning_svg___9",
+    "status": "available",
+    "seat": 9,
+    "floor": 4,
+    "type": "Mässplats"
+  },
+  {
+    "id": "platsbokning_svg___10",
+    "status": "available",
+    "seat": 10,
+    "floor": 4,
+    "type": "Mässplats"
+  },
+  {
+    "id": "platsbokning_svg___11",
+    "status": "available",
+    "seat": 11,
+    "floor": 4,
+    "type": "Mässplats"
+  },
+  {
+    "id": "platsbokning_svg___12",
+    "status": "available",
+    "seat": 12,
+    "floor": 4,
+    "type": "Mässplats"
+  },
+  {
+    "id": "platsbokning_svg___13",
+    "status": "available",
+    "seat": 13,
+    "floor": 4,
+    "type": "Mässplats"
+  },
+  {
+    "id": "platsbokning_svg___14",
+    "status": "available",
+    "seat": 14,
+    "floor": 4,
+    "type": "Mässplats"
+  },
+  {
+    "id": "platsbokning_svg___15",
+    "status": "available",
+    "seat": 15,
+    "floor": 4,
+    "type": "Mässplats"
+  },
+  {
+    "id": "platsbokning_svg___151",
+    "status": "available",
+    "seat": 16,
+    "floor": 4,
+    "type": "Mässplats"
+  },
+  {
+    "id": "platsbokning_svg___17",
+    "seat": 17,
+    "floor": 4,
+    "type": "Mässplats"
+  },
+  {
+    "id": "platsbokning_svg___18",
+    "status": "available",
+    "seat": 18,
+    "floor": 4,
+    "type": "Mässplats"
+  },
+  {
+    "id": "platsbokning_svg___19",
+    "status": "available",
+    "seat": 19,
+    "floor": 4,
+    "type": "Mässplats"
+  },
+  {
+    "id": "platsbokning_svg___20",
+    "status": "available",
+    "seat": 20,
+    "floor": 4,
+    "type": "Mässplats"
+  },
+  {
+    "id": "platsbokning_svg___21",
+    "status": "available",
+    "seat": 21,
+    "floor": 4,
+    "type": "Mässplats"
+  },
+  {
+    "id": "platsbokning_svg___22",
+    "status": "available",
+    "seat": 22,
+    "floor": 4,
+    "type": "Mässplats"
+  },
+  {
+    "id": "platsbokning_svg___23",
+    "status": "available",
+    "seat": 23,
+    "floor": 4,
+    "type": "Mässplats"
+  },
+  {
+    "id": "platsbokning_svg___24",
+    "status": "available",
+    "seat": 24,
+    "floor": 4,
+    "type": "Sponsor"
+  }
+]

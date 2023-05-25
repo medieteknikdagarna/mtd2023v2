@@ -1,0 +1,275 @@
+.menu-container {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  //background-color: rgba(0, 0, 0, 0.582);
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+    justify-content: flex-end;
+  // .star-container {
+  //   height: 100%;
+  //   top: 0;
+  //   left: 0;
+  //   width: 100%;
+  //   //background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+  //   background-color: rgba(0, 0, 0, 0.582);
+  //   display: flex;
+  //   flex-direction: column;
+  //   z-index: 999;
+  //   overflow-y: scroll;
+  // }
+
+  &--inactive{
+    visibility: hidden;
+    background-color: transparent;
+    transition: all 0.5s;
+  }
+  &--active{
+    visibility: unset;
+    background-color: rgba(0, 0, 0, 0.582);
+    transition: all 0.5s;
+
+  }
+}
+
+
+.close-icon i {
+  grid-column: -1/-2;
+  justify-self: flex-end;
+}
+
+.close-icon path {
+  fill: var(--color-light);
+}
+.sub-menu--active {
+  max-height: 150px;
+  opacity: 1;
+  transition: 0.5s;
+  margin: 1rem 0;
+
+}
+.sub-menu--inactive {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: 0.5s;
+}
+.sub-menu-link a {
+  font-size: 1.6rem !important;
+  color: rgba(255, 255, 255, 0.39);
+  margin: 0;
+  font-weight: 300 !important;
+
+  &::after{
+    height: 0.2rem !important;
+  }
+}
+.sub-menu-link {
+  padding-bottom: 0;
+  margin: 0;
+}
+.menu--ul > li {
+  padding-bottom: 1.5rem;
+}
+
+.menu--ul{
+  margin-left: 6rem;
+  display: inline-block;
+}
+.selected-page a::after{
+      
+  position: absolute;
+    content: '';
+    height: 0.5rem;
+  /* adjust this to move up and down. you may have to adjust the line height of the paragraph if you move it down a lot. */
+    bottom: -4px; 
+    background: linear-gradient(317deg, rgba(255,147,65,1) 0%, rgba(255,198,155,1) 45%, rgba(255,255,255,1) 50%, rgba(255,195,149,1) 55%, rgba(255,147,65,1) 100%);
+    background-size: 400%;
+    margin: 0 auto;
+    margin-top: 1rem;
+    left: 0;
+    width: 100%;
+    animation: gradientAnim 1.2s linear infinite,widthAnim 0.5s ease;
+    transition: 0.5s;
+    
+
+}
+.menu ul {
+  
+  list-style: none;
+  padding: 0;
+  font-size: 2rem;
+  a{
+    font-size: 2.5rem;
+    position: relative;
+    padding-bottom: 0.25rem;
+    &:hover::after, .selected-page::after{
+      
+      position: absolute;
+        content: '';
+        height: 0.5rem;
+		  /* adjust this to move up and down. you may have to adjust the line height of the paragraph if you move it down a lot. */
+        bottom: -4px; 
+        background: linear-gradient(317deg, rgba(255,147,65,1) 0%, rgba(255,198,155,1) 45%, rgba(255,255,255,1) 50%, rgba(255,195,149,1) 55%, rgba(255,147,65,1) 100%);
+        background-size: 400%;
+        margin: 0 auto;
+        margin-top: 1rem;
+        left: 0;
+        width: 100%;
+        animation: gradientAnim 1.2s linear infinite,widthAnim 0.5s ease;
+        transition: 0.5s;
+        
+
+    }
+    
+  }
+}
+
+@keyframes widthAnim {
+  0%{
+    width: 0%;
+  }
+  100%{
+    width: 100%;
+  }
+  
+}
+
+@keyframes gradientAnim {
+  0%{
+    background-position: right;
+  }
+  100%{
+    background-position: left;
+  }
+  
+}
+
+.icons-menu {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2em;
+  flex-direction: column;
+}
+.icons-menu--links {
+  path {
+    fill: var(--color-light) !important;
+  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  a{
+    margin: 0 0.5rem;
+  }
+  
+}
+.menu a {
+  text-decoration: none;
+  font-weight: 600;
+  color: var(--color-light);
+  fill: var(--color-light);
+  transition: 0.2s;
+}
+.escape-div{
+  grid-column: 1/3;
+}
+.menu {
+  display: flex;
+  overflow-y: scroll ;
+  flex-direction: column;
+  background-color: black;
+  grid-column: -1/-2;
+  li a{
+    font-size: 2rem;
+  }
+  
+}
+.menu a:hover {
+  text-decoration: none;
+  fill: var(--color-primary);
+  transition: 0.2s;
+}
+
+.close-icon {
+  width: 100%;
+  fill: var(--color-light);
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 2rem;
+  margin-top: 2rem;
+  padding-top: 2rem;
+  
+  i:hover {
+    filter: brightness(70%);
+  }
+}
+.exit-popup-icon {
+  path {
+    fill: inherit;
+  }
+
+  cursor: pointer;
+  width: 3rem;
+  transition: 0.2s;
+}
+.exit-popup-icon:hover {
+  transition: 0.2s;
+}
+.menu path {
+  fill: inherit;
+}
+
+.star-container svg {
+  max-width: 4rem;
+}
+
+.menu--active {
+
+  transition: all 0.7s ease-in-out;
+}
+
+.menu--inactive {
+  transition: all 0.7s ease-in-out;
+  visibility: hidden;
+}
+
+.menu-chevron {
+  &--active svg {
+    transform: rotate(90deg);
+    transition: transform 0.2s;
+  }
+  &--inactive svg {
+    transition: transform 0.2s;
+    transform: rotate(0deg);
+  }
+}
+
+@media screen and (min-width: 750px) {
+  .close-icon i {
+    grid-column: -2/-3;
+  }
+}
+
+
+@media screen and (max-width: 900px) {
+  .menu{
+    grid-column: 1/-1;
+  }
+  .escape-div{
+    display: none;
+  }
+  .menu--ul{
+    margin-left: 5rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+
+  .menu--ul{
+    margin-left: 2rem;
+  }
+}

@@ -1,0 +1,32 @@
+.reservation-success {
+  h2{
+    font-size: 4rem;
+  }
+  p{
+    margin-top: 1rem;
+  }
+  display: flex;
+  justify-content: center;
+}
+
+.thank-you{
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-content: center;
+  align-items: center;
+
+  @media screen and (min-width:900px) {
+    grid-template-columns: 1fr 1fr;
+    
+  }
+
+  svg{
+    justify-self: center;
+    font-size: 8rem;
+    margin-top: 2rem;
+    margin-bottom: 5rem;
+    path{
+      fill: var(--color-primary)
+    }
+  }
+}

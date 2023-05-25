@@ -1,0 +1,30 @@
+{
+  "name": "mtd2023v2",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@fortawesome/free-brands-svg-icons": "^6.4.0",
+    "@fortawesome/free-solid-svg-icons": "^6.4.0",
+    "@fortawesome/react-fontawesome": "^0.2.0",
+    "@react-spring/web": "^9.7.2",
+    "eslint": "8.41.0",
+    "eslint-config-next": "13.4.3",
+    "mp4": "^0.5.2",
+    "next": "13.4.3",
+    "next-seo": "^6.0.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-image-gallery": "^1.2.11",
+    "react-spring": "^9.7.1",
+    "sass": "^1.62.1"
+  },
+  "devDependencies": {
+    "file-loader": "^6.2.0"
+  }
+}

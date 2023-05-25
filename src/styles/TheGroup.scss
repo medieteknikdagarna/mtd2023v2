@@ -1,0 +1,22 @@
+.member-card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 18rem));
+  align-items: center;
+  row-gap: 2rem;
+  column-gap: 0.5rem;
+  justify-content: space-between;
+  -webkit-animation: fade 0.5s; /* Safari 4+ */
+  -moz-animation: fade 0.5s; /* Fx 5+ */
+  -o-animation: fade 0.5s; /* Opera 12+ */
+  animation: fade 0.5s; /* IE 10+, Fx 29+ */
+  justify-content: space-around;
+}
+
+.the-group-section {
+  grid-column: 2/3;
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+  }
+}
+
