@@ -9,6 +9,7 @@ import MenuIcon from "../../public/images/menu_icon.svg";
 import Menu from "./Menu";
 import Link from "next/link";
 import LanguageFlag from "./LanguageFlag";
+import Image from "next/image";
 
 export const menuActiveContext = React.createContext();
 
@@ -41,12 +42,6 @@ export default function Header({
     setlastScrollPos(pos);
   };
 
-  const CustomComponent = React.forwardRef(function CustomComponent(
-    props,
-    ref
-  ) {
-    return <div>HEJ</div>;
-  });
   {
     /*<MTDSvg className="header-logo" />  SKA RETURNAS*/
   }
@@ -66,8 +61,7 @@ export default function Header({
       ></Menu>
       <div className="logo-container">
         <Link href="/" legacyBehavior>
-          {/* <MTDSvg className="header-logo" /> */}
-          <CustomComponent />
+          <Image src={MTDSvg} className="header-logo" alt="MTD" />
         </Link>
         <div className="nav-items">
           <Link href="/" legacyBehavior>

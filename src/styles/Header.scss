@@ -5,16 +5,14 @@
   width: 1.5em;
   grid-column: -2 / -1;
   gap: 0.5rem;
-  path{
-    fill: var(--color-light)
+  path {
+    fill: var(--color-light);
   }
-  
 }
 .menu-icon {
   font-size: 3rem;
   cursor: pointer;
   transition: 0.1s;
-  
 }
 
 .menu-icon:hover {
@@ -22,6 +20,7 @@
 }
 .header-logo {
   width: 2.75rem;
+  height: auto;
   justify-self: end;
 }
 
@@ -116,11 +115,11 @@
   }
 }
 
-.header-scroll{
-  h2{
+.header-scroll {
+  h2 {
     color: var(--color-light);
   }
-  
+
   .icon-link {
     fill: var(--color-light) !important;
     transition: 0.2s;
@@ -153,9 +152,9 @@
   justify-content: flex-end;
   align-items: center;
   width: 100%;
-  &--icon{
-    rect{
-      fill: var(--color-light)
+  &--icon {
+    rect {
+      fill: var(--color-light);
     }
   }
 }
@@ -174,7 +173,8 @@
   align-items: flex-start;
   grid-column: 2/3;
   gap: 1em;
-  h2,svg{
+  h2,
+  svg {
     cursor: pointer;
   }
 }
@@ -188,7 +188,7 @@
   .menu-icon {
     font-size: 2rem;
     grid-column: -1 / -2;
-    &--icon{
+    &--icon {
       margin-right: 0.75rem;
     }
   }

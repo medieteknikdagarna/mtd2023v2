@@ -2,9 +2,9 @@ import React, { useState, useContext, useEffect } from "react";
 import { faCheckCircle } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Confetti from "react-dom-confetti";
-import * as animationData from "../public/animation_success.json";
+import * as animationData from "../../public/animation_success.json";
 import { languageContext } from "../pages/_app";
-const content = require("../public/content/register_complete.json");
+const content = require("../../public/content/register_complete.json");
 
 export default function ReservSucces({ name, company }) {
   const [shouldExlpode, setExplode] = useState(false);
