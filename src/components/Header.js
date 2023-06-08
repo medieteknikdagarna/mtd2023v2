@@ -41,10 +41,6 @@ export default function Header({
 
     setlastScrollPos(pos);
   };
-
-  {
-    /*<MTDSvg className="header-logo" />  SKA RETURNAS*/
-  }
   return (
     <header
       style={style}

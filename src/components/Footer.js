@@ -13,6 +13,7 @@ import { ClipboardButton } from "./ContactCard";
 import Link from "next/dist/client/link";
 import { languageContext } from "../pages/_app";
 const content = require("../../public/content/footer.json");
+import Image from "next/image";
 
 export default function Footer(props) {
   const [lang, setLang] = useContext(languageContext);
@@ -22,7 +23,10 @@ export default function Footer(props) {
       <div className="footer">
         <div className="footer-left">
           <div>
-            <div className="footer--images"></div>
+            <div className="footer--images">
+              <Image src={MTDSvg} className="footer-logo" alt="MTD" />
+              <Image src={MTSvg} className="footer-logo" alt="MT" />
+            </div>
             <div className="footer--icons">
               <a
                 href="https://www.facebook.com/medieteknikdagen"

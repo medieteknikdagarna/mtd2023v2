@@ -1,13 +1,20 @@
 import { useState, useEffect } from "react";
 import { useForm, useController, useFieldArray } from "react-hook-form";
 import { DevTool } from "@hookform/devtools";
+import { firebaseApp } from "@/firebase/clientApp";
+import { collection, addDoc, getFirestore } from "firebase/firestore";
+import { ref, uploadBytes } from "firebase/storage";
+import { getStorage } from "firebase/storage";
 
 export default function BookingForm() {
+  const db = getFirestore(firebaseApp);
+  const storage = getStorage(firebaseApp);
+
   const [info, setInfo] = useState();
   const { register, handleSubmit, control, formState, watch, setValue } =
     useForm({
       defaultValues: {
-        logotyp: "",
+        sponsor: "",
         transport: "",
         bankettbiljetter: 0,
         bankettkost: [],
@@ -15,8 +22,17 @@ export default function BookingForm() {
         mässkost: [],
       },
     });
+
+  const sponsorWatch = watch("sponsor");
+  console.log(sponsorWatch);
+  console.log(sponsorWatch === "gold");
+
   const { errors } = formState;
-  const { fields: bankettField, append: bankettAppend } = useFieldArray({
+  const {
+    fields: bankettField,
+    append: bankettAppend,
+    remove: bankettRemove,
+  } = useFieldArray({
     name: "bankettkost",
     control,
   });
@@ -30,27 +46,82 @@ export default function BookingForm() {
     control,
   });
 
-  const onSubmit = (formValues) => {
-    console.log(formValues);
-  };
-
   const addBankettKost = () => {
     bankettAppend({ kost: "" });
   };
   const addMässKost = () => {
     const currentMässCount = mässField.length;
     const newMässCount = watch("antalpåmässa");
+    const diff = Math.abs(currentMässCount - newMässCount);
     if (newMässCount > currentMässCount) {
-      mässAppend({ kost: "" });
+      for (let i = 0; i < diff; i++) {
+        mässAppend({ kost: "" });
+      }
     } else {
-      mässRemove(newMässCount);
+      for (let i = 0; i < diff; i++) {
+        mässRemove(newMässCount);
+      }
     }
   };
 
+  const onSubmit = (formValues) => {
+    console.log(formValues);
+    const logoRef = ref(storage, `logotype/${formValues.logotyp[0].name}`);
+    try {
+      const docRef = addDoc(collection(db, "companies"), {
+        TV: formValues.TV,
+      });
+      uploadBytes(logoRef, formValues.logotyp[0]);
+    } catch (e) {
+      console.log(e);
+    }
+  };
   return (
     <>
       <div style={{ paddingTop: "100px" }}>
         <form onSubmit={handleSubmit(onSubmit)} noValidate>
+          <div>
+            <h2>Välj Sponsorpaket</h2>
+            <input
+              type="radio"
+              id="sponsor-op1"
+              value="bronze"
+              {...register("sponsor")}
+            />
+            <label htmlFor="sponsor-op1">Bronze</label>
+            <input
+              type="radio"
+              id="sponsor-op2"
+              value="silver"
+              {...register("sponsor")}
+            />
+            <label htmlFor="sponsor-op2">Silver</label>
+            <input
+              type="radio"
+              id="sponsor-op3"
+              value="gold"
+              {...register("sponsor")}
+            />
+            <label htmlFor="sponsor-op3">Guld</label>
+          </div>
+          <div>
+            <label htmlFor="contact">Kontaktperson</label>
+            <input type="text" id="contact" {...register("contact")} />
+            <label htmlFor="company">Företag</label>
+            <input type="text" id="company" {...register("company")} />
+            <label htmlFor="companyaddress">Företags adress</label>
+            <input
+              type="text"
+              id="companyadress"
+              {...register("companyadress")}
+            />
+            <label htmlFor="email">Email</label>
+            <input type="email" id="email" {...register("email")} />
+            <label htmlFor="tel">Tel</label>
+            <input type="tel" id="tel" {...register("tel")} />
+            <label htmlFor="description">Beskrivning</label>
+            <input type="text" id="description" {...register("description")} />
+          </div>
           <div>
             <h2>Tillägg</h2>
           </div>
@@ -179,6 +250,7 @@ export default function BookingForm() {
             <input
               type="number"
               id="Bankettbiljetter"
+              value={sponsorWatch === "gold" ? 3 : 0}
               {...register("bankettbiljetter", {
                 valueAsNumber: true,
                 onChange: addBankettKost,
@@ -207,13 +279,7 @@ export default function BookingForm() {
           </div>
           <div>
             <label htmlFor="logotyp">Logotyp</label>
-            <input
-              type="text"
-              id="logotyp"
-              {...register("logotyp", {
-                required: "hej",
-              })}
-            />
+            <input type="file" id="logotyp" {...register("logotyp", {})} />
             <p>{errors.logotyp?.message}</p>
             <h3>Faktureringsadreass</h3>
             <label htmlFor="fakurering">Faktureringsuppgifter</label>
