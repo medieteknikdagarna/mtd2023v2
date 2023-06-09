@@ -9,7 +9,7 @@ export default function BookingPage() {
   return (
     <>
       <NextSeo noindex={true} />
-      <div style={{ display: "flex", flexDirection: "row" }}>
+      <div className="booking-main">
         <Header changeOnScroll />
         <BookingForm />
       </div>

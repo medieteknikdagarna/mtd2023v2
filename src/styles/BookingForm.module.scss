@@ -1,0 +1,118 @@
+$offWhite: #f5f5f7;
+$MTDorange: #ec6610;
+$MTDdarkblue: #13283c;
+
+@mixin hideInput {
+  width: 0;
+  height: 0;
+  position: absolute;
+  left: -9999px;
+}
+@mixin focusOutline {
+  outline: dotted 1px #ccc;
+  outline-offset: 0.45rem;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  padding-top: 20vh;
+  padding-left: 100px;
+  h3,
+  h2 {
+    color: #fff;
+  }
+  h1 {
+    color: $MTDorange;
+  }
+  .paket {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    padding-bottom: 4vh;
+  }
+  .sponsor {
+    padding-bottom: 100px;
+    box-sizing: border-box;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: stretch;
+    input {
+      @include hideInput;
+    }
+    input + label {
+      margin: 0;
+      padding: 1rem 4rem;
+      box-sizing: border-box;
+      position: relative;
+      display: inline-block;
+      font-size: 1rem;
+      color: #fff;
+      line-height: 140%;
+      font-weight: 600;
+      text-align: center;
+      box-shadow: 0 0 0 rgba(255, 255, 255, 0);
+      transition: border-color 0.15s ease-out, color 0.25s ease-out,
+        background-color 0.15s ease-out, box-shadow 0.15s ease-out;
+    }
+    input:hover + label {
+      border-color: $MTDdarkblue;
+    }
+    input:checked + label {
+      background-color: $MTDorange;
+      color: #fff;
+      border-color: $MTDorange;
+      z-index: 1;
+    }
+  }
+  .contact {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    flex-flow: column nowrap;
+    .contactitem {
+      position: relative;
+    }
+    input {
+      width: 100%;
+      padding: 10px 0;
+      font-size: 16px;
+      color: #fff;
+      margin-bottom: 30px;
+      border: none;
+      border-bottom: 1px solid #fff;
+      outline: none;
+      background: transparent;
+    }
+    label {
+      position: absolute;
+      top: 0;
+      left: 0;
+      padding: 10px 0;
+      font-size: 16px;
+      color: #fff;
+      pointer-events: none;
+      transition: 0.5s;
+    }
+    input:focus ~ label,
+    input:not(:placeholder-shown) :not(:focus) ~ label {
+      top: -20px;
+      left: 0;
+      color: $MTDorange;
+      font-size: 12px;
+    }
+  }
+  .fairday {
+    padding-top: 5vh;
+    span {
+      padding-top: 2vh;
+      padding-bottom: 2vh;
+      color: #fff;
+    }
+    .numberattend {
+      display: flex;
+      flex-flow: column;
+    }
+  }
+}

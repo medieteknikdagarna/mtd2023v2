@@ -5,6 +5,7 @@ import { firebaseApp } from "@/firebase/clientApp";
 import { collection, addDoc, getFirestore } from "firebase/firestore";
 import { ref, uploadBytes } from "firebase/storage";
 import { getStorage } from "firebase/storage";
+import styles from "../styles/BookingForm.module.scss";
 
 export default function BookingForm() {
   const db = getFirestore(firebaseApp);
@@ -24,8 +25,6 @@ export default function BookingForm() {
     });
 
   const sponsorWatch = watch("sponsor");
-  console.log(sponsorWatch);
-  console.log(sponsorWatch === "gold");
 
   const { errors } = formState;
   const {
@@ -78,10 +77,12 @@ export default function BookingForm() {
   };
   return (
     <>
-      <div style={{ paddingTop: "100px" }}>
+      <div className={styles.container}>
         <form onSubmit={handleSubmit(onSubmit)} noValidate>
-          <div>
-            <h2>Välj Sponsorpaket</h2>
+          <div className={styles.paket}>
+            <h1>Välj Sponsorpaket</h1>
+          </div>
+          <div className={styles.sponsor}>
             <input
               type="radio"
               id="sponsor-op1"
@@ -91,70 +92,97 @@ export default function BookingForm() {
             <label htmlFor="sponsor-op1">Bronze</label>
             <input
               type="radio"
-              id="sponsor-op2"
-              value="silver"
-              {...register("sponsor")}
-            />
-            <label htmlFor="sponsor-op2">Silver</label>
-            <input
-              type="radio"
               id="sponsor-op3"
               value="gold"
               {...register("sponsor")}
             />
             <label htmlFor="sponsor-op3">Guld</label>
-          </div>
-          <div>
-            <label htmlFor="contact">Kontaktperson</label>
-            <input type="text" id="contact" {...register("contact")} />
-            <label htmlFor="company">Företag</label>
-            <input type="text" id="company" {...register("company")} />
-            <label htmlFor="companyaddress">Företags adress</label>
             <input
-              type="text"
-              id="companyadress"
-              {...register("companyadress")}
+              type="radio"
+              id="sponsor-op2"
+              value="silver"
+              {...register("sponsor")}
             />
-            <label htmlFor="email">Email</label>
-            <input type="email" id="email" {...register("email")} />
-            <label htmlFor="tel">Tel</label>
-            <input type="tel" id="tel" {...register("tel")} />
-            <label htmlFor="description">Beskrivning</label>
-            <input type="text" id="description" {...register("description")} />
+            <label htmlFor="sponsor-op2">Silver</label>
           </div>
-          <div>
-            <h2>Tillägg</h2>
+          <div className={styles.contact}>
+            <div className={styles.contactitem}>
+              <label htmlFor="contact">Kontaktperson</label>
+              <input
+                type="text"
+                id="contact"
+                placeholder=" "
+                {...register("contact")}
+              />
+            </div>
+            <div className={styles.contactitem}>
+              <label htmlFor="company">Företag</label>
+              <input type="text" id="company" {...register("company")} />
+            </div>
+            <div className={styles.contactitem}>
+              <label htmlFor="companyaddress">Företags adress</label>
+              <input
+                type="text"
+                id="companyadress"
+                {...register("companyadress")}
+              />
+            </div>
+            <div className={styles.contactitem}>
+              <label htmlFor="email">Email</label>
+              <input type="email" id="email" {...register("email")} />
+            </div>
+            <div className={styles.contactitem}>
+              <label htmlFor="tel">Tel</label>
+              <input type="tel" id="tel" {...register("tel")} />
+            </div>
+            <div className={styles.contactitem}>
+              <label htmlFor="description">Beskrivning</label>
+              <input
+                type="text"
+                id="description"
+                {...register("description")}
+              />
+            </div>
           </div>
-          <div>
+          <div
+            style={{ display: "flex", justifyContent: "center", width: "100%" }}
+          >
+            <h2 style={{ color: "#ec6610" }}>Tillägg</h2>
+          </div>
+          <div className={styles.fairday}>
             <h2>Mässdag</h2>
-            <label htmlFor="antalpåmässa">Antal som kommer på mässdagen</label>
-            <input
-              type="number"
-              id="antalpåmässa"
-              placeholder="0"
-              min={0}
-              {...register("antalpåmässa", {
-                valueAsNumber: true,
-                onChange: addMässKost,
-              })}
-            />
-            {watch("antalpåmässa") > 0 && (
-              <div>
-                <h3>Kost</h3>
+            <div className={styles.numberattend}>
+              <span>Hur många kommer på mässdagen?</span>
+              <label htmlFor="antalpåmässa" />
+              <input
+                type="number"
+                id="antalpåmässa"
+                placeholder="0"
+                min={0}
+                {...register("antalpåmässa", {
+                  valueAsNumber: true,
+                  onChange: addMässKost,
+                })}
+              />
+              {watch("antalpåmässa") > 0 && (
                 <div>
-                  {mässField.map((kost, index) => {
-                    return (
-                      <div className="form-control" key={kost.id}>
-                        <input
-                          type="text"
-                          {...register(`mässkost.${index}.kost`)}
-                        />
-                      </div>
-                    );
-                  })}
+                  <h3>Kost</h3>
+                  <div>
+                    {mässField.map((kost, index) => {
+                      return (
+                        <div className="form-control" key={kost.id}>
+                          <input
+                            type="text"
+                            {...register(`mässkost.${index}.kost`)}
+                          />
+                        </div>
+                      );
+                    })}
+                  </div>
                 </div>
-              </div>
-            )}
+              )}
+            </div>
+
             <h3>Montertransport</h3>
             <input
               type="radio"

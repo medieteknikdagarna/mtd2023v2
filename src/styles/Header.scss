@@ -28,7 +28,7 @@
 .header-light h2 {
   font-size: 2.75rem;
   align-self: center;
-  color: var(--color-dark);
+  color: var(--color-light);
   font-weight: bold;
 }
 .header-light h2 {
@@ -131,7 +131,7 @@
 .header {
   color: var(--color-dark);
   .icon-link {
-    fill: var(--color-dark);
+    fill: var(--color-light);
     transition: 0.2s;
   }
   .menu-icon rect {

@@ -2,6 +2,11 @@
   --clr-primary: #ff984a;
   --color-dark: #3a4151;
   --color-light: #fafafa;
+  --color-dark-gradient: linear-gradient(
+    -45deg,
+    rgba(29, 46, 55, 1) 0%,
+    rgba(0, 0, 0, 1) 100%
+  );
 }
 
 @keyframes fadeInUp {
