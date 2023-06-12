@@ -12,13 +12,13 @@ import Footer from "../components/Footer";
 import ResponsiveContainer from "./ResponsiveContainer";
 import { languageContext } from "../pages/_app";
 import ReservSuccess from "./ReservSuccess";
-const formContent = require("../public/content/form.json");
+const formContent = require("../../public/content/form.json");
 import Link from "next/link";
 import { Router } from "next/router";
 import BookingSuccess from "../pages/BookingSuccess";
 
-const floor4_all = require("../public/content/seat-info/floor4.json");
-const floor5_all = require("../public/content/seat-info/floor5.json");
+const floor4_all = require("../../public/content/seat-info/floor4.json");
+const floor5_all = require("../../public/content/seat-info/floor5.json");
 
 export const selectedContext = React.createContext();
 

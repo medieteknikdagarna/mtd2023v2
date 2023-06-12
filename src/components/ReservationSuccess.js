@@ -2,9 +2,9 @@ import React, { useContext, useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheckCircle } from "@fortawesome/free-solid-svg-icons";
 import Confetti from "react-dom-confetti";
-import * as animationData from "../public/animation_success.json";
+import * as animationData from "../../public/animation_success.json";
 import { languageContext } from "../pages/_app";
-const content = require("../public/content/register_complete.json");
+const content = require("../../public/content/register_complete.json");
 
 // function formatName(name) {
 //   return name.split(" ")[0];
