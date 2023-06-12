@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { languageContext } from "../pages/_app";
 import MTDSvg from "../../public/images/mtd.svg";
 import MTSvg from "../../public/images/mt_logo.svg";
-const content = require("../public/content/fair.json");
+const content = require("../../public/content/fair.json");
 export default function AboutInfo() {
   const [lang, setLang] = useContext(languageContext);
 

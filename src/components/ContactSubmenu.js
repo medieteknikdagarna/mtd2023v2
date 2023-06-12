@@ -4,7 +4,7 @@ import useWindowDimensions from "./utilities/useWindowDimensions";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { languageContext } from "../pages/_app";
-const content = require("../public/content/contact-us.json");
+const content = require("../../public/content/contact-us.json");
 
 export function SubmenuLink({ active = false, children, href }) {
   const { isMobile } = useWindowDimensions();

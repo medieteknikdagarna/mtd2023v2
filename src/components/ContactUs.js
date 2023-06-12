@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import ContactMap from "../components/ContactMap";
 import ContactCard from "../components/ContactCard";
 import { languageContext } from "../pages/_app";
-const content = require("../public/content/contact-us.json");
+const content = require("../../public/content/contact-us.json");
 
 export default function ContactUs({ className }) {
   const [lang, setLang] = useContext(languageContext);
