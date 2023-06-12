@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { languageContext } from "../pages/_app";
 import MTDSvg from "../../public/images/mtd.svg";
 import MTSvg from "../../public/images/mt_logo.svg";
+import Image from "next/image";
 const content = require("../../public/content/fair.json");
 export default function AboutInfo() {
   const [lang, setLang] = useContext(languageContext);
@@ -10,7 +11,7 @@ export default function AboutInfo() {
     <div className="about-info">
       <div className="about-info--mtd">
         <div className="about-info--img-container">
-          <MTDSvg />
+          <Image src={MTDSvg} className="header-logo" alt="MTD" />
         </div>
         <div>
           <h3>{content[lang].about_info.title1}</h3>
@@ -21,7 +22,7 @@ export default function AboutInfo() {
       </div>
       <div className="about-info--mt">
         <div className="about-info--img-container">
-          <MTSvg />
+          <Image src={MTSvg} className="header-logo" alt="MTD" />
         </div>
         <div>
           <h3>{content[lang].about_info.title2}</h3>

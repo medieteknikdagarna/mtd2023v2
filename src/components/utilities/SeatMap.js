@@ -5,6 +5,7 @@ import Floor5 from "../../../public/images/platsbokning_p5.svg";
 import { selectedContext } from "../SeatBooker";
 import { useTransition, animated } from "react-spring";
 import { languageContext } from "../../pages/_app";
+import Image from "next/image";
 
 export function isReserved(seat, listOfReserved) {
   let isReserved = false;
@@ -91,7 +92,7 @@ export default function SeatMap({ seats, reservations, activeFloor, type }) {
         (styles, item) =>
           item && (
             <animated.div style={styles}>
-              <Floor4 />
+              <Image src={Floor4} className="header-logo" alt="MTD" />
             </animated.div>
           )
       )}
@@ -99,7 +100,7 @@ export default function SeatMap({ seats, reservations, activeFloor, type }) {
         (styles, item) =>
           item && (
             <animated.div style={styles}>
-              <Floor5 />
+              <Image src={Floor5} className="header-logo" alt="MTD" />
             </animated.div>
           )
       )}

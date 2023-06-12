@@ -5,6 +5,7 @@ import Button from "./Button";
 import { languageContext } from "../pages/_app";
 import MTD from "../../public/images/mtd.svg";
 const content = require("../../public/content/fair.json");
+import Image from "next/image";
 
 export default function TheFair() {
   const [lang, setLang] = useContext(languageContext);
@@ -43,7 +44,7 @@ export default function TheFair() {
         </InfoSection>
       </div>
       <div className="mtd-img">
-        <MTD />
+        <Image src={MTD} className="header-logo" alt="MTD" />
       </div>
     </div>
   );

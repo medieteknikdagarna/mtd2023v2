@@ -7,6 +7,7 @@ import Link from "next/link";
 import ReservationSuccess from "./ReservationSuccess";
 import SignSVG from "../../public/images/sign.svg";
 import { languageContext } from "../pages/_app";
+import Image from "next/image";
 const content = require("../../public/content/register.json");
 const formContent = require("../../public/content/form.json");
 export default function Registration() {
@@ -70,7 +71,7 @@ export default function Registration() {
           <div>
             <h1>{content[lang].title}</h1>
             <p>{content[lang].body}</p>
-            <SignSVG />
+            <Image src={SignSVG} className="header-logo" alt="MTD" />
           </div>
           <div className="registration-form">
             <form className="register-form">
