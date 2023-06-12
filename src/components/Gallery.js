@@ -12,7 +12,11 @@ export default function Gallery() {
 
   useEffect(() => {
     let imgs = importAll(
-      require.context("../public/images/gallery", false, /\.(png|jpe?g|svg)$/)
+      require.context(
+        "../../public/images/gallery",
+        false,
+        /\.(png|jpe?g|svg)$/
+      )
     );
     if (imgs) {
       imgs.sort();

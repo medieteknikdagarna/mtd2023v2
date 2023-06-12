@@ -5,10 +5,10 @@ import Button from "./Button";
 import ResponsiveContainer from "./ResponsiveContainer";
 import Link from "next/link";
 import ReservationSuccess from "./ReservationSuccess";
-import SignSVG from "../public/images/sign.svg";
+import SignSVG from "../../public/images/sign.svg";
 import { languageContext } from "../pages/_app";
-const content = require("../public/content/register.json");
-const formContent = require("../public/content/form.json");
+const content = require("../../public/content/register.json");
+const formContent = require("../../public/content/form.json");
 export default function Registration() {
   const [error, setError] = useState(null);
   const [submitted, setSubmitted] = useState(false);
