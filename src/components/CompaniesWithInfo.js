@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useContext } from "react";
 import { shuffleArray } from "../pages/foretag";
-const content = require("../public/content/company_information.json");
+const content = require("../../public/content/company_information.json");
 import CompanyModal from "./CompanyModal";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { languageContext } from "../pages/_app";
