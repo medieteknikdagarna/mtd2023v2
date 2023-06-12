@@ -19,7 +19,9 @@ $MTDdarkblue: #13283c;
   padding-top: 20vh;
   padding-left: 100px;
   h3,
-  h2 {
+  h2,
+  span,
+  p {
     color: #fff;
   }
   h1 {
@@ -114,5 +116,14 @@ $MTDdarkblue: #13283c;
       display: flex;
       flex-flow: column;
     }
+    .fairfood {
+      padding-top: 0.5rem;
+    }
+  }
+  .submitButton {
+    background-color: $MTDorange;
+    font-size: 24px;
+    color: #fff;
+    border: none;
   }
 }

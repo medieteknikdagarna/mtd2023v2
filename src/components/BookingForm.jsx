@@ -170,7 +170,7 @@ export default function BookingForm() {
                   <div>
                     {mässField.map((kost, index) => {
                       return (
-                        <div className="form-control" key={kost.id}>
+                        <div className={styles.fairfood} key={kost.id}>
                           <input
                             type="text"
                             {...register(`mässkost.${index}.kost`)}
@@ -184,71 +184,97 @@ export default function BookingForm() {
             </div>
 
             <h3>Montertransport</h3>
-            <input
-              type="radio"
-              id="T_op1"
-              value="op1"
-              {...register("transport")}
-            />
-            <label htmlFor="T_op1">Skicka i förväg via godsmottagningen</label>
-            <input
-              type="radio"
-              id="T_op2"
-              value="op2"
-              {...register("transport")}
-            />
-            <label htmlFor="T_op2">Tar med själv till mässan</label>
+            <div
+              className={styles.sponsor}
+              style={{ paddingTop: "1rem", paddingBottom: ".5rem" }}
+            >
+              <input
+                type="radio"
+                id="T_op1"
+                value="sendWithGods"
+                {...register("transport")}
+              />
+              <label htmlFor="T_op1">
+                Skicka i förväg via godsmottagningen
+              </label>
+              <input
+                type="radio"
+                id="T_op2"
+                value="takeWithUs"
+                {...register("transport")}
+              />
+              <label htmlFor="T_op2">
+                Tar med själv till mässan på mässdagen
+              </label>
+            </div>
             <h3>Persontransport</h3>
-            <input
-              type="radio"
-              id="persontransport-ja"
-              value="Ja"
-              {...register("persontransport")}
-            />
-            <label htmlFor="persontransport-ja">Ja</label>
-            <input
-              type="radio"
-              id="persontransport-nej"
-              value="Nej"
-              {...register("persontransport")}
-            />
-            <label htmlFor="persontransport-nej">Nej</label>
+            <span>
+              Behöver ni trasport inom Norköping t.ex från Resecentrum till
+              Campus på mässdagen
+            </span>
+            <div
+              className={styles.sponsor}
+              style={{ paddingTop: "1rem", paddingBottom: ".5rem" }}
+            >
+              <input
+                type="radio"
+                id="persontransport-ja"
+                value="Ja"
+                {...register("persontransport")}
+              />
+              <label htmlFor="persontransport-ja">Ja</label>
+              <input
+                type="radio"
+                id="persontransport-nej"
+                value="Nej"
+                {...register("persontransport")}
+              />
+              <label htmlFor="persontransport-nej">Nej</label>
+            </div>
             <h3>Extrabord</h3>
-            <label htmlFor="extrabord">Extra ståbord</label>
-            <input
-              type="number"
-              id="extrabord"
-              {...register("extrabord", { valueAsNumber: true })}
-            />
+            <div style={{ display: "flex", flexFlow: "column" }}>
+              <span>Hur många extra bord</span>
+              <label htmlFor="extrabord" />
+              <input
+                type="number"
+                id="extrabord"
+                {...register("extrabord", { valueAsNumber: true })}
+              />
+            </div>
             <h3>Extrastol</h3>
-            <label htmlFor="extrastol">Extra stol</label>
-            <input
-              type="number"
-              id="extrastol"
-              {...register("extrastol", { valueAsNumber: true })}
-            />
-            <h3>Beställ TV</h3>
-            <input
-              type="radio"
-              id="TV-op1"
-              value="TV-op1"
-              {...register("TV")}
-            />
-            <label htmlFor="TV-op1">TV-op1</label>
-            <input
-              type="radio"
-              id="TV-op2"
-              value="TV-op2"
-              {...register("TV")}
-            />
-            <label htmlFor="TV-op2">TV-op2</label>
-            <h3>Antal enheter trådlöst nätverk</h3>
+            <span>Hur många extra stolar</span>
+            <div style={{ display: "flex", flexFlow: "column" }}>
+              <label htmlFor="extrastol" />
+              <input
+                type="number"
+                id="extrastol"
+                {...register("extrastol", { valueAsNumber: true })}
+              />
+            </div>
+            <h3>Extra TV-skärm</h3>
+            <div
+              className={styles.sponsor}
+              style={{ paddingTop: "1rem", paddingBottom: ".5rem" }}
+            >
+              <input type="radio" id="TV-op1" value="32" {...register("TV")} />
+              <label htmlFor="TV-op1">32"TV-skärm</label>
+              <input type="radio" id="TV-op2" value="40" {...register("TV")} />
+              <label htmlFor="TV-op2">40"TV-skärm</label>
+              <input type="radio" id="TV-op3" value="47" {...register("TV")} />
+              <label htmlFor="TV-op3">47"TV-skärm</label>
+              <input type="radio" id="TV-op4" value="55" {...register("TV")} />
+              <label htmlFor="TV-op4">55"TV-skärm</label>
+            </div>
+            <h3>Uppskattat antel enheter som behöver trådlöst nätverk?</h3>
             <input
               type="number"
               id="trådlösaenheter"
               {...register("trådlösaenheter", { valueAsNumber: true })}
             />
-            <h3>Drar mycket el</h3>
+            <h3>
+              Har ni någon elutrustning som drar säskilt mycket ström, i så fall
+              vad?
+            </h3>
             <input
               type="text"
               id="elenhet"
@@ -257,85 +283,127 @@ export default function BookingForm() {
               })}
             />
             <h3>Tjänster för besökare</h3>
-            <input
-              type="radio"
-              id="exjobb"
-              value="exjobb"
-              {...register("tjänst")}
-            />
-            <label htmlFor="exjobb">exjobb</label>
-            <input
-              type="radio"
-              id="praktik"
-              value="praktik"
-              {...register("tjänst")}
-            />
-            <label htmlFor="praktik">Praktik</label>
+            <div
+              className={styles.sponsor}
+              style={{ paddingTop: "1rem", paddingBottom: ".5rem" }}
+            >
+              <input
+                type="radio"
+                id="exjobb"
+                value="exjobb"
+                {...register("tjänst")}
+              />
+              <label htmlFor="exjobb">Exjobb</label>
+              <input
+                type="radio"
+                id="praktik"
+                value="praktik"
+                {...register("tjänst")}
+              />
+              <label htmlFor="praktik">Praktik</label>
+              <input
+                type="radio"
+                id="trainee"
+                value="trainee"
+                {...register("tjänst")}
+              />
+              <label htmlFor="trainee">Trainee</label>
+              <input
+                type="radio"
+                id="sommarjobb"
+                value="sommarjobb"
+                {...register("tjänst")}
+              />
+              <label htmlFor="sommarjobb">Sommarjobb</label>
+              <input
+                type="radio"
+                id="anställning"
+                value="anställning"
+                {...register("tjänst")}
+              />
+              <label htmlFor="anställning">anställning</label>
+            </div>
           </div>
           <div>
             <h2>Bankett</h2>
-            <label htmlFor="Bankettbiljetter">Bankettbiljetter</label>
-            <input
-              type="number"
-              id="Bankettbiljetter"
-              value={sponsorWatch === "gold" ? 3 : 0}
-              {...register("bankettbiljetter", {
-                valueAsNumber: true,
-                onChange: addBankettKost,
-              })}
-            />
-            {watch("bankettbiljetter") > 0 && (
-              <div>
-                <h3>Kost</h3>
+            <div
+              style={{ display: "flex", flexFlow: "column" }}
+              className={styles.numberattend}
+            >
+              <span>Hur många kommer på banketten?</span>
+              <label htmlFor="Bankettbiljetter" />
+              <input
+                type="number"
+                id="Bankettbiljetter"
+                value={sponsorWatch === "gold" ? 3 : 0}
+                {...register("bankettbiljetter", {
+                  valueAsNumber: true,
+                  onChange: addBankettKost,
+                })}
+              />
+              {watch("bankettbiljetter") > 0 && (
                 <div>
-                  {bankettField.map((kost, index) => {
-                    return (
-                      <div className="form-control" key={kost.id}>
-                        <input
-                          type="text"
-                          {...register(`bankettkost.${index}.kost`)}
-                        />
-                      </div>
-                    );
-                  })}
+                  <h3>Kost</h3>
+                  <div>
+                    {bankettField.map((kost, index) => {
+                      return (
+                        <div className="form-control" key={kost.id}>
+                          <input
+                            type="text"
+                            {...register(`bankettkost.${index}.kost`)}
+                          />
+                        </div>
+                      );
+                    })}
+                  </div>
                 </div>
-              </div>
-            )}
+              )}
+            </div>
           </div>
           <div>
             <h2>Övrigt</h2>
           </div>
           <div>
-            <label htmlFor="logotyp">Logotyp</label>
-            <input type="file" id="logotyp" {...register("logotyp", {})} />
-            <p>{errors.logotyp?.message}</p>
-            <h3>Faktureringsadreass</h3>
-            <label htmlFor="fakurering">Faktureringsuppgifter</label>
-            <input
-              type="email"
-              id="fakturering"
-              {...register("fakturering", {
-                required: "hej",
-              })}
-            />
-            <h3>Firmateknare</h3>
-            <label htmlFor="firmateknare">Firmateknare</label>
-            <input
-              type="text"
-              id="firmateknare"
-              {...register("firmateknare", {
-                required: "hej",
-              })}
-            />
+            <div style={{ display: "flex", flexFlow: "column" }}>
+              <span>
+                Infoga eran logotyp så den kan användas i app och webb
+              </span>
+              <label htmlFor="logotyp" />
+              <input
+                style={{ color: "#fff" }}
+                type="file"
+                id="logotyp"
+                {...register("logotyp", {})}
+              />
+              <p>{errors.logotyp?.message}</p>
+            </div>
+            <div style={{ display: "flex", flexFlow: "column" }}>
+              <h3>Faktureringsuppgifter</h3>
+              <span>Vilken e-postadress ska fakturan skickas till?</span>
+              <label htmlFor="fakurering" />
+              <input
+                type="email"
+                id="fakturering"
+                {...register("fakturering", {
+                  required: "hej",
+                })}
+              />
+              <h3>Eventuell Firmateknare</h3>
+              <span>Fyll i nedan namn på firmatecknare</span>
+              <label htmlFor="firmateknare" />
+              <input
+                type="text"
+                id="firmateknare"
+                {...register("firmateknare", {
+                  required: "hej",
+                })}
+              />
+            </div>
           </div>
 
-          <button
-            type="submit"
-            style={{
-              width: "2rem",
-              height: "1rem",
-            }}
-          />
+          <button type="submit" className={styles.submitButton}>
+            Boka
+          </button>
         </form>
       </div>
     </>
