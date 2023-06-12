@@ -257,13 +257,13 @@ export default function BookingForm() {
               style={{ paddingTop: "1rem", paddingBottom: ".5rem" }}
             >
               <input type="radio" id="TV-op1" value="32" {...register("TV")} />
-              <label htmlFor="TV-op1">32"TV-skärm</label>
+              <label htmlFor="TV-op1">32TV-skärm</label>
               <input type="radio" id="TV-op2" value="40" {...register("TV")} />
-              <label htmlFor="TV-op2">40"TV-skärm</label>
+              <label htmlFor="TV-op2">40TV-skärm</label>
               <input type="radio" id="TV-op3" value="47" {...register("TV")} />
-              <label htmlFor="TV-op3">47"TV-skärm</label>
+              <label htmlFor="TV-op3">47TV-skärm</label>
               <input type="radio" id="TV-op4" value="55" {...register("TV")} />
-              <label htmlFor="TV-op4">55"TV-skärm</label>
+              <label htmlFor="TV-op4">55TV-skärm</label>
             </div>
             <h3>Uppskattat antel enheter som behöver trådlöst nätverk?</h3>
             <input
