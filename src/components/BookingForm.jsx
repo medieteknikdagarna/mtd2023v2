@@ -107,41 +107,53 @@ export default function BookingForm() {
           </div>
           <div className={styles.contact}>
             <div className={styles.contactitem}>
-              <label htmlFor="contact">Kontaktperson</label>
               <input
                 type="text"
                 id="contact"
                 placeholder=" "
                 {...register("contact")}
               />
+              <label htmlFor="contact">Kontaktperson</label>
             </div>
             <div className={styles.contactitem}>
+              <input
+                type="text"
+                id="company"
+                placeholder=" "
+                {...register("company")}
+              />
               <label htmlFor="company">Företag</label>
-              <input type="text" id="company" {...register("company")} />
             </div>
             <div className={styles.contactitem}>
-              <label htmlFor="companyaddress">Företags adress</label>
               <input
                 type="text"
                 id="companyadress"
+                placeholder=" "
                 {...register("companyadress")}
               />
+              <label htmlFor="companyaddress">Företags adress</label>
             </div>
             <div className={styles.contactitem}>
+              <input
+                type="email"
+                id="email"
+                placeholder=" "
+                {...register("email")}
+              />
               <label htmlFor="email">Email</label>
-              <input type="email" id="email" {...register("email")} />
             </div>
             <div className={styles.contactitem}>
+              <input type="tel" id="tel" placeholder=" " {...register("tel")} />
               <label htmlFor="tel">Tel</label>
-              <input type="tel" id="tel" {...register("tel")} />
             </div>
             <div className={styles.contactitem}>
-              <label htmlFor="description">Beskrivning</label>
               <input
                 type="text"
                 id="description"
+                placeholder=" "
                 {...register("description")}
               />
+              <label htmlFor="description">Beskrivning</label>
             </div>
           </div>
           <div
@@ -155,6 +167,7 @@ export default function BookingForm() {
               <span>Hur många kommer på mässdagen?</span>
               <label htmlFor="antalpåmässa" />
               <input
+                className={styles.numberInput}
                 type="number"
                 id="antalpåmässa"
                 placeholder="0"
@@ -184,10 +197,8 @@ export default function BookingForm() {
             </div>
 
             <h3>Montertransport</h3>
-            <div
-              className={styles.sponsor}
-              style={{ paddingTop: "1rem", paddingBottom: ".5rem" }}
-            >
+
+            <div className={styles.option}>
               <input
                 type="radio"
                 id="T_op1"
@@ -212,10 +223,7 @@ export default function BookingForm() {
               Behöver ni trasport inom Norköping t.ex från Resecentrum till
               Campus på mässdagen
             </span>
-            <div
-              className={styles.sponsor}
-              style={{ paddingTop: "1rem", paddingBottom: ".5rem" }}
-            >
+            <div className={styles.option}>
               <input
                 type="radio"
                 id="persontransport-ja"
@@ -236,6 +244,7 @@ export default function BookingForm() {
               <span>Hur många extra bord</span>
               <label htmlFor="extrabord" />
               <input
+                className={styles.numberInput}
                 type="number"
                 id="extrabord"
                 {...register("extrabord", { valueAsNumber: true })}
@@ -246,6 +255,7 @@ export default function BookingForm() {
             <div style={{ display: "flex", flexFlow: "column" }}>
               <label htmlFor="extrastol" />
               <input
+                className={styles.numberInput}
                 type="number"
                 id="extrastol"
                 {...register("extrastol", { valueAsNumber: true })}
@@ -253,7 +263,7 @@ export default function BookingForm() {
             </div>
             <h3>Extra TV-skärm</h3>
             <div
-              className={styles.sponsor}
+              className={styles.option}
               style={{ paddingTop: "1rem", paddingBottom: ".5rem" }}
             >
               <input type="radio" id="TV-op1" value="32" {...register("TV")} />
@@ -267,6 +277,7 @@ export default function BookingForm() {
             </div>
             <h3>Uppskattat antel enheter som behöver trådlöst nätverk?</h3>
             <input
+              className={styles.numberInput}
               type="number"
               id="trådlösaenheter"
               {...register("trådlösaenheter", { valueAsNumber: true })}
@@ -284,7 +295,7 @@ export default function BookingForm() {
             />
             <h3>Tjänster för besökare</h3>
             <div
-              className={styles.sponsor}
+              className={styles.option}
               style={{ paddingTop: "1rem", paddingBottom: ".5rem" }}
             >
               <input
@@ -333,6 +344,7 @@ export default function BookingForm() {
               <span>Hur många kommer på banketten?</span>
               <label htmlFor="Bankettbiljetter" />
               <input
+                className={styles.numberInput}
                 type="number"
                 id="Bankettbiljetter"
                 value={sponsorWatch === "gold" ? 3 : 0}

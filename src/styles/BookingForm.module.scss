@@ -8,10 +8,6 @@ $MTDdarkblue: #13283c;
   position: absolute;
   left: -9999px;
 }
-@mixin focusOutline {
-  outline: dotted 1px #ccc;
-  outline-offset: 0.45rem;
-}
 
 .container {
   display: flex;
@@ -26,6 +22,10 @@ $MTDdarkblue: #13283c;
   }
   h1 {
     color: $MTDorange;
+  }
+  input {
+    background-color: rgba(0, 0, 0, 0.2);
+    border: none;
   }
   .paket {
     display: flex;
@@ -63,7 +63,6 @@ $MTDdarkblue: #13283c;
     }
     input:checked + label {
       background-color: $MTDorange;
-      color: #fff;
       border-color: $MTDorange;
       z-index: 1;
     }
@@ -75,34 +74,37 @@ $MTDdarkblue: #13283c;
     flex-flow: column nowrap;
     .contactitem {
       position: relative;
-    }
-    input {
-      width: 100%;
-      padding: 10px 0;
-      font-size: 16px;
-      color: #fff;
-      margin-bottom: 30px;
-      border: none;
-      border-bottom: 1px solid #fff;
-      outline: none;
-      background: transparent;
-    }
-    label {
-      position: absolute;
-      top: 0;
-      left: 0;
-      padding: 10px 0;
-      font-size: 16px;
-      color: #fff;
-      pointer-events: none;
-      transition: 0.5s;
-    }
-    input:focus ~ label,
-    input:not(:placeholder-shown) :not(:focus) ~ label {
-      top: -20px;
-      left: 0;
-      color: $MTDorange;
-      font-size: 12px;
+      label {
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 10px 0;
+        font-size: 16px;
+        color: #fff;
+        pointer-events: none;
+        transition: 0.5s;
+      }
+      input {
+        position: relative;
+        width: 100%;
+        padding: 10px 0;
+        font-size: 16px;
+        color: #fff;
+        margin-bottom: 30px;
+        border: none;
+        border-bottom: 1px solid #fff;
+        outline: none;
+        background: transparent;
+        &:focus,
+        &:not(:placeholder-shown) {
+          + label {
+            top: -20px;
+            left: 0;
+            color: $MTDorange;
+            font-size: 12px;
+          }
+        }
+      }
     }
   }
   .fairday {
@@ -118,6 +120,39 @@ $MTDdarkblue: #13283c;
     }
     .fairfood {
       padding-top: 0.5rem;
+      input {
+        border: none;
+        color: #fff;
+        background-color: rgba(0, 0, 0, 0.2);
+      }
+    }
+  }
+  .option {
+    padding-top: 2rem;
+    display: flex;
+    flex-flow: row;
+    box-sizing: border-box;
+    justify-content: center;
+    input {
+      @include hideInput;
+    }
+    input + label {
+      border: 1px solid #f5f5f7;
+      padding: 1.5rem 1rem;
+      margin: 0 0 0 3rem;
+      background-color: rgba(0, 0, 0, 0.2);
+      box-sizing: border-box;
+      transition: border-color 0.15s ease-out, color 0.25s ease-out,
+        background-color 0.15s ease-out, box-shadow 0.15s ease-out;
+    }
+    input:checked + label {
+      color: $MTDorange;
+      border-color: $MTDorange;
+      box-shadow: 0 0 10px rgba($MTDorange, 0.2);
+      z-index: 1;
+    }
+    label {
+      color: #fff;
     }
   }
   .submitButton {
@@ -125,5 +160,10 @@ $MTDdarkblue: #13283c;
     font-size: 24px;
     color: #fff;
     border: none;
+  }
+  .numberInput {
+    color: #fff;
+    border: none;
+    background-color: rgba(0, 0, 0, 0.2);
   }
 }
