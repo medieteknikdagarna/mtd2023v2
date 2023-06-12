@@ -1,11 +1,17 @@
 import { useState, useEffect } from "react";
-import { useForm, useController, useFieldArray } from "react-hook-form";
+import {
+  useForm,
+  useController,
+  useFieldArray,
+  Controller,
+} from "react-hook-form";
 import { DevTool } from "@hookform/devtools";
 import { firebaseApp } from "@/firebase/clientApp";
 import { collection, addDoc, getFirestore } from "firebase/firestore";
 import { ref, uploadBytes } from "firebase/storage";
 import { getStorage } from "firebase/storage";
 import styles from "../styles/BookingForm.module.scss";
+import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
 
 export default function BookingForm() {
   const db = getFirestore(firebaseApp);
@@ -47,6 +53,7 @@ export default function BookingForm() {
 
   const addBankettKost = () => {
     bankettAppend({ kost: "" });
+    console.log("hej");
   };
   const addMässKost = () => {
     const currentMässCount = mässField.length;
@@ -75,6 +82,22 @@ export default function BookingForm() {
       console.log(e);
     }
   };
+
+  const changeNumber = (value, target) => {
+    if (target == "bankett") {
+      const newVal = watch("bankettbiljetter") + value;
+      setValue("bankettbiljetter", newVal, {
+        shouldDirty: true,
+        shouldValidate: true,
+        shouldTouch: true,
+      });
+      if (value === 1) {
+        bankettAppend({ kost: "" });
+      } else {
+      }
+    }
+  };
+
   return (
     <>
       <div className={styles.container}>
@@ -247,6 +270,7 @@ export default function BookingForm() {
                 className={styles.numberInput}
                 type="number"
                 id="extrabord"
+                placeholder="0"
                 {...register("extrabord", { valueAsNumber: true })}
               />
             </div>
@@ -258,6 +282,7 @@ export default function BookingForm() {
                 className={styles.numberInput}
                 type="number"
                 id="extrastol"
+                placeholder="0"
                 {...register("extrastol", { valueAsNumber: true })}
               />
             </div>
@@ -280,19 +305,14 @@ export default function BookingForm() {
               className={styles.numberInput}
               type="number"
               id="trådlösaenheter"
+              placeholder="0"
               {...register("trådlösaenheter", { valueAsNumber: true })}
             />
             <h3>
               Har ni någon elutrustning som drar säskilt mycket ström, i så fall
               vad?
             </h3>
-            <input
-              type="text"
-              id="elenhet"
-              {...register("elenhet", {
-                required: "hej",
-              })}
-            />
+            <input type="text" id="elenhet" {...register("elenhet")} />
             <h3>Tjänster för besökare</h3>
             <div
               className={styles.option}
@@ -335,24 +355,41 @@ export default function BookingForm() {
               <label htmlFor="anställning">anställning</label>
             </div>
           </div>
+          <h2>Bankett</h2>
           <div>
-            <h2>Bankett</h2>
             <div
               style={{ display: "flex", flexFlow: "column" }}
               className={styles.numberattend}
             >
               <span>Hur många kommer på banketten?</span>
-              <label htmlFor="Bankettbiljetter" />
-              <input
-                className={styles.numberInput}
-                type="number"
-                id="Bankettbiljetter"
-                value={sponsorWatch === "gold" ? 3 : 0}
-                {...register("bankettbiljetter", {
-                  valueAsNumber: true,
-                  onChange: addBankettKost,
-                })}
-              />
+              <div className={styles.counterContainer}>
+                <div
+                  className={styles.counterDecrement}
+                  onClick={() => changeNumber(-1, "bankett")}
+                >
+                  <AiOutlineMinus size={24} style={{ fill: "white" }} />
+                </div>
+                <div className={styles.counter}>
+                  <label htmlFor="Bankettbiljetter" />
+                  <input
+                    className={styles.numberInput}
+                    type="text"
+                    id="Bankettbiljetter"
+                    readOnly
+                    //value={sponsorWatch === "gold" ? 3 : 0}
+                    {...register("bankettbiljetter", {
+                      valueAsNumber: true,
+                      onChange: addBankettKost,
+                    })}
+                  />
+                </div>
+                <div
+                  className={styles.counterIncrement}
+                  onClick={() => changeNumber(1, "bankett")}
+                >
+                  <AiOutlinePlus size={24} style={{ fill: "white" }} />
+                </div>
+              </div>
               {watch("bankettbiljetter") > 0 && (
                 <div>
                   <h3>Kost</h3>

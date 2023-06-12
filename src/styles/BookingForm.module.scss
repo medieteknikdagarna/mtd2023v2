@@ -165,5 +165,36 @@ $MTDdarkblue: #13283c;
     color: #fff;
     border: none;
     background-color: rgba(0, 0, 0, 0.2);
+    height: 2rem;
+    width: 3rem;
+    text-align: center;
+  }
+  .counterContainer {
+    margin: 1rem 0 1rem 0;
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    justify-self: center;
+    .counterDecrement {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: $MTDorange;
+      height: 2rem;
+      width: 2rem;
+    }
+    .counterIncrement {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: $MTDorange;
+      height: 2rem;
+      width: 2rem;
+    }
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
   }
 }
