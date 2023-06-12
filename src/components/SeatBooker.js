@@ -757,7 +757,6 @@ export default function SeatBooker({ type, setType }) {
                 selectedSeat,
                 activeLevel === 5 ? floor5_res : floor4_res
               )}
-              onClick={handleSubmit}
               style={{
                 fontSize: "1.5rem",
                 marginTop: "2rem",

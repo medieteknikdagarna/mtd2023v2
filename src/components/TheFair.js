@@ -1,10 +1,10 @@
 import React, { useContext } from "react";
 import InfoSection from "./InfoSection";
-import GL from "../public/images/graduateland.png";
+import GL from "../../public/images/graduateland.png";
 import Button from "./Button";
 import { languageContext } from "../pages/_app";
-import MTD from "../public/images/mtd.svg";
-const content = require("../public/content/fair.json");
+import MTD from "../../public/images/mtd.svg";
+const content = require("../../public/content/fair.json");
 
 export default function TheFair() {
   const [lang, setLang] = useContext(languageContext);

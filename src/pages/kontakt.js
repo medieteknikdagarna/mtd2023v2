@@ -8,7 +8,7 @@ import { languageContext } from "./_app";
 import { NextSeo } from "next-seo";
 import ContactUs from "../components/ContactUs";
 
-const content = require("../public/content/contact-us.json");
+const content = require("../../public/content/contact-us.json");
 
 export default function ContactPage() {
   const [lang, setLang] = useContext(languageContext);

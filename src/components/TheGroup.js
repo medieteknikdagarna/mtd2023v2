@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import MemberCard from "./MemberCard";
-const memberInfo = require("../public/content/members.json");
+const memberInfo = require("../../public/content/members.json");
 import { shuffleArray } from "../pages/foretagPrev";
 import { languageContext } from "../pages/_app";
 

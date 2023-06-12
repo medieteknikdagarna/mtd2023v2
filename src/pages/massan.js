@@ -10,7 +10,7 @@ import ResponsiveContainer from "../components/ResponsiveContainer";
 import LoadingSpinner from "../components/LoadingSpinner";
 import Carousel from "../components/Carousel";
 import Gallery from "../components/Gallery";
-const content = require("../public/content/fair.json");
+const content = require("../../public/content/fair.json");
 import { NextSeo } from "next-seo";
 import EmbeddedVideo from "../components/AfterMovie";
 export function importAll(r) {

@@ -44,7 +44,7 @@ export function CompanyImagesGold() {
 
   useEffect(() => {
     const images_import = importAll(
-      require.context("../public/images/companies/gold", false, /\.(svg)$/)
+      require.context("../../public/images/companies/gold", false, /\.(svg)$/)
     );
     let imgs = [];
     for (let key in images_import) {
@@ -67,7 +67,7 @@ export function CompanyImagesSilver() {
 
   useEffect(() => {
     const images_import = importAll(
-      require.context("../public/images/companies/silver", false, /\.(svg)$/)
+      require.context("../../public/images/companies/silver", false, /\.(svg)$/)
     );
     let imgs = [];
     for (let key in images_import) {
