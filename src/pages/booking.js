@@ -13,7 +13,6 @@ export default function BookingPage() {
       <div className="booking-main">
         <Header changeOnScroll />
         <BookingForm />
-        <SeatBooker />
       </div>
       <Footer />
     </>
