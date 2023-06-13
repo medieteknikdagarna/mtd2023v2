@@ -307,9 +307,10 @@ $anim-speed: 0.85; // in seconds
       background-color: $MTDorange;
       height: 2rem;
       width: 2rem;
-      transition: background-color 0.15s ease-out;
+      transition: background-color 0.15s ease-out, transform 0.15s ease-out;
       &:hover {
         background-color: #e97730;
+        transform: scale(1.1);
       }
     }
     .counterIncrement {
@@ -319,9 +320,10 @@ $anim-speed: 0.85; // in seconds
       background-color: $MTDorange;
       height: 2rem;
       width: 2rem;
-      transition: background-color 0.15s ease-out;
+      transition: background-color 0.15s ease-out, transform 0.15s ease-out;
       &:hover {
         background-color: #e97730;
+        transform: scale(1.1);
       }
     }
     input::-webkit-outer-spin-button,
