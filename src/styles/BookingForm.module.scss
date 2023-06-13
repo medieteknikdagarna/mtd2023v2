@@ -1,10 +1,13 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Lato:100,200,300,400,500,600,700,800,900&display=swap");
+
 $offWhite: #f5f5f7;
 $MTDorange: #ec6610;
 $MTDdarkblue: #13283c;
 
 $SPONSBronze: #804a00;
 $SPONSSilver: #c0c0c0;
-$SPONSGold: #ccac00;
+$SPONSGold: #b3a34d;
 
 $anim-duration: 2; // in seconds
 $anim-speed: 0.85; // in seconds
@@ -85,15 +88,13 @@ $anim-speed: 0.85; // in seconds
       line-height: 140%;
       font-weight: 600;
       text-align: center;
+      border: 1px hidden black;
       box-shadow: 0 0 0 rgba(255, 255, 255, 0);
       transition: border-color 0.15s ease-out, color 0.25s ease-out,
         background-color 0.15s ease-out, box-shadow 0.15s ease-out;
     }
-
-    input:checked + label {
-      background-color: $MTDorange;
-      border-color: $MTDorange;
-      z-index: 1;
+    input:hover + label {
+      background-color: rgba(255, 255, 255, 0.03);
     }
     .bronze {
       label {
@@ -167,7 +168,6 @@ $anim-speed: 0.85; // in seconds
       }
       input:checked + label {
         background-color: $SPONSSilver;
-        border-color: $SPONSSilver;
         color: black;
         z-index: 1;
       }
@@ -253,6 +253,7 @@ $anim-speed: 0.85; // in seconds
     max-width: max-content;
     input {
       @include hideInput;
+      box-shadow: 0 0 10px black;
     }
     input + label {
       padding: 1.5rem 1rem;
@@ -277,12 +278,6 @@ $anim-speed: 0.85; // in seconds
     }
   }
 
-  .submitButton {
-    background-color: $MTDorange;
-    font-size: 24px;
-    color: #fff;
-    border: none;
-  }
   .numberInput {
     color: #fff;
     border: none;
@@ -354,6 +349,20 @@ $anim-speed: 0.85; // in seconds
         border-bottom: 1px solid $MTDorange;
         outline: none;
       }
+    }
+  }
+  .submitButton {
+    margin-top: 1.5rem;
+    background-color: $MTDorange;
+    width: 100%;
+    height: 3rem;
+    font-size: 24px;
+    color: #fff;
+    border: none;
+    transition: box-shadow 0.15s ease-out, transform 0.15s ease-out;
+    &:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px rgba($MTDorange, 0.2);
     }
   }
 }

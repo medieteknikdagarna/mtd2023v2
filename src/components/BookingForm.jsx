@@ -17,7 +17,7 @@ export default function BookingForm() {
   const db = getFirestore(firebaseApp);
   const storage = getStorage(firebaseApp);
 
-  const [info, setInfo] = useState();
+  const [loading, setLoading] = useState(false);
   const { register, handleSubmit, control, formState, watch, setValue } =
     useForm({
       defaultValues: {
@@ -74,8 +74,12 @@ export default function BookingForm() {
   };
 
   const onSubmit = (formValues) => {
+    setLoading(true);
     console.log(formValues);
-    const logoRef = ref(storage, `logotype/${formValues.logotyp[0].name}`);
+    setTimeout(() => {
+      setLoading(false);
+    }, 2000);
+    /* const logoRef = ref(storage, `logotype/${formValues.logotyp[0].name}`);
     try {
       const docRef = addDoc(collection(db, "companies"), {
         TV: formValues.TV,
@@ -83,7 +87,7 @@ export default function BookingForm() {
       uploadBytes(logoRef, formValues.logotyp[0]);
     } catch (e) {
       console.log(e);
-    }
+    } */
   };
 
   const changeNumber = (value, target) => {
@@ -162,15 +166,7 @@ export default function BookingForm() {
               />
               <label htmlFor="sponsor-op1">Brons</label>
             </div>
-            <div className={styles.gold}>
-              <input
-                type="radio"
-                id="sponsor-op3"
-                value="gold"
-                {...register("sponsor")}
-              />
-              <label htmlFor="sponsor-op3">Guld</label>
-            </div>
+
             <div className={styles.silver}>
               <input
                 type="radio"
@@ -179,6 +175,15 @@ export default function BookingForm() {
                 {...register("sponsor")}
               />
               <label htmlFor="sponsor-op2">Silver</label>
+            </div>
+            <div className={styles.gold}>
+              <input
+                type="radio"
+                id="sponsor-op3"
+                value="gold"
+                {...register("sponsor")}
+              />
+              <label htmlFor="sponsor-op3">Guld</label>
             </div>
           </div>
           <div className={styles.contact}>
@@ -207,7 +212,7 @@ export default function BookingForm() {
                 placeholder=" "
                 {...register("companyadress")}
               />
-              <label htmlFor="companyaddress">Företags adress</label>
+              <label htmlFor="companyaddress">Företagsadress</label>
             </div>
             <div className={styles.contactitem}>
               <input
@@ -588,10 +593,12 @@ export default function BookingForm() {
               </div>
             </div>
           </div>
-
-          <button type="submit" className={styles.submitButton}>
-            Boka
-          </button>
+          <div style={{ display: "flex", justifyContent: "center" }}>
+            <button type="submit" className={styles.submitButton}>
+              {loading && <p>Laddar</p>}
+              {!loading && <p>Boka</p>}
+            </button>
+          </div>
         </form>
       </div>
     </>
