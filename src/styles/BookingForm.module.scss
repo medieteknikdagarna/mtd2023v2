@@ -128,33 +128,41 @@ $MTDdarkblue: #13283c;
     }
   }
   .option {
-    padding-top: 2rem;
+    margin: 2rem 0 2rem 0;
     display: flex;
     flex-flow: row;
-    box-sizing: border-box;
-    justify-content: center;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    border-radius: 10px;
+    border: hidden 1px;
+    max-width: max-content;
     input {
       @include hideInput;
     }
     input + label {
-      border: 1px solid #f5f5f7;
       padding: 1.5rem 1rem;
-      margin: 0 0 0 3rem;
+      margin: 0 0 0 0px;
+      min-width: 5rem;
+      text-align: center;
       background-color: rgba(0, 0, 0, 0.2);
-      box-sizing: border-box;
       transition: border-color 0.15s ease-out, color 0.25s ease-out,
         background-color 0.15s ease-out, box-shadow 0.15s ease-out;
     }
     input:checked + label {
       color: $MTDorange;
+      border: solid 1px;
       border-color: $MTDorange;
       box-shadow: 0 0 10px rgba($MTDorange, 0.2);
       z-index: 1;
+    }
+    input:hover + label {
+      color: $MTDorange;
     }
     label {
       color: #fff;
     }
   }
+
   .submitButton {
     background-color: $MTDorange;
     font-size: 24px;
@@ -195,6 +203,17 @@ $MTDdarkblue: #13283c;
     input::-webkit-inner-spin-button {
       -webkit-appearance: none;
       margin: 0;
+    }
+  }
+  .textinput {
+    input {
+      margin-top: 1.5rem;
+      padding-left: 1rem;
+      height: 3rem;
+      width: 100%;
+      color: #fff;
+      border-bottom: 1px solid#fff;
+      border-radius: 5px 5px 0 0;
     }
   }
 }

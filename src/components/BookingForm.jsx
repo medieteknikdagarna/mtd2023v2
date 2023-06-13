@@ -25,8 +25,11 @@ export default function BookingForm() {
         transport: "",
         bankettbiljetter: 0,
         bankettkost: [],
-        antalpåmässdag: 0,
+        antalpåmässa: 0,
         mässkost: [],
+        extrabord: 0,
+        extrastol: 0,
+        trådlösaenheter: 0,
       },
     });
 
@@ -86,14 +89,58 @@ export default function BookingForm() {
   const changeNumber = (value, target) => {
     if (target == "bankett") {
       const newVal = watch("bankettbiljetter") + value;
-      setValue("bankettbiljetter", newVal, {
-        shouldDirty: true,
-        shouldValidate: true,
-        shouldTouch: true,
-      });
+      if (newVal >= 0) {
+        setValue("bankettbiljetter", newVal, {
+          shouldDirty: true,
+          shouldValidate: true,
+          shouldTouch: true,
+        });
+      }
       if (value === 1) {
         bankettAppend({ kost: "" });
-      } else {
+      } else if (newVal >= 0) {
+        bankettRemove(watch("bankettbiljetter"));
+      }
+    } else if (target == "fair") {
+      const newVal = watch("antalpåmässa") + value;
+      if (newVal >= 0) {
+        setValue("antalpåmässa", newVal, {
+          shouldDirty: true,
+          shouldValidate: true,
+          shouldTouch: true,
+        });
+      }
+      if (value === 1) {
+        mässAppend({ kost: "" });
+      } else if (newVal >= 0) {
+        mässRemove(watch("antalpåmässa"));
+      }
+    } else if (target == "bord") {
+      const newVal = watch("extrabord") + value;
+      if (newVal >= 0) {
+        setValue("extrabord", newVal, {
+          shouldDirty: true,
+          shouldValidate: true,
+          shouldTouch: true,
+        });
+      }
+    } else if (target == "stol") {
+      const newVal = watch("extrastol") + value;
+      if (newVal >= 0) {
+        setValue("extrastol", newVal, {
+          shouldDirty: true,
+          shouldValidate: true,
+          shouldTouch: true,
+        });
+      }
+    } else if (target == "enheter") {
+      const newVal = watch("trådlösaenheter") + value;
+      if (newVal >= 0) {
+        setValue("trådlösaenheter", newVal, {
+          shouldDirty: true,
+          shouldValidate: true,
+          shouldTouch: true,
+        });
       }
     }
   };
@@ -186,20 +233,36 @@ export default function BookingForm() {
           </div>
           <div className={styles.fairday}>
             <h2>Mässdag</h2>
+
+            <span>Hur många kommer på mässdagen?</span>
             <div className={styles.numberattend}>
-              <span>Hur många kommer på mässdagen?</span>
-              <label htmlFor="antalpåmässa" />
-              <input
-                className={styles.numberInput}
-                type="number"
-                id="antalpåmässa"
-                placeholder="0"
-                min={0}
-                {...register("antalpåmässa", {
-                  valueAsNumber: true,
-                  onChange: addMässKost,
-                })}
-              />
+              <div className={styles.counterContainer}>
+                <div
+                  className={styles.counterDecrement}
+                  onClick={() => changeNumber(-1, "fair")}
+                >
+                  <AiOutlineMinus size={24} style={{ fill: "white" }} />
+                </div>
+                <div className={styles.counter}>
+                  <label htmlFor="antalpåmässa" />
+                  <input
+                    className={styles.numberInput}
+                    type="number"
+                    id="antalpåmässa"
+                    readOnly
+                    {...register("antalpåmässa", {
+                      valueAsNumber: true,
+                    })}
+                  />
+                </div>
+                <div
+                  className={styles.counterIncrement}
+                  onClick={() => changeNumber(1, "fair")}
+                >
+                  <AiOutlinePlus size={24} style={{ fill: "white" }} />
+                </div>
+              </div>
+
               {watch("antalpåmässa") > 0 && (
                 <div>
                   <h3>Kost</h3>
@@ -265,32 +328,67 @@ export default function BookingForm() {
             <h3>Extrabord</h3>
             <div style={{ display: "flex", flexFlow: "column" }}>
               <span>Hur många extra bord</span>
-              <label htmlFor="extrabord" />
-              <input
-                className={styles.numberInput}
-                type="number"
-                id="extrabord"
-                placeholder="0"
-                {...register("extrabord", { valueAsNumber: true })}
-              />
+              <div className={styles.counterContainer}>
+                <div
+                  className={styles.counterDecrement}
+                  onClick={() => changeNumber(-1, "bord")}
+                >
+                  <AiOutlineMinus size={24} style={{ fill: "white" }} />
+                </div>
+                <div className={styles.counter}>
+                  <label htmlFor="extrabord" />
+                  <input
+                    className={styles.numberInput}
+                    type="number"
+                    id="extrabord"
+                    readOnly
+                    {...register("extrabord", {
+                      valueAsNumber: true,
+                    })}
+                  />
+                </div>
+                <div
+                  className={styles.counterIncrement}
+                  onClick={() => changeNumber(1, "bord")}
+                >
+                  <AiOutlinePlus size={24} style={{ fill: "white" }} />
+                </div>
+              </div>
             </div>
             <h3>Extrastol</h3>
             <span>Hur många extra stolar</span>
             <div style={{ display: "flex", flexFlow: "column" }}>
-              <label htmlFor="extrastol" />
-              <input
-                className={styles.numberInput}
-                type="number"
-                id="extrastol"
-                placeholder="0"
-                {...register("extrastol", { valueAsNumber: true })}
-              />
+              <div className={styles.counterContainer}>
+                <div
+                  className={styles.counterDecrement}
+                  onClick={() => changeNumber(-1, "stol")}
+                >
+                  <AiOutlineMinus size={24} style={{ fill: "white" }} />
+                </div>
+                <div className={styles.counter}>
+                  <label htmlFor="extrastol" />
+                  <input
+                    className={styles.numberInput}
+                    type="number"
+                    id="extrastol"
+                    readOnly
+                    //value={sponsorWatch === "gold" ? 3 : 0}
+                    {...register("extrastol", {
+                      valueAsNumber: true,
+                      onChange: addBankettKost,
+                    })}
+                  />
+                </div>
+                <div
+                  className={styles.counterIncrement}
+                  onClick={() => changeNumber(1, "stol")}
+                >
+                  <AiOutlinePlus size={24} style={{ fill: "white" }} />
+                </div>
+              </div>
             </div>
             <h3>Extra TV-skärm</h3>
-            <div
-              className={styles.option}
-              style={{ paddingTop: "1rem", paddingBottom: ".5rem" }}
-            >
+            <div className={styles.option}>
               <input type="radio" id="TV-op1" value="32" {...register("TV")} />
               <label htmlFor="TV-op1">32TV-skärm kost</label>
               <input type="radio" id="TV-op2" value="40" {...register("TV")} />
@@ -301,18 +399,41 @@ export default function BookingForm() {
               <label htmlFor="TV-op4">55TV-skärm</label>
             </div>
             <h3>Uppskattat antel enheter som behöver trådlöst nätverk?</h3>
-            <input
-              className={styles.numberInput}
-              type="number"
-              id="trådlösaenheter"
-              placeholder="0"
-              {...register("trådlösaenheter", { valueAsNumber: true })}
-            />
+            <div className={styles.counterContainer}>
+              <div
+                className={styles.counterDecrement}
+                onClick={() => changeNumber(-1, "enheter")}
+              >
+                <AiOutlineMinus size={24} style={{ fill: "white" }} />
+              </div>
+              <div className={styles.counter}>
+                <label htmlFor="trådlösaenheter" />
+                <input
+                  className={styles.numberInput}
+                  type="number"
+                  id="trådlösaenheter"
+                  readOnly
+                  {...register("trådlösaenheter", {
+                    valueAsNumber: true,
+                  })}
+                />
+              </div>
+              <div
+                className={styles.counterIncrement}
+                onClick={() => changeNumber(1, "enheter")}
+              >
+                <AiOutlinePlus size={24} style={{ fill: "white" }} />
+              </div>
+            </div>
+
             <h3>
               Har ni någon elutrustning som drar säskilt mycket ström, i så fall
               vad?
             </h3>
-            <input type="text" id="elenhet" {...register("elenhet")} />
+            <div className={styles.textinput}>
+              <input type="text" id="elenhet" {...register("elenhet")} />
+              <label htmlFor="elenhet" />
+            </div>
             <h3>Tjänster för besökare</h3>
             <div
               className={styles.option}
@@ -352,7 +473,7 @@ export default function BookingForm() {
                 value="anställning"
                 {...register("tjänst")}
               />
-              <label htmlFor="anställning">anställning</label>
+              <label htmlFor="anställning">Anställning</label>
             </div>
           </div>
           <h2>Bankett</h2>
@@ -373,7 +494,7 @@ export default function BookingForm() {
                   <label htmlFor="Bankettbiljetter" />
                   <input
                     className={styles.numberInput}
-                    type="text"
+                    type="number"
                     id="Bankettbiljetter"
                     readOnly
                     //value={sponsorWatch === "gold" ? 3 : 0}
@@ -429,24 +550,28 @@ export default function BookingForm() {
             <div style={{ display: "flex", flexFlow: "column" }}>
               <h3>Faktureringsuppgifter</h3>
               <span>Vilken e-postadress ska fakturan skickas till?</span>
-              <label htmlFor="fakurering" />
-              <input
-                type="email"
-                id="fakturering"
-                {...register("fakturering", {
-                  required: "hej",
-                })}
-              />
+              <div className={styles.textinput}>
+                <label htmlFor="fakurering" />
+                <input
+                  type="email"
+                  id="fakturering"
+                  {...register("fakturering", {
+                    required: "hej",
+                  })}
+                />
+              </div>
               <h3>Eventuell Firmateknare</h3>
               <span>Fyll i nedan namn på firmatecknare</span>
-              <label htmlFor="firmateknare" />
-              <input
-                type="text"
-                id="firmateknare"
-                {...register("firmateknare", {
-                  required: "hej",
-                })}
-              />
+              <div className={styles.textinput}>
+                <label htmlFor="firmateknare" />
+                <input
+                  type="text"
+                  id="firmateknare"
+                  {...register("firmateknare", {
+                    required: "hej",
+                  })}
+                />
+              </div>
             </div>
           </div>
 
