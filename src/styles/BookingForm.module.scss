@@ -21,7 +21,9 @@ $anim-speed: 0.85; // in seconds
 
 .container {
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
   padding-top: 20vh;
   padding-left: 100px;
   width: 100%;
@@ -47,12 +49,26 @@ $anim-speed: 0.85; // in seconds
     font-size: 16px;
     margin: 0.5rem 0 0 0;
   }
+  .topPart {
+    border: 1px solidblack;
+    display: flex;
+    width: 80%;
+    justify-content: space-around;
+    margin-bottom: 5rem;
+  }
+  .seatBooker {
+    width: 10rem;
+  }
   .paket {
     display: flex;
     width: 100%;
-    justify-content: center;
     padding-bottom: 4vh;
+    h2 {
+      font-size: 2rem;
+      color: #fff;
+    }
   }
+
   .sponsor {
     padding-bottom: 100px;
     box-sizing: border-box;
@@ -192,9 +208,11 @@ $anim-speed: 0.85; // in seconds
     display: flex;
     width: 100%;
     justify-content: center;
+    align-items: center;
     flex-flow: column nowrap;
     .contactitem {
       position: relative;
+      width: 100%;
       label {
         position: absolute;
         top: 0;
@@ -236,9 +254,23 @@ $anim-speed: 0.85; // in seconds
     }
     .fairfood {
       input {
-        border: none;
+        position: relative;
+        margin-top: 1rem;
+        padding-left: 1rem;
+        height: 3rem;
+        width: 50%;
         color: #fff;
-        background-color: rgba(0, 0, 0, 0.2);
+        border-bottom: 1px solid#fff;
+        border-radius: 5px 5px 0 0;
+        transition: border-color 0.15s ease-out, background-color 0.15s ease-out;
+        &:hover {
+          background-color: rgba(0, 0, 0, 0.12);
+        }
+        &:focus,
+        &:not(:placeholder-shown) {
+          border-bottom: 1px solid $MTDorange;
+          outline: none;
+        }
       }
     }
   }

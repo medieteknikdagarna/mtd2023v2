@@ -2,7 +2,7 @@ import React, { useContext, useEffect } from "react";
 import BookerSVG from "../../../public/images/platsbokaren.svg";
 import Floor4 from "../../../public/images/platsbokning.svg";
 import Floor5 from "../../../public/images/platsbokning_p5.svg";
-import { selectedContext } from "../SeatBooker";
+import { selectedContext } from "../BookingForm";
 import { useTransition, animated } from "react-spring";
 import { languageContext } from "../../pages/_app";
 import Image from "next/image";
@@ -85,14 +85,14 @@ export default function SeatMap({ seats, reservations, activeFloor, type }) {
 
   return (
     <div>
-      <h2>
+      <h2 style={{ fontSize: "3rem" }}>
         {lang === "sv" ? "Plan" : "Floor"} {activeFloor}
       </h2>
       {floor4Transition(
         (styles, item) =>
           item && (
             <animated.div style={styles}>
-              <Image src={Floor4} className="header-logo" alt="MTD" />
+              <Image src={Floor4} alt="floor4" />
             </animated.div>
           )
       )}
@@ -100,7 +100,7 @@ export default function SeatMap({ seats, reservations, activeFloor, type }) {
         (styles, item) =>
           item && (
             <animated.div style={styles}>
-              <Image src={Floor5} className="header-logo" alt="MTD" />
+              <Image src={Floor5} alt="floor5" width={500} height={500} />
             </animated.div>
           )
       )}

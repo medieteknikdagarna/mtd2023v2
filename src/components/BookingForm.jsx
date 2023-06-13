@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import React, { useContext, useRef, useState } from "react";
 import {
   useForm,
   useController,
@@ -12,6 +12,15 @@ import { ref, uploadBytes } from "firebase/storage";
 import { getStorage } from "firebase/storage";
 import styles from "../styles/BookingForm.module.scss";
 import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
+import SeatMap from "./utilities/SeatMap";
+import { isReserved } from "./utilities/SeatMap";
+import WingLeft from "../../public/images/WingLeft.svg";
+import Image from "next/image";
+
+const floor4_all = require("../../public/content/seat-info/floor4.json");
+const floor5_all = require("../../public/content/seat-info/floor5.json");
+
+export const selectedContext = React.createContext();
 
 export default function BookingForm() {
   const db = getFirestore(firebaseApp);
@@ -21,7 +30,7 @@ export default function BookingForm() {
   const { register, handleSubmit, control, formState, watch, setValue } =
     useForm({
       defaultValues: {
-        sponsor: "",
+        sponsor: "bronze",
         transport: "",
         bankettbiljetter: 0,
         bankettkost: [],
@@ -54,6 +63,14 @@ export default function BookingForm() {
     control,
   });
 
+  /* -- PLANLÖSNING STATES -- */
+  const [type, setType] = useState("Brons");
+  const [activeLevel, setLevel] = useState(5);
+  const [activeSeats, setActiveSeats] = useState(floor5_all);
+  const [floor4_res, setFloor4] = useState([]);
+  const [floor5_res, setFloor5] = useState([]);
+  const [selectedSeat, setSelected] = useState(floor5_all[0]);
+
   const addBankettKost = () => {
     bankettAppend({ kost: "" });
     console.log("hej");
@@ -79,7 +96,7 @@ export default function BookingForm() {
     setTimeout(() => {
       setLoading(false);
     }, 2000);
-    /* const logoRef = ref(storage, `logotype/${formValues.logotyp[0].name}`);
+    const logoRef = ref(storage, `logotype/${formValues.logotyp[0].name}`);
     try {
       const docRef = addDoc(collection(db, "companies"), {
         TV: formValues.TV,
@@ -87,7 +104,7 @@ export default function BookingForm() {
       uploadBytes(logoRef, formValues.logotyp[0]);
     } catch (e) {
       console.log(e);
-    } */
+    }
   };
 
   const changeNumber = (value, target) => {
@@ -152,40 +169,62 @@ export default function BookingForm() {
   return (
     <>
       <div className={styles.container}>
-        <form onSubmit={handleSubmit(onSubmit)} noValidate>
-          <div className={styles.paket}>
-            <h1>Välj Sponsorpaket</h1>
-          </div>
-          <div className={styles.sponsor}>
-            <div className={styles.bronze}>
-              <input
-                type="radio"
-                id="sponsor-op1"
-                value="bronze"
-                {...register("sponsor")}
+        <div className={styles.topPart}>
+          <div>
+            <selectedContext.Provider value={[selectedSeat, setSelected]}>
+              <SeatMap
+                type={type}
+                key={activeLevel}
+                activeFloor={activeLevel}
+                seats={activeSeats}
+                reservations={activeLevel == 5 ? floor5_res : floor4_res}
+                selected={selectedSeat}
               />
-              <label htmlFor="sponsor-op1">Brons</label>
+            </selectedContext.Provider>
+          </div>
+          <div>
+            <div className={styles.sponsContainer}>
+              <h1 style={{ fontSize: "4rem" }}>{type}</h1>
             </div>
 
-            <div className={styles.silver}>
-              <input
-                type="radio"
-                id="sponsor-op2"
-                value="silver"
-                {...register("sponsor")}
-              />
-              <label htmlFor="sponsor-op2">Silver</label>
+            <div className={styles.paket}>
+              <h2>Välj Sponsorpaket</h2>
             </div>
-            <div className={styles.gold}>
-              <input
-                type="radio"
-                id="sponsor-op3"
-                value="gold"
-                {...register("sponsor")}
-              />
-              <label htmlFor="sponsor-op3">Guld</label>
+            <div className={styles.sponsor}>
+              <div className={styles.bronze}>
+                <input
+                  type="radio"
+                  id="sponsor-op1"
+                  value="bronze"
+                  onClick={() => setType("Brons")}
+                  {...register("sponsor")}
+                />
+                <label htmlFor="sponsor-op1">Brons</label>
+              </div>
+
+              <div className={styles.silver}>
+                <input
+                  type="radio"
+                  id="sponsor-op2"
+                  value="silver"
+                  onClick={() => setType("Silver")}
+                  {...register("sponsor")}
+                />
+                <label htmlFor="sponsor-op2">Silver</label>
+              </div>
+              <div className={styles.gold}>
+                <input
+                  type="radio"
+                  id="sponsor-op3"
+                  value="gold"
+                  {...register("sponsor")}
+                />
+                <label htmlFor="sponsor-op3">Guld</label>
+              </div>
             </div>
           </div>
+        </div>
+        <form onSubmit={handleSubmit(onSubmit)} noValidate>
           <div className={styles.contact}>
             <div className={styles.contactitem}>
               <input
@@ -283,6 +322,7 @@ export default function BookingForm() {
                         <div className={styles.fairfood} key={kost.id}>
                           <input
                             type="text"
+                            placeholder=" "
                             {...register(`mässkost.${index}.kost`)}
                           />
                         </div>

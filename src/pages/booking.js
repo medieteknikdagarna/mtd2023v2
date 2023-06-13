@@ -6,7 +6,6 @@ import Footer from "@/components/Footer";
 import SeatBooker from "@/components/SeatBooker";
 
 export default function BookingPage() {
-  const [type, setType] = useState("Mässplats");
   return (
     <>
       <NextSeo noindex={true} />
