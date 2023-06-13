@@ -153,27 +153,33 @@ export default function BookingForm() {
             <h1>Välj Sponsorpaket</h1>
           </div>
           <div className={styles.sponsor}>
-            <input
-              type="radio"
-              id="sponsor-op1"
-              value="bronze"
-              {...register("sponsor")}
-            />
-            <label htmlFor="sponsor-op1">Bronze</label>
-            <input
-              type="radio"
-              id="sponsor-op3"
-              value="gold"
-              {...register("sponsor")}
-            />
-            <label htmlFor="sponsor-op3">Guld</label>
-            <input
-              type="radio"
-              id="sponsor-op2"
-              value="silver"
-              {...register("sponsor")}
-            />
-            <label htmlFor="sponsor-op2">Silver</label>
+            <div className={styles.bronze}>
+              <input
+                type="radio"
+                id="sponsor-op1"
+                value="bronze"
+                {...register("sponsor")}
+              />
+              <label htmlFor="sponsor-op1">Brons</label>
+            </div>
+            <div className={styles.gold}>
+              <input
+                type="radio"
+                id="sponsor-op3"
+                value="gold"
+                {...register("sponsor")}
+              />
+              <label htmlFor="sponsor-op3">Guld</label>
+            </div>
+            <div className={styles.silver}>
+              <input
+                type="radio"
+                id="sponsor-op2"
+                value="silver"
+                {...register("sponsor")}
+              />
+              <label htmlFor="sponsor-op2">Silver</label>
+            </div>
           </div>
           <div className={styles.contact}>
             <div className={styles.contactitem}>
@@ -233,9 +239,9 @@ export default function BookingForm() {
           </div>
           <div className={styles.fairday}>
             <h2>Mässdag</h2>
-
-            <span>Hur många kommer på mässdagen?</span>
             <div className={styles.numberattend}>
+              <span>Hur många kommer på mässdagen?</span>
+
               <div className={styles.counterContainer}>
                 <div
                   className={styles.counterDecrement}
@@ -281,9 +287,7 @@ export default function BookingForm() {
                 </div>
               )}
             </div>
-
             <h3>Montertransport</h3>
-
             <div className={styles.option}>
               <input
                 type="radio"
@@ -305,25 +309,27 @@ export default function BookingForm() {
               </label>
             </div>
             <h3>Persontransport</h3>
-            <span>
-              Behöver ni trasport inom Norköping t.ex från Resecentrum till
-              Campus på mässdagen
-            </span>
-            <div className={styles.option}>
-              <input
-                type="radio"
-                id="persontransport-ja"
-                value="Ja"
-                {...register("persontransport")}
-              />
-              <label htmlFor="persontransport-ja">Ja</label>
-              <input
-                type="radio"
-                id="persontransport-nej"
-                value="Nej"
-                {...register("persontransport")}
-              />
-              <label htmlFor="persontransport-nej">Nej</label>
+            <div style={{ display: "flex", flexFlow: "column" }}>
+              <span>
+                Behöver ni trasport inom Norköping t.ex från Resecentrum till
+                Campus på mässdagen
+              </span>
+              <div className={styles.option}>
+                <input
+                  type="radio"
+                  id="persontransport-ja"
+                  value="Ja"
+                  {...register("persontransport")}
+                />
+                <label htmlFor="persontransport-ja">Ja</label>
+                <input
+                  type="radio"
+                  id="persontransport-nej"
+                  value="Nej"
+                  {...register("persontransport")}
+                />
+                <label htmlFor="persontransport-nej">Nej</label>
+              </div>
             </div>
             <h3>Extrabord</h3>
             <div style={{ display: "flex", flexFlow: "column" }}>
@@ -356,8 +362,9 @@ export default function BookingForm() {
               </div>
             </div>
             <h3>Extrastol</h3>
-            <span>Hur många extra stolar</span>
             <div style={{ display: "flex", flexFlow: "column" }}>
+              <span>Hur många extra stolar</span>
+
               <div className={styles.counterContainer}>
                 <div
                   className={styles.counterDecrement}
@@ -431,7 +438,12 @@ export default function BookingForm() {
               vad?
             </h3>
             <div className={styles.textinput}>
-              <input type="text" id="elenhet" {...register("elenhet")} />
+              <input
+                type="text"
+                id="elenhet"
+                placeholder=" "
+                {...register("elenhet")}
+              />
               <label htmlFor="elenhet" />
             </div>
             <h3>Tjänster för besökare</h3>
@@ -555,6 +567,7 @@ export default function BookingForm() {
                 <input
                   type="email"
                   id="fakturering"
+                  placeholder=" "
                   {...register("fakturering", {
                     required: "hej",
                   })}
@@ -567,6 +580,7 @@ export default function BookingForm() {
                 <input
                   type="text"
                   id="firmateknare"
+                  placeholder=" "
                   {...register("firmateknare", {
                     required: "hej",
                   })}

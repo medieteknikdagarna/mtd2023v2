@@ -2,6 +2,13 @@ $offWhite: #f5f5f7;
 $MTDorange: #ec6610;
 $MTDdarkblue: #13283c;
 
+$SPONSBronze: #804a00;
+$SPONSSilver: #c0c0c0;
+$SPONSGold: #ccac00;
+
+$anim-duration: 2; // in seconds
+$anim-speed: 0.85; // in seconds
+
 @mixin hideInput {
   width: 0;
   height: 0;
@@ -14,18 +21,28 @@ $MTDdarkblue: #13283c;
   justify-content: center;
   padding-top: 20vh;
   padding-left: 100px;
+  width: 100%;
   h3,
   h2,
-  span,
   p {
     color: #fff;
   }
   h1 {
     color: $MTDorange;
   }
+  h3,
+  h2 {
+    margin: 1.5rem 0 0 0;
+  }
   input {
     background-color: rgba(0, 0, 0, 0.2);
     border: none;
+    margin: 0.5rem 0 0.5rem 0;
+  }
+  span {
+    color: gray;
+    font-size: 16px;
+    margin: 0.5rem 0 0 0;
   }
   .paket {
     display: flex;
@@ -42,6 +59,20 @@ $MTDdarkblue: #13283c;
     align-items: stretch;
     input {
       @include hideInput;
+      position: relative;
+      overflow: hidden;
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -15rem;
+        width: 60px;
+        height: 200px;
+        z-index: 1;
+        background-color: rgba(255, 255, 255, 0.7);
+        transform: skewX(-30deg);
+        filter: blur(30px);
+      }
     }
     input + label {
       margin: 0;
@@ -58,13 +89,103 @@ $MTDdarkblue: #13283c;
       transition: border-color 0.15s ease-out, color 0.25s ease-out,
         background-color 0.15s ease-out, box-shadow 0.15s ease-out;
     }
-    input:hover + label {
-      border-color: $MTDdarkblue;
-    }
+
     input:checked + label {
       background-color: $MTDorange;
       border-color: $MTDorange;
       z-index: 1;
+    }
+    .bronze {
+      label {
+        position: relative;
+        overflow: hidden;
+        &::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: -15rem;
+          width: 60px;
+          height: 200px;
+          z-index: 1;
+          background-color: rgba(255, 255, 255, 1);
+          transform: skewX(-30deg);
+          filter: blur(30px);
+        }
+      }
+      input:checked + label {
+        background-color: $SPONSBronze;
+        border-color: $SPONSBronze;
+        z-index: 1;
+      }
+      input:checked + label::before {
+        animation: slide #{$anim-duration}s ease infinite;
+      }
+    }
+    .gold {
+      label {
+        position: relative;
+        overflow: hidden;
+        &::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: -15rem;
+          width: 60px;
+          height: 200px;
+          z-index: 1;
+          background-color: rgba(255, 255, 255, 1);
+          transform: skewX(-30deg);
+          filter: blur(30px);
+        }
+      }
+      input:checked + label {
+        background-color: $SPONSGold;
+        border-color: $SPONSGold;
+
+        z-index: 1;
+      }
+      input:checked + label::before {
+        animation: slide #{$anim-duration}s ease infinite;
+      }
+    }
+    .silver {
+      label {
+        position: relative;
+        overflow: hidden;
+        &::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: -15rem;
+          width: 60px;
+          height: 200px;
+          z-index: 1;
+          background-color: rgba(255, 255, 255, 1);
+          transform: skewX(-30deg);
+          filter: blur(30px);
+        }
+      }
+      input:checked + label {
+        background-color: $SPONSSilver;
+        border-color: $SPONSSilver;
+        color: black;
+        z-index: 1;
+      }
+      input:checked + label::before {
+        animation: slide #{$anim-duration}s ease infinite;
+      }
+    }
+
+    @keyframes slide {
+      0% {
+        left: -100%;
+        transition-property: left;
+      }
+      #{($anim-speed / ($anim-duration + $anim-speed) * 100%)},
+      100% {
+        left: 110%;
+        transition-property: left;
+      }
     }
   }
   .contact {
@@ -109,17 +230,11 @@ $MTDdarkblue: #13283c;
   }
   .fairday {
     padding-top: 5vh;
-    span {
-      padding-top: 2vh;
-      padding-bottom: 2vh;
-      color: #fff;
-    }
     .numberattend {
       display: flex;
       flex-flow: column;
     }
     .fairfood {
-      padding-top: 0.5rem;
       input {
         border: none;
         color: #fff;
@@ -128,7 +243,7 @@ $MTDdarkblue: #13283c;
     }
   }
   .option {
-    margin: 2rem 0 2rem 0;
+    margin-top: 1rem;
     display: flex;
     flex-flow: row;
     flex-wrap: wrap;
@@ -141,7 +256,6 @@ $MTDdarkblue: #13283c;
     }
     input + label {
       padding: 1.5rem 1rem;
-      margin: 0 0 0 0px;
       min-width: 5rem;
       text-align: center;
       background-color: rgba(0, 0, 0, 0.2);
@@ -178,11 +292,19 @@ $MTDdarkblue: #13283c;
     text-align: center;
   }
   .counterContainer {
-    margin: 1rem 0 1rem 0;
+    position: relative;
+    margin: 0.5rem 0 0 0;
+
     flex: 0 0 auto;
     display: flex;
     align-items: center;
     justify-self: center;
+    div {
+      -moz-user-select: none;
+      -khtml-user-select: none;
+      -webkit-user-select: none;
+      user-select: none;
+    }
     .counterDecrement {
       display: flex;
       justify-content: center;
@@ -190,6 +312,10 @@ $MTDdarkblue: #13283c;
       background-color: $MTDorange;
       height: 2rem;
       width: 2rem;
+      transition: background-color 0.15s ease-out;
+      &:hover {
+        background-color: #e97730;
+      }
     }
     .counterIncrement {
       display: flex;
@@ -198,6 +324,10 @@ $MTDdarkblue: #13283c;
       background-color: $MTDorange;
       height: 2rem;
       width: 2rem;
+      transition: background-color 0.15s ease-out;
+      &:hover {
+        background-color: #e97730;
+      }
     }
     input::-webkit-outer-spin-button,
     input::-webkit-inner-spin-button {
@@ -207,13 +337,23 @@ $MTDdarkblue: #13283c;
   }
   .textinput {
     input {
-      margin-top: 1.5rem;
+      position: relative;
+      margin-top: 1rem;
       padding-left: 1rem;
       height: 3rem;
       width: 100%;
       color: #fff;
       border-bottom: 1px solid#fff;
       border-radius: 5px 5px 0 0;
+      transition: border-color 0.15s ease-out, background-color 0.15s ease-out;
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.12);
+      }
+      &:focus,
+      &:not(:placeholder-shown) {
+        border-bottom: 1px solid $MTDorange;
+        outline: none;
+      }
     }
   }
 }
