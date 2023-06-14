@@ -15,7 +15,7 @@ import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
 import SeatMap from "./utilities/SeatMap";
 import { isReserved } from "./utilities/SeatMap";
 import WingLeft from "../../public/images/WingLeft.svg";
-import Image from "next/image";
+import { languageContext } from "../pages/_app";
 
 const floor4_all = require("../../public/content/seat-info/floor4.json");
 const floor5_all = require("../../public/content/seat-info/floor5.json");
@@ -25,12 +25,11 @@ export const selectedContext = React.createContext();
 export default function BookingForm() {
   const db = getFirestore(firebaseApp);
   const storage = getStorage(firebaseApp);
-
   const [loading, setLoading] = useState(false);
   const { register, handleSubmit, control, formState, watch, setValue } =
     useForm({
       defaultValues: {
-        sponsor: "bronze",
+        sponsor: "Brons",
         transport: "",
         bankettbiljetter: 0,
         bankettkost: [],
@@ -39,6 +38,7 @@ export default function BookingForm() {
         extrabord: 0,
         extrastol: 0,
         trådlösaenheter: 0,
+        floor: 5,
       },
     });
 
@@ -71,24 +71,7 @@ export default function BookingForm() {
   const [floor5_res, setFloor5] = useState([]);
   const [selectedSeat, setSelected] = useState(floor5_all[0]);
 
-  const addBankettKost = () => {
-    bankettAppend({ kost: "" });
-    console.log("hej");
-  };
-  const addMässKost = () => {
-    const currentMässCount = mässField.length;
-    const newMässCount = watch("antalpåmässa");
-    const diff = Math.abs(currentMässCount - newMässCount);
-    if (newMässCount > currentMässCount) {
-      for (let i = 0; i < diff; i++) {
-        mässAppend({ kost: "" });
-      }
-    } else {
-      for (let i = 0; i < diff; i++) {
-        mässRemove(newMässCount);
-      }
-    }
-  };
+  const [lang, setLang] = useContext(languageContext);
 
   const onSubmit = (formValues) => {
     setLoading(true);
@@ -105,6 +88,11 @@ export default function BookingForm() {
     } catch (e) {
       console.log(e);
     }
+  };
+
+  const changeFloor = (floor) => {
+    setActiveSeats(floor === 5 ? floor5_all : floor4_all);
+    setLevel(floor);
   };
 
   const changeNumber = (value, target) => {
@@ -170,7 +158,7 @@ export default function BookingForm() {
     <>
       <div className={styles.container}>
         <div className={styles.topPart}>
-          <div>
+          <div className={styles.floorContainer}>
             <selectedContext.Provider value={[selectedSeat, setSelected]}>
               <SeatMap
                 type={type}
@@ -182,11 +170,68 @@ export default function BookingForm() {
               />
             </selectedContext.Provider>
           </div>
-          <div>
+          <div style={{ width: "32rem" }}>
             <div className={styles.sponsContainer}>
-              <h1 style={{ fontSize: "4rem" }}>{type}</h1>
+              <h1
+                style={{
+                  fontSize: "4rem",
+                  color:
+                    watch("sponsor") === "Brons"
+                      ? "#804a00"
+                      : watch("sponsor") === "Silver"
+                      ? "#c0c0c0"
+                      : watch("sponsor") === "Guld"
+                      ? "#b3a34d"
+                      : "white",
+                }}
+              >
+                {watch("sponsor")}
+              </h1>
             </div>
-
+            <div className={styles.floorInfo}>
+              <div
+                className={styles.indicator}
+                style={{ backgroundColor: "#89E17B" }}
+              ></div>
+              <h4>{lang === "sv" ? "Ledig" : "Empty"}</h4>
+              <div
+                className={styles.indicator}
+                style={{ backgroundColor: "#FFF068" }}
+              ></div>
+              <h4>{lang === "sv" ? "Vald" : "Chosen"}</h4>
+              <div
+                className={styles.indicator}
+                style={{ backgroundColor: "#E07979" }}
+              ></div>
+              <h4>{lang === "sv" ? "Resarverad" : "Resarverad"}</h4>
+            </div>
+            <p className="seat-information-p">
+              {lang === "sv"
+                ? "Mässan tar plats på våning 4 samt 5 i Täppan, Campus Norrköping. Ni bokar genom att välja en plats och våning i vår platskarta."
+                : "The fair will take place on floor 4 and 5 in Täppan at Campus Norrköping. Book your spot by choosing floor and seat in the figure."}
+            </p>
+            <div className={styles.floorSelect}>
+              <input
+                type="radio"
+                id="floor-op1"
+                value="4"
+                onClick={() => changeFloor(4)}
+                {...register("floor", {
+                  valueAsNumber: true,
+                })}
+              />
+              <label htmlFor="floor-op1">Plan 4</label>
+              <input
+                type="radio"
+                id="floor-op2"
+                value="5"
+                onClick={() => changeFloor(5)}
+                {...register("floor", {
+                  valueAsNumber: true,
+                })}
+              />
+              <label htmlFor="floor-op2">Plan 5</label>
+            </div>
             <div className={styles.paket}>
               <h2>Välj Sponsorpaket</h2>
             </div>
@@ -195,7 +240,7 @@ export default function BookingForm() {
                 <input
                   type="radio"
                   id="sponsor-op1"
-                  value="bronze"
+                  value="Brons"
                   onClick={() => setType("Brons")}
                   {...register("sponsor")}
                 />
@@ -206,7 +251,7 @@ export default function BookingForm() {
                 <input
                   type="radio"
                   id="sponsor-op2"
-                  value="silver"
+                  value="Silver"
                   onClick={() => setType("Silver")}
                   {...register("sponsor")}
                 />
@@ -216,7 +261,8 @@ export default function BookingForm() {
                 <input
                   type="radio"
                   id="sponsor-op3"
-                  value="gold"
+                  value="Guld"
+                  onClick={() => setType("Guld")}
                   {...register("sponsor")}
                 />
                 <label htmlFor="sponsor-op3">Guld</label>
@@ -224,6 +270,7 @@ export default function BookingForm() {
             </div>
           </div>
         </div>
+
         <form onSubmit={handleSubmit(onSubmit)} noValidate>
           <div className={styles.contact}>
             <div className={styles.contactitem}>
@@ -427,7 +474,6 @@ export default function BookingForm() {
                     //value={sponsorWatch === "gold" ? 3 : 0}
                     {...register("extrastol", {
                       valueAsNumber: true,
-                      onChange: addBankettKost,
                     })}
                   />
                 </div>
@@ -557,7 +603,6 @@ export default function BookingForm() {
                     //value={sponsorWatch === "gold" ? 3 : 0}
                     {...register("bankettbiljetter", {
                       valueAsNumber: true,
-                      onChange: addBankettKost,
                     })}
                   />
                 </div>

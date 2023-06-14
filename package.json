@@ -13,7 +13,6 @@
     "@fortawesome/free-solid-svg-icons": "^6.4.0",
     "@fortawesome/react-fontawesome": "^0.2.0",
     "@react-spring/web": "^9.7.2",
-    "@svgr/webpack": "^8.0.1",
     "axios": "^1.4.0",
     "eslint": "8.41.0",
     "eslint-config-next": "13.4.3",
@@ -35,6 +34,7 @@
   },
   "devDependencies": {
     "@hookform/devtools": "^4.3.1",
+    "@svgr/webpack": "^8.0.1",
     "file-loader": "^6.2.0"
   }
 }

@@ -2,6 +2,7 @@ import React, { useContext, useEffect } from "react";
 import BookerSVG from "../../../public/images/platsbokaren.svg";
 import Floor4 from "../../../public/images/platsbokning.svg";
 import Floor5 from "../../../public/images/platsbokning_p5.svg";
+//import { selectedContext } from "../SeatBooker";
 import { selectedContext } from "../BookingForm";
 import { useTransition, animated } from "react-spring";
 import { languageContext } from "../../pages/_app";
@@ -92,7 +93,7 @@ export default function SeatMap({ seats, reservations, activeFloor, type }) {
         (styles, item) =>
           item && (
             <animated.div style={styles}>
-              <Image src={Floor4} alt="floor4" />
+              <Floor4 />
             </animated.div>
           )
       )}
@@ -100,7 +101,7 @@ export default function SeatMap({ seats, reservations, activeFloor, type }) {
         (styles, item) =>
           item && (
             <animated.div style={styles}>
-              <Image src={Floor5} alt="floor5" width={500} height={500} />
+              <Floor5 />
             </animated.div>
           )
       )}

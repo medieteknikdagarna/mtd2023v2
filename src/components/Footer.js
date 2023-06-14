@@ -24,8 +24,8 @@ export default function Footer(props) {
         <div className="footer-left">
           <div>
             <div className="footer--images">
-              <Image src={MTDSvg} className="footer-logo" alt="MTD" />
-              <Image src={MTSvg} className="footer-logo" alt="MT" />
+              <MTDSvg className="footer-logo" />
+              <MTSvg className="footer-logo" />
             </div>
             <div className="footer--icons">
               <a

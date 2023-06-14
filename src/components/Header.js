@@ -57,7 +57,7 @@ export default function Header({
       ></Menu>
       <div className="logo-container">
         <Link href="/" legacyBehavior>
-          <Image src={MTDSvg} className="header-logo" alt="MTD" />
+          <MTDSvg className="header-logo" />
         </Link>
         <div className="nav-items">
           <Link href="/" legacyBehavior>

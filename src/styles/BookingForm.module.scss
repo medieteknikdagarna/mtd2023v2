@@ -29,7 +29,8 @@ $anim-speed: 0.85; // in seconds
   width: 100%;
   h3,
   h2,
-  p {
+  p,
+  h4 {
     color: #fff;
   }
   h1 {
@@ -52,12 +53,38 @@ $anim-speed: 0.85; // in seconds
   .topPart {
     border: 1px solidblack;
     display: flex;
-    width: 80%;
+    width: 70%;
     justify-content: space-around;
     margin-bottom: 5rem;
+    .floorInfo {
+      display: flex;
+      margin-top: 1rem;
+      .indicator {
+        width: 1rem;
+        height: 1rem;
+        border-radius: 100%;
+      }
+      h4 {
+        margin: 0 1rem 0 1rem;
+      }
+    }
+    .floorSelect {
+      margin-top: 2rem;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      label {
+        margin: 0 1rem 0 1rem;
+        color: #fff;
+      }
+      input {
+        width: 1.5rem;
+        height: 1.5rem;
+      }
+    }
   }
-  .seatBooker {
-    width: 10rem;
+  .floorContainer {
+    width: 30rem;
   }
   .paket {
     display: flex;
