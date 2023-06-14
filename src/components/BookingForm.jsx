@@ -38,7 +38,7 @@ export default function BookingForm() {
         extrabord: 0,
         extrastol: 0,
         trådlösaenheter: 0,
-        floor: 5,
+        floor: "5",
       },
     });
 
@@ -213,8 +213,7 @@ export default function BookingForm() {
             <div className={styles.floorSelect}>
               <input
                 type="radio"
-                id="floor-op1"
-                value="4"
+                id="4"
                 onClick={() => changeFloor(4)}
                 {...register("floor", {
                   valueAsNumber: true,
@@ -223,8 +222,7 @@ export default function BookingForm() {
               <label htmlFor="floor-op1">Plan 4</label>
               <input
                 type="radio"
-                id="floor-op2"
-                value="5"
+                id="5"
                 onClick={() => changeFloor(5)}
                 {...register("floor", {
                   valueAsNumber: true,
@@ -233,7 +231,9 @@ export default function BookingForm() {
               <label htmlFor="floor-op2">Plan 5</label>
             </div>
             <div className={styles.paket}>
-              <h2>Välj Sponsorpaket</h2>
+              <h2>
+                {lang === "sv" ? "Välj Sponsorpaket" : "Chose Sponsor Package"}
+              </h2>
             </div>
             <div className={styles.sponsor}>
               <div className={styles.bronze}>
@@ -244,7 +244,9 @@ export default function BookingForm() {
                   onClick={() => setType("Brons")}
                   {...register("sponsor")}
                 />
-                <label htmlFor="sponsor-op1">Brons</label>
+                <label htmlFor="sponsor-op1">
+                  {lang === "sv" ? "Brons" : "Bronze"}
+                </label>
               </div>
 
               <div className={styles.silver}>
@@ -255,7 +257,9 @@ export default function BookingForm() {
                   onClick={() => setType("Silver")}
                   {...register("sponsor")}
                 />
-                <label htmlFor="sponsor-op2">Silver</label>
+                <label htmlFor="sponsor-op2">
+                  {lang === "sv" ? "Silver" : "Silver"}
+                </label>
               </div>
               <div className={styles.gold}>
                 <input
@@ -265,12 +269,36 @@ export default function BookingForm() {
                   onClick={() => setType("Guld")}
                   {...register("sponsor")}
                 />
-                <label htmlFor="sponsor-op3">Guld</label>
+                <label htmlFor="sponsor-op3">
+                  {lang === "sv" ? "Guld" : "Gold"}
+                </label>
               </div>
             </div>
           </div>
         </div>
-
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            marginBottom: "7rem",
+          }}
+        >
+          <WingLeft
+            className={styles.wingLeft}
+            width="400"
+            height="10"
+            preserveascpectratio="null"
+          />
+          <h1 style={{ color: "white" }}>
+            {lang === "sv" ? "Information" : "Information"}
+          </h1>
+          <WingLeft
+            className={styles.wingRight}
+            width="400"
+            height="10"
+            preserveascpectratio="null"
+          />
+        </div>
         <form onSubmit={handleSubmit(onSubmit)} noValidate>
           <div className={styles.contact}>
             <div className={styles.contactitem}>
@@ -280,7 +308,9 @@ export default function BookingForm() {
                 placeholder=" "
                 {...register("contact")}
               />
-              <label htmlFor="contact">Kontaktperson</label>
+              <label htmlFor="contact">
+                {lang === "sv" ? "Kontaktperson" : "Name"}
+              </label>
             </div>
             <div className={styles.contactitem}>
               <input
@@ -289,7 +319,9 @@ export default function BookingForm() {
                 placeholder=" "
                 {...register("company")}
               />
-              <label htmlFor="company">Företag</label>
+              <label htmlFor="company">
+                {lang === "sv" ? "Företag" : "Company name"}
+              </label>
             </div>
             <div className={styles.contactitem}>
               <input
@@ -298,7 +330,9 @@ export default function BookingForm() {
                 placeholder=" "
                 {...register("companyadress")}
               />
-              <label htmlFor="companyaddress">Företagsadress</label>
+              <label htmlFor="companyaddress">
+                {lang === "sv" ? "Företagsadress" : "Company adress"}
+              </label>
             </div>
             <div className={styles.contactitem}>
               <input
@@ -320,18 +354,28 @@ export default function BookingForm() {
                 placeholder=" "
                 {...register("description")}
               />
-              <label htmlFor="description">Beskrivning</label>
+              <label htmlFor="description">
+                {lang === "Beskrivning av företag för app och hemsida"
+                  ? "Ledig"
+                  : "Description of company for app and websire"}
+              </label>
             </div>
           </div>
           <div
             style={{ display: "flex", justifyContent: "center", width: "100%" }}
           >
-            <h2 style={{ color: "#ec6610" }}>Tillägg</h2>
+            <h2 style={{ color: "#ec6610" }}>
+              {lang === "sv" ? "Tillägg" : "Additions"}
+            </h2>
           </div>
           <div className={styles.fairday}>
             <h2>Mässdag</h2>
             <div className={styles.numberattend}>
-              <span>Hur många kommer på mässdagen?</span>
+              <span>
+                {lang === "sv"
+                  ? "Hur många kommer på mässdagen?"
+                  : "How many are coming to the fair?"}
+              </span>
 
               <div className={styles.counterContainer}>
                 <div
@@ -362,7 +406,7 @@ export default function BookingForm() {
 
               {watch("antalpåmässa") > 0 && (
                 <div>
-                  <h3>Kost</h3>
+                  <h3>Specialkost</h3>
                   <div>
                     {mässField.map((kost, index) => {
                       return (
@@ -379,7 +423,11 @@ export default function BookingForm() {
                 </div>
               )}
             </div>
-            <h3>Montertransport</h3>
+            <h3>
+              {lang === "sv"
+                ? "Montertransport"
+                : "Transportation of fair booth"}
+            </h3>
             <div className={styles.option}>
               <input
                 type="radio"
@@ -388,7 +436,9 @@ export default function BookingForm() {
                 {...register("transport")}
               />
               <label htmlFor="T_op1">
-                Skicka i förväg via godsmottagningen
+                {lang === "sv"
+                  ? "Skicka i förväg via godsmottagningen"
+                  : "Will be sent in advance through goods reception"}
               </label>
               <input
                 type="radio"
@@ -397,14 +447,17 @@ export default function BookingForm() {
                 {...register("transport")}
               />
               <label htmlFor="T_op2">
-                Tar med själv till mässan på mässdagen
+                {lang === "sv"
+                  ? "Tar med själv till mässdagen"
+                  : "Will be brought with us on the day of the fair"}
               </label>
             </div>
-            <h3>Persontransport</h3>
+            <h3>{lang === "sv" ? "Persontransport" : "Transportation"}</h3>
             <div style={{ display: "flex", flexFlow: "column" }}>
               <span>
-                Behöver ni trasport inom Norköping t.ex från Resecentrum till
-                Campus på mässdagen
+                {lang === "sv"
+                  ? " Behöver ni trasport inom Norköping t.ex från Resecentrum till Campus på mässdagen"
+                  : "Are you in need of transportation in Norrköping, for example from the central station to campus on the day of the fair"}
               </span>
               <div className={styles.option}>
                 <input
@@ -413,19 +466,29 @@ export default function BookingForm() {
                   value="Ja"
                   {...register("persontransport")}
                 />
-                <label htmlFor="persontransport-ja">Ja</label>
+                <label htmlFor="persontransport-ja">
+                  {lang === "sv" ? "Ja" : "Yes"}
+                </label>
                 <input
                   type="radio"
                   id="persontransport-nej"
                   value="Nej"
                   {...register("persontransport")}
                 />
-                <label htmlFor="persontransport-nej">Nej</label>
+                <label htmlFor="persontransport-nej">
+                  {" "}
+                  {lang === "sv" ? "Nej" : "No"}
+                </label>
               </div>
             </div>
-            <h3>Extrabord</h3>
+            <h3> {lang === "sv" ? "Extra ståbord" : "Extra standing desks"}</h3>
             <div style={{ display: "flex", flexFlow: "column" }}>
-              <span>Hur många extra bord</span>
+              <span>
+                {" "}
+                {lang === "sv"
+                  ? "Alla företag erbjuds ett ståbord. Utöver det kan fler ståbord beställas för 300kr/st. Fyll i antalet bord ni vill ha utöver det som ingår. (Vill ni inte ha nåot extra fyller ni i 0)"
+                  : "All companies are provided with one standing desk. Additional desks can be ordered for 300SEK/each. Enter the number of additional desks wanted. (If no additional desks are wanted, enter 0)"}
+              </span>
               <div className={styles.counterContainer}>
                 <div
                   className={styles.counterDecrement}
@@ -453,9 +516,14 @@ export default function BookingForm() {
                 </div>
               </div>
             </div>
-            <h3>Extrastol</h3>
+            <h3> {lang === "sv" ? "Extra barstol" : "Extra barstool"}</h3>
             <div style={{ display: "flex", flexFlow: "column" }}>
-              <span>Hur många extra stolar</span>
+              <span>
+                {" "}
+                {lang === "sv"
+                  ? "100kr/st - 2st barstolar ingår för Silver och Guldsponsor"
+                  : "100SEK/each - 2 barstools are included for Silver and Gold sponsors"}
+              </span>
 
               <div className={styles.counterContainer}>
                 <div
@@ -485,18 +553,41 @@ export default function BookingForm() {
                 </div>
               </div>
             </div>
-            <h3>Extra TV-skärm</h3>
-            <div className={styles.option}>
+
+            <h3> {lang === "sv" ? "Extra TV-skärm" : "Extra TV-screens"}</h3>
+            <div className={styles.option} id={styles.TV}>
               <input type="radio" id="TV-op1" value="32" {...register("TV")} />
-              <label htmlFor="TV-op1">32TV-skärm kost</label>
+              <label htmlFor="TV-op1">
+                {" "}
+                {lang === "sv"
+                  ? '32" TV-skärm med stativ 2500kr/st'
+                  : '32" TV-screen with stand 2500SEK/each'}
+              </label>
               <input type="radio" id="TV-op2" value="40" {...register("TV")} />
-              <label htmlFor="TV-op2">40TV-skärm</label>
+              <label htmlFor="TV-op2">
+                {lang === "sv"
+                  ? '40" TV-skärm med stativ 3200kr/st'
+                  : '40" TV-screen with stand 3200SEK/each'}
+              </label>
               <input type="radio" id="TV-op3" value="47" {...register("TV")} />
-              <label htmlFor="TV-op3">47TV-skärm</label>
+              <label htmlFor="TV-op3">
+                {lang === "sv"
+                  ? '47" TV-skärm med stativ 3900kr/st'
+                  : '47" TV-screen with stand 3900SEK/each'}
+              </label>
               <input type="radio" id="TV-op4" value="55" {...register("TV")} />
-              <label htmlFor="TV-op4">55TV-skärm</label>
+              <label htmlFor="TV-op4">
+                {lang === "sv"
+                  ? '55" TV-skärm med stativ 4300kr/st'
+                  : '55" TV-screen with stand 4300SEK/each'}
+              </label>
             </div>
-            <h3>Uppskattat antel enheter som behöver trådlöst nätverk?</h3>
+            <h3>
+              {" "}
+              {lang === "sv"
+                ? "Uppskattat antel enheter som behöver trådlöst nätverk?"
+                : "Estimated number of devices in need of wireless network"}
+            </h3>
             <div className={styles.counterContainer}>
               <div
                 className={styles.counterDecrement}
@@ -525,8 +616,9 @@ export default function BookingForm() {
             </div>
 
             <h3>
-              Har ni någon elutrustning som drar säskilt mycket ström, i så fall
-              vad?
+              {lang === "sv"
+                ? "Har ni någon elutrustning som drar särskilt mycket ström, i så fall vad?"
+                : "Do you have any electrical equipment with high electrical consumption?"}
             </h3>
             <div className={styles.textinput}>
               <input
@@ -537,55 +629,81 @@ export default function BookingForm() {
               />
               <label htmlFor="elenhet" />
             </div>
-            <h3>Tjänster för besökare</h3>
+            <h3>
+              {lang === "sv"
+                ? "Erbjuder ni tjänster för besökarna?"
+                : "Are you offerring any services for visitors?"}
+            </h3>
             <div
               className={styles.option}
               style={{ paddingTop: "1rem", paddingBottom: ".5rem" }}
             >
               <input
-                type="radio"
+                type="checkbox"
                 id="exjobb"
                 value="exjobb"
                 {...register("tjänst")}
               />
-              <label htmlFor="exjobb">Exjobb</label>
+              <label htmlFor="exjobb">
+                {lang === "sv" ? "Exjobb" : "Exjob"}
+              </label>
               <input
-                type="radio"
+                type="checkbox"
                 id="praktik"
                 value="praktik"
                 {...register("tjänst")}
               />
-              <label htmlFor="praktik">Praktik</label>
+              <label htmlFor="praktik">
+                {" "}
+                {lang === "sv" ? "Praktik" : "Internship"}
+              </label>
               <input
-                type="radio"
+                type="checkbox"
                 id="trainee"
                 value="trainee"
                 {...register("tjänst")}
               />
-              <label htmlFor="trainee">Trainee</label>
+              <label htmlFor="trainee">
+                {" "}
+                {lang === "sv" ? "Trainee" : "Trainee"}
+              </label>
               <input
-                type="radio"
+                type="checkbox"
                 id="sommarjobb"
                 value="sommarjobb"
                 {...register("tjänst")}
               />
-              <label htmlFor="sommarjobb">Sommarjobb</label>
+              <label htmlFor="sommarjobb">
+                {" "}
+                {lang === "sv" ? "Sommarjobb" : "Summerjob"}
+              </label>
               <input
-                type="radio"
+                type="checkbox"
                 id="anställning"
                 value="anställning"
                 {...register("tjänst")}
               />
-              <label htmlFor="anställning">Anställning</label>
+              <label htmlFor="anställning">
+                {" "}
+                {lang === "sv" ? "Antsällning" : "Employment"}
+              </label>
             </div>
           </div>
-          <h2>Bankett</h2>
+          <h2> {lang === "sv" ? "Bankett" : "Banquet"}</h2>
           <div>
             <div
               style={{ display: "flex", flexFlow: "column" }}
               className={styles.numberattend}
             >
-              <span>Hur många kommer på banketten?</span>
+              <h3>{lang === "sv" ? "Bankettbiljetter" : "Banquest Tickets"}</h3>
+              <span>
+                {" "}
+                <h3>
+                  {lang === "sv"
+                    ? "Hur många bankettbiljetter vill ni ha inför banketten som hålls efter MTD (600kr/st)"
+                    : "How many banquet tickets would you like for the banquet which will be held after MTD (600SEK/each)"}
+                </h3>
+              </span>
               <div className={styles.counterContainer}>
                 <div
                   className={styles.counterDecrement}
@@ -615,13 +733,14 @@ export default function BookingForm() {
               </div>
               {watch("bankettbiljetter") > 0 && (
                 <div>
-                  <h3>Kost</h3>
+                  <h3>Specialkost</h3>
                   <div>
                     {bankettField.map((kost, index) => {
                       return (
-                        <div className="form-control" key={kost.id}>
+                        <div className={styles.fairfood} key={kost.id}>
                           <input
                             type="text"
+                            placeholder=" "
                             {...register(`bankettkost.${index}.kost`)}
                           />
                         </div>
@@ -633,12 +752,14 @@ export default function BookingForm() {
             </div>
           </div>
           <div>
-            <h2>Övrigt</h2>
+            <h2>{lang === "sv" ? "Övrigt" : "Other"}</h2>
           </div>
           <div>
             <div style={{ display: "flex", flexFlow: "column" }}>
               <span>
-                Infoga eran logotyp så den kan användas i app och webb
+                {lang === "sv"
+                  ? "Infoga logotyp för app och webb"
+                  : "Attach logo for usage in the app or on the website"}
               </span>
               <label htmlFor="logotyp" />
               <input
@@ -650,8 +771,14 @@ export default function BookingForm() {
               <p>{errors.logotyp?.message}</p>
             </div>
             <div style={{ display: "flex", flexFlow: "column" }}>
-              <h3>Faktureringsuppgifter</h3>
-              <span>Vilken e-postadress ska fakturan skickas till?</span>
+              <h3>
+                {lang === "sv" ? "Fakturerinsuppgifter" : "Billing information"}
+              </h3>
+              <span>
+                {lang === "sv"
+                  ? "Vilken e-postadress ska fakturan skickas till?"
+                  : "What email adress should the invoice be sent to"}
+              </span>
               <div className={styles.textinput}>
                 <label htmlFor="fakurering" />
                 <input
@@ -663,8 +790,17 @@ export default function BookingForm() {
                   })}
                 />
               </div>
-              <h3>Eventuell Firmateknare</h3>
-              <span>Fyll i nedan namn på firmatecknare</span>
+              <h3>
+                {lang === "sv"
+                  ? "Eventuell Firmatecknare"
+                  : "Eventual Company Signatory"}
+              </h3>
+              <span>
+                {" "}
+                {lang === "sv"
+                  ? "Fyll i nedan namn och position på eventuell firmatecknare eller annan ansvarig som kommer att skriva på kommande avtal."
+                  : "Enter the name and role of eventual company signatory or another responsible who will sign upcoming contract"}
+              </span>
               <div className={styles.textinput}>
                 <label htmlFor="firmateknare" />
                 <input
@@ -680,8 +816,8 @@ export default function BookingForm() {
           </div>
           <div style={{ display: "flex", justifyContent: "center" }}>
             <button type="submit" className={styles.submitButton}>
-              {loading && <p>Laddar</p>}
-              {!loading && <p>Boka</p>}
+              {loading && <p>{lang === "sv" ? "Laddar" : "Loading"}</p>}
+              {!loading && <p>{lang === "sv" ? "Boka" : "Book"}</p>}
             </button>
           </div>
         </form>
