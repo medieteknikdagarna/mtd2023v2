@@ -21,6 +21,7 @@
     "mp4": "^0.5.2",
     "next": "13.4.3",
     "next-seo": "^6.0.0",
+    "next-videos": "^1.4.1",
     "pigeon-maps": "^0.21.3",
     "react": "18.2.0",
     "react-confetti": "^6.1.0",

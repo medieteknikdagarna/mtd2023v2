@@ -10,7 +10,6 @@ export default function BookingPage() {
       <NextSeo noindex={true} />
       <div>
         <Header changeOnScroll />
-        <SeatBooker type={type} setType={setType} />
       </div>
     </>
   );
