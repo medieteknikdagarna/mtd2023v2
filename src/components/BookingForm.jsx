@@ -1,4 +1,4 @@
-import React, { useContext, useRef, useState } from "react";
+import React, { useContext, useRef, useState, useEffect } from "react";
 import {
   useForm,
   useController,
@@ -23,22 +23,32 @@ const floor5_all = require("../../public/content/seat-info/floor5.json");
 export const selectedContext = React.createContext();
 
 export default function BookingForm() {
-  const db = getFirestore(firebaseApp);
   const storage = getStorage(firebaseApp);
   const [loading, setLoading] = useState(false);
   const { register, handleSubmit, control, formState, watch, setValue } =
     useForm({
       defaultValues: {
-        sponsor: "Brons",
-        transport: "",
+        TV: "32",
+        antalpåmässa: 0,
         bankettbiljetter: 0,
         bankettkost: [],
-        antalpåmässa: 0,
-        mässkost: [],
+        company: "",
+        companyadress: "",
+        contact: "",
+        description: "",
+        elenhet: "",
+        email: "",
         extrabord: 0,
         extrastol: 0,
-        trådlösaenheter: 0,
+        fakturering: "",
+        firmateknare: "",
         floor: "5",
+        mässkost: [],
+        persontransport: "Nej",
+        sponsor: "Brons",
+        tjänst: "",
+        transport: "takeWithUs",
+        trådlösaenheter: 0,
       },
     });
 
@@ -76,10 +86,48 @@ export default function BookingForm() {
   const onSubmit = (formValues) => {
     setLoading(true);
     console.log(formValues);
-    setTimeout(() => {
-      setLoading(false);
-    }, 2000);
-    const logoRef = ref(storage, `logotype/${formValues.logotyp[0].name}`);
+    const requestOptions = {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        TV: formValues.TV,
+        antalpåmässa: formValues.antalpåmässa,
+        bankettbiljetter: formValues.bankettbiljetter,
+        bankettkost: formValues.bankettkost,
+        company: formValues.company,
+        companyadress: formValues.companyadress,
+        contact: formValues.contact,
+        description: formValues.description,
+        elenhet: formValues.elenhet,
+        email: formValues.email,
+        extrabord: formValues.extrabord,
+        extrastol: formValues.extrastol,
+        fakturering: formValues.fakturering,
+        firmatecknare: formValues.firmateknare,
+        floor: formValues.floor,
+        seat: selectedSeat.seat,
+        mässkost: formValues.mässkost,
+        persontransport: formValues.persontransport,
+        sponsor: formValues.sponsor,
+        tel: formValues.tel,
+        tjänst: formValues.tjänst,
+        montertransport: formValues.transport,
+        trådlösaenheter: formValues.trådlösaenheter,
+        //logotyp: formValues.logotyp,
+      }),
+    };
+    fetch("/api/book", requestOptions)
+      .then((response) => response.json())
+      .then((res_data) => {
+        if (res_data.success) {
+          console.log("sucsess");
+        } else {
+          console.log("Eroor");
+        }
+      });
+    setLoading(false);
+
+    /*  const logoRef = ref(storage, `logotype/${formValues.logotyp[0].name}`);
     try {
       const docRef = addDoc(collection(db, "companies"), {
         TV: formValues.TV,
@@ -87,8 +135,28 @@ export default function BookingForm() {
       uploadBytes(logoRef, formValues.logotyp[0]);
     } catch (e) {
       console.log(e);
-    }
+    } */
   };
+  const fetchData = async () => {
+    fetch("/api/book")
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        setFloor4(
+          data.filter((seat) => {
+            return seat.floor == 4;
+          })
+        );
+        setFloor5(
+          data.filter((seat) => {
+            return seat.floor == 5;
+          })
+        );
+      });
+  };
+  useEffect(() => {
+    fetchData();
+  }, []);
 
   const changeFloor = (floor) => {
     setActiveSeats(floor === 5 ? floor5_all : floor4_all);
@@ -204,6 +272,11 @@ export default function BookingForm() {
                 style={{ backgroundColor: "#E07979" }}
               ></div>
               <h4>{lang === "sv" ? "Resarverad" : "Resarverad"}</h4>
+              <div
+                className={styles.indicator}
+                style={{ backgroundColor: "#8eadc5" }}
+              ></div>
+              <h4>{lang === "sv" ? "Tilldelad" : "Assigned"}</h4>
             </div>
             <p className="seat-information-p">
               {lang === "sv"
@@ -213,20 +286,18 @@ export default function BookingForm() {
             <div className={styles.floorSelect}>
               <input
                 type="radio"
-                id="4"
+                id="floor-op1"
+                value="4"
                 onClick={() => changeFloor(4)}
-                {...register("floor", {
-                  valueAsNumber: true,
-                })}
+                {...register("floor", {})}
               />
               <label htmlFor="floor-op1">Plan 4</label>
               <input
                 type="radio"
-                id="5"
+                id="floor-op2"
+                value="5"
                 onClick={() => changeFloor(5)}
-                {...register("floor", {
-                  valueAsNumber: true,
-                })}
+                {...register("floor", {})}
               />
               <label htmlFor="floor-op2">Plan 5</label>
             </div>
@@ -273,6 +344,15 @@ export default function BookingForm() {
                   {lang === "sv" ? "Guld" : "Gold"}
                 </label>
               </div>
+            </div>
+            <div>
+              {watch("sponsor") === "Brons" ? (
+                <span>
+                  Brons sponsorer blir tilldelade en av de blå platserna!
+                </span>
+              ) : (
+                <span>Klicka på en ledig ruta för att välja plats!</span>
+              )}
             </div>
           </div>
         </div>
@@ -355,8 +435,8 @@ export default function BookingForm() {
                 {...register("description")}
               />
               <label htmlFor="description">
-                {lang === "Beskrivning av företag för app och hemsida"
-                  ? "Ledig"
+                {lang === "sv"
+                  ? "Beskrivning av företag för app och hemsida"
                   : "Description of company for app and websire"}
               </label>
             </div>
@@ -369,13 +449,13 @@ export default function BookingForm() {
             </h2>
           </div>
           <div className={styles.fairday}>
-            <h2>Mässdag</h2>
+            <h2 id={styles.underLine}>Mässdag</h2>
             <div className={styles.numberattend}>
-              <span>
+              <h3>
                 {lang === "sv"
-                  ? "Hur många kommer på mässdagen?"
-                  : "How many are coming to the fair?"}
-              </span>
+                  ? "Hur många från ert företag kommer på mässdagen?"
+                  : "How many from the company are coming to the fair?"}
+              </h3>
 
               <div className={styles.counterContainer}>
                 <div
@@ -428,6 +508,12 @@ export default function BookingForm() {
                 ? "Montertransport"
                 : "Transportation of fair booth"}
             </h3>
+            <span>
+              {" "}
+              {lang === "sv"
+                ? "MTD står inte för några fraktkostnader från eller till mässan, adress till godsmottagning: Sandgatan 31, 602 47 Norrköping"
+                : "MTD doesn't pay for any shippingcost to or from the fair, adress to tge goods reception: Sandgatan 31, 602 47 Norrköping"}
+            </span>
             <div className={styles.option}>
               <input
                 type="radio"
@@ -456,7 +542,7 @@ export default function BookingForm() {
             <div style={{ display: "flex", flexFlow: "column" }}>
               <span>
                 {lang === "sv"
-                  ? " Behöver ni trasport inom Norköping t.ex från Resecentrum till Campus på mässdagen"
+                  ? " Behöver ni transport inom Norköping t.ex från Resecentrum till Campus på mässdagen"
                   : "Are you in need of transportation in Norrköping, for example from the central station to campus on the day of the fair"}
               </span>
               <div className={styles.option}>
@@ -476,7 +562,6 @@ export default function BookingForm() {
                   {...register("persontransport")}
                 />
                 <label htmlFor="persontransport-nej">
-                  {" "}
                   {lang === "sv" ? "Nej" : "No"}
                 </label>
               </div>
@@ -484,7 +569,6 @@ export default function BookingForm() {
             <h3> {lang === "sv" ? "Extra ståbord" : "Extra standing desks"}</h3>
             <div style={{ display: "flex", flexFlow: "column" }}>
               <span>
-                {" "}
                 {lang === "sv"
                   ? "Alla företag erbjuds ett ståbord. Utöver det kan fler ståbord beställas för 300kr/st. Fyll i antalet bord ni vill ha utöver det som ingår. (Vill ni inte ha nåot extra fyller ni i 0)"
                   : "All companies are provided with one standing desk. Additional desks can be ordered for 300SEK/each. Enter the number of additional desks wanted. (If no additional desks are wanted, enter 0)"}
@@ -519,7 +603,6 @@ export default function BookingForm() {
             <h3> {lang === "sv" ? "Extra barstol" : "Extra barstool"}</h3>
             <div style={{ display: "flex", flexFlow: "column" }}>
               <span>
-                {" "}
                 {lang === "sv"
                   ? "100kr/st - 2st barstolar ingår för Silver och Guldsponsor"
                   : "100SEK/each - 2 barstools are included for Silver and Gold sponsors"}
@@ -554,11 +637,15 @@ export default function BookingForm() {
               </div>
             </div>
 
-            <h3> {lang === "sv" ? "Extra TV-skärm" : "Extra TV-screens"}</h3>
+            <h3>{lang === "sv" ? "Lägg till TV-skärm" : "Order TV-screens"}</h3>
+            <span>
+              {lang === "sv"
+                ? "Det ingår inte en TV-skärm i något av paketen"
+                : "No TV-screens are included in any of the sponsor packages"}
+            </span>
             <div className={styles.option} id={styles.TV}>
               <input type="radio" id="TV-op1" value="32" {...register("TV")} />
               <label htmlFor="TV-op1">
-                {" "}
                 {lang === "sv"
                   ? '32" TV-skärm med stativ 2500kr/st'
                   : '32" TV-screen with stand 2500SEK/each'}
@@ -583,7 +670,6 @@ export default function BookingForm() {
               </label>
             </div>
             <h3>
-              {" "}
               {lang === "sv"
                 ? "Uppskattat antel enheter som behöver trådlöst nätverk?"
                 : "Estimated number of devices in need of wireless network"}
@@ -684,12 +770,14 @@ export default function BookingForm() {
                 {...register("tjänst")}
               />
               <label htmlFor="anställning">
-                {" "}
                 {lang === "sv" ? "Antsällning" : "Employment"}
               </label>
             </div>
           </div>
-          <h2> {lang === "sv" ? "Bankett" : "Banquet"}</h2>
+          <h2 id={styles.underLine}>
+            {" "}
+            {lang === "sv" ? "Bankett" : "Banquet"}
+          </h2>
           <div>
             <div
               style={{ display: "flex", flexFlow: "column" }}
@@ -697,12 +785,9 @@ export default function BookingForm() {
             >
               <h3>{lang === "sv" ? "Bankettbiljetter" : "Banquest Tickets"}</h3>
               <span>
-                {" "}
-                <h3>
-                  {lang === "sv"
-                    ? "Hur många bankettbiljetter vill ni ha inför banketten som hålls efter MTD (600kr/st)"
-                    : "How many banquet tickets would you like for the banquet which will be held after MTD (600SEK/each)"}
-                </h3>
+                {lang === "sv"
+                  ? "Hur många bankettbiljetter vill ni ha inför banketten som hålls efter MTD (ca 600kr/st). Guld sponsorer får 3st biljetter"
+                  : "How many banquet tickets would you like for the banquet which will be held after MTD (ca 600SEK/each)"}
               </span>
               <div className={styles.counterContainer}>
                 <div
@@ -718,7 +803,6 @@ export default function BookingForm() {
                     type="number"
                     id="Bankettbiljetter"
                     readOnly
-                    //value={sponsorWatch === "gold" ? 3 : 0}
                     {...register("bankettbiljetter", {
                       valueAsNumber: true,
                     })}
@@ -752,7 +836,7 @@ export default function BookingForm() {
             </div>
           </div>
           <div>
-            <h2>{lang === "sv" ? "Övrigt" : "Other"}</h2>
+            <h2 id={styles.underLine}>{lang === "sv" ? "Övrigt" : "Other"}</h2>
           </div>
           <div>
             <div style={{ display: "flex", flexFlow: "column" }}>

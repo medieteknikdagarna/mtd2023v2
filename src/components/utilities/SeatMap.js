@@ -2,7 +2,6 @@ import React, { useContext, useEffect } from "react";
 import BookerSVG from "../../../public/images/platsbokaren.svg";
 import Floor4 from "../../../public/images/platsbokning.svg";
 import Floor5 from "../../../public/images/platsbokning_p5.svg";
-//import { selectedContext } from "../SeatBooker";
 import { selectedContext } from "../BookingForm";
 import { useTransition, animated } from "react-spring";
 import { languageContext } from "../../pages/_app";
@@ -57,13 +56,16 @@ export default function SeatMap({ seats, reservations, activeFloor, type }) {
       } else if (isReserved(seat, reservations)) {
         var color = "#E07979";
         element.classList.remove("seat-active");
+      } else if (seat.type === "Brons") {
+        var color = "#8eadc5";
+        element.classList.remove("seat-active");
       } else {
         var color = "#89E17B";
         element.classList.remove("seat-active");
       }
 
       element.style.fill = color;
-      if (seat.type === type) {
+      if (seat.type === type && type !== "Brons") {
         element.addEventListener("click", handleClick);
         element.classList.add("seat-animation");
       } else {

@@ -51,6 +51,10 @@ $anim-speed: 0.85; // in seconds
     margin: 0.5rem 0 0 0;
     width: 50rem;
   }
+  #underLine {
+    text-decoration: underline;
+    color: white;
+  }
   .topPart {
     border: 1px solidblack;
     display: flex;
@@ -85,6 +89,7 @@ $anim-speed: 0.85; // in seconds
   }
   .floorContainer {
     width: 35rem;
+    margin-right: 5rem;
   }
   .paket {
     display: flex;
@@ -104,7 +109,7 @@ $anim-speed: 0.85; // in seconds
     transform: scaleX(-2);
   }
   .sponsor {
-    padding-bottom: 100px;
+    padding-bottom: 2rem;
     box-sizing: border-box;
     display: flex;
     flex-flow: row nowrap;
