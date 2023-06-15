@@ -19,6 +19,12 @@ $anim-speed: 0.85; // in seconds
   left: -9999px;
 }
 
+.pageGrad {
+  position: fixed;
+  height: 100vh;
+  width: 100vh;
+}
+
 .container {
   display: flex;
   flex-direction: column;
@@ -56,10 +62,10 @@ $anim-speed: 0.85; // in seconds
     color: white;
   }
   .topPart {
-    border: 1px solidblack;
     display: flex;
     width: 70%;
     justify-content: space-around;
+    height: 40rem;
     .floorInfo {
       display: flex;
       margin-top: 1rem;
@@ -115,6 +121,7 @@ $anim-speed: 0.85; // in seconds
     flex-flow: row nowrap;
     justify-content: center;
     align-items: stretch;
+
     input {
       @include hideInput;
       position: relative;
@@ -149,8 +156,9 @@ $anim-speed: 0.85; // in seconds
         background-color 0.15s ease-out, box-shadow 0.15s ease-out;
     }
     input:hover + label {
-      background-color: rgba(255, 255, 255, 0.03);
+      background-color: rgba(255, 255, 255, 0.1);
     }
+
     .bronze {
       label {
         position: relative;
@@ -197,7 +205,6 @@ $anim-speed: 0.85; // in seconds
       input:checked + label {
         background-color: $SPONSGold;
         border-color: $SPONSGold;
-
         z-index: 1;
       }
       input:checked + label::before {
@@ -242,7 +249,19 @@ $anim-speed: 0.85; // in seconds
         transition-property: left;
       }
     }
+    @keyframes flyIn {
+      0% {
+        left: -10%;
+        transition-property: left;
+      }
+
+      100% {
+        left: 0%;
+        transition-property: left;
+      }
+    }
   }
+
   .contact {
     display: flex;
     width: 100%;

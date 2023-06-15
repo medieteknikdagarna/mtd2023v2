@@ -16,6 +16,7 @@ import SeatMap from "./utilities/SeatMap";
 import { isReserved } from "./utilities/SeatMap";
 import WingLeft from "../../public/images/WingLeft.svg";
 import { languageContext } from "../pages/_app";
+import { Transition } from "react-spring";
 
 const floor4_all = require("../../public/content/seat-info/floor4.json");
 const floor5_all = require("../../public/content/seat-info/floor5.json");
@@ -222,8 +223,42 @@ export default function BookingForm() {
     }
   };
 
+  const [colorload, setColorload] = useState(false);
   return (
     <>
+      {/*   {watch("sponsor") === "Brons" ? (
+        <div
+          className={styles.pageGrad}
+          style={{
+            background:
+              "linear-gradient(90deg, rgba(128,74,0,0.5018382352941176) 0%, rgba(128,74,0,0) 10%)",
+          }}
+        />
+      ) : (
+        ""
+      )}
+      {watch("sponsor") === "Silver" ? (
+        <div
+          className={styles.pageGrad}
+          style={{
+            background:
+              "linear-gradient(90deg, rgba(192,192,192,0.4990371148459384) 0%, rgba(192,192,192,0) 10%)",
+          }}
+        />
+      ) : (
+        ""
+      )}
+      {watch("sponsor") === "Guld" ? (
+        <div
+          className={styles.pageGrad}
+          style={{
+            background:
+              "linear-gradient(90deg, rgba(179,163,77,0.4990371148459384) 0%, rgba(179,163,77,0) 10%)",
+          }}
+        />
+      ) : (
+        ""
+      )} */}
       <div className={styles.container}>
         <div className={styles.topPart}>
           <div className={styles.floorContainer}>
@@ -237,7 +272,17 @@ export default function BookingForm() {
                 selected={selectedSeat}
               />
             </selectedContext.Provider>
+            <div>
+              {watch("sponsor") === "Brons" ? (
+                <span>
+                  Brons sponsorer blir tilldelade en av de blå platserna!
+                </span>
+              ) : (
+                <span>Klicka på en ledig ruta för att välja plats!</span>
+              )}
+            </div>
           </div>
+
           <div style={{ width: "32rem" }}>
             <div className={styles.sponsContainer}>
               <h1
@@ -271,7 +316,7 @@ export default function BookingForm() {
                 className={styles.indicator}
                 style={{ backgroundColor: "#E07979" }}
               ></div>
-              <h4>{lang === "sv" ? "Resarverad" : "Resarverad"}</h4>
+              <h4>{lang === "sv" ? "Reserverad" : "Resarverad"}</h4>
               <div
                 className={styles.indicator}
                 style={{ backgroundColor: "#8eadc5" }}
@@ -344,15 +389,6 @@ export default function BookingForm() {
                   {lang === "sv" ? "Guld" : "Gold"}
                 </label>
               </div>
-            </div>
-            <div>
-              {watch("sponsor") === "Brons" ? (
-                <span>
-                  Brons sponsorer blir tilldelade en av de blå platserna!
-                </span>
-              ) : (
-                <span>Klicka på en ledig ruta för att välja plats!</span>
-              )}
             </div>
           </div>
         </div>
@@ -442,7 +478,11 @@ export default function BookingForm() {
             </div>
           </div>
           <div
-            style={{ display: "flex", justifyContent: "center", width: "100%" }}
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              width: "100%",
+            }}
           >
             <h2 style={{ color: "#ec6610" }}>
               {lang === "sv" ? "Tillägg" : "Additions"}
@@ -842,8 +882,8 @@ export default function BookingForm() {
             <div style={{ display: "flex", flexFlow: "column" }}>
               <span>
                 {lang === "sv"
-                  ? "Infoga logotyp för app och webb"
-                  : "Attach logo for usage in the app or on the website"}
+                  ? "Infoga logotyp för app och webb (.eps eller .svg)"
+                  : "Attach logo for usage in the app or on the website (.eps or .svg)"}
               </span>
               <label htmlFor="logotyp" />
               <input

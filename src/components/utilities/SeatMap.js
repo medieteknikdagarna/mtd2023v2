@@ -87,7 +87,7 @@ export default function SeatMap({ seats, reservations, activeFloor, type }) {
   }, [selectedSeat]);
 
   return (
-    <div>
+    <div style={{ height: "28rem" }}>
       <h2 style={{ fontSize: "3rem" }}>
         {lang === "sv" ? "Plan" : "Floor"} {activeFloor}
       </h2>
