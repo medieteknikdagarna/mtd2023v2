@@ -9,6 +9,7 @@ import { DevTool } from "@hookform/devtools";
 import { firebaseApp } from "@/firebase/clientApp";
 import { collection, addDoc, getFirestore } from "firebase/firestore";
 import { ref, uploadBytes } from "firebase/storage";
+
 import { getStorage } from "firebase/storage";
 import styles from "../styles/BookingForm.module.scss";
 import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
@@ -23,13 +24,17 @@ const floor5_all = require("../../public/content/seat-info/floor5.json");
 
 export const selectedContext = React.createContext();
 
+const storage = getStorage(firebaseApp);
+
 export default function BookingForm() {
-  const storage = getStorage(firebaseApp);
   const [loading, setLoading] = useState(false);
+  const [bookSuccess, setBookSuccess] = useState(false);
+  const [bookFailed, setBookFailed] = useState(false);
+
   const { register, handleSubmit, control, formState, watch, setValue } =
     useForm({
       defaultValues: {
-        TV: "32",
+        TV: "",
         antalpåmässa: 0,
         bankettbiljetter: 0,
         bankettkost: [],
@@ -84,8 +89,15 @@ export default function BookingForm() {
 
   const [lang, setLang] = useContext(languageContext);
 
+  const successMessage = () => {
+    setBookSuccess(true);
+    setTimeout(() => {
+      setBookSuccess(false);
+    }, 5000);
+  };
   const onSubmit = (formValues) => {
     setLoading(true);
+
     console.log(formValues);
     const requestOptions = {
       method: "POST",
@@ -114,29 +126,24 @@ export default function BookingForm() {
         tjänst: formValues.tjänst,
         montertransport: formValues.transport,
         trådlösaenheter: formValues.trådlösaenheter,
-        //logotyp: formValues.logotyp,
       }),
     };
+    const logoRef = ref(storage, `logotype/${formValues.logotyp[0].name}`);
+    uploadBytes(logoRef);
     fetch("/api/book", requestOptions)
       .then((response) => response.json())
       .then((res_data) => {
         if (res_data.success) {
           console.log("sucsess");
+          setTimeout(() => {
+            setLoading(false);
+            successMessage();
+          }, 1000);
         } else {
-          console.log("Eroor");
+          setBookFailed(true);
+          alert("Valda platsen är redan tagen!");
         }
       });
-    setLoading(false);
-
-    /*  const logoRef = ref(storage, `logotype/${formValues.logotyp[0].name}`);
-    try {
-      const docRef = addDoc(collection(db, "companies"), {
-        TV: formValues.TV,
-      });
-      uploadBytes(logoRef, formValues.logotyp[0]);
-    } catch (e) {
-      console.log(e);
-    } */
   };
   const fetchData = async () => {
     fetch("/api/book")
@@ -275,7 +282,7 @@ export default function BookingForm() {
             <div>
               {watch("sponsor") === "Brons" ? (
                 <span>
-                  Brons sponsorer blir tilldelade en av de blå platserna!
+                  Bronssponsorer blir tilldelade en av de blå platserna!
                 </span>
               ) : (
                 <span>Klicka på en ledig ruta för att välja plats!</span>
@@ -422,10 +429,18 @@ export default function BookingForm() {
                 type="text"
                 id="contact"
                 placeholder=" "
-                {...register("contact")}
+                {...register("contact", {
+                  required: {
+                    value: true,
+                    message: `${lang === "sv" ? " *" : " *"}`,
+                  },
+                })}
               />
               <label htmlFor="contact">
-                {lang === "sv" ? "Kontaktperson" : "Name"}
+                <div style={{ display: "flex", color: "white" }}>
+                  {lang === "sv" ? "Kontaktperson" : "Name"}
+                  <p className={styles.error}>{errors.contact?.message}</p>
+                </div>
               </label>
             </div>
             <div className={styles.contactitem}>
@@ -433,10 +448,18 @@ export default function BookingForm() {
                 type="text"
                 id="company"
                 placeholder=" "
-                {...register("company")}
+                {...register("company", {
+                  required: {
+                    value: true,
+                    message: `${lang === "sv" ? " *" : " *"}`,
+                  },
+                })}
               />
               <label htmlFor="company">
-                {lang === "sv" ? "Företag" : "Company name"}
+                <div style={{ display: "flex", color: "white" }}>
+                  {lang === "sv" ? "Företag" : "Company name"}
+                  <p className={styles.error}>{errors.company?.message}</p>
+                </div>
               </label>
             </div>
             <div className={styles.contactitem}>
@@ -444,10 +467,20 @@ export default function BookingForm() {
                 type="text"
                 id="companyadress"
                 placeholder=" "
-                {...register("companyadress")}
+                {...register("companyadress", {
+                  required: {
+                    value: true,
+                    message: `${lang === "sv" ? " *" : " *"}`,
+                  },
+                })}
               />
               <label htmlFor="companyaddress">
-                {lang === "sv" ? "Företagsadress" : "Company adress"}
+                <div style={{ display: "flex", color: "white" }}>
+                  {lang === "sv" ? "Företagsadress" : "Company adress"}
+                  <p className={styles.error}>
+                    {errors.companyadress?.message}
+                  </p>
+                </div>
               </label>
             </div>
             <div className={styles.contactitem}>
@@ -455,25 +488,66 @@ export default function BookingForm() {
                 type="email"
                 id="email"
                 placeholder=" "
-                {...register("email")}
+                {...register("email", {
+                  required: {
+                    value: true,
+                    message: `${lang === "sv" ? " *" : " *"}`,
+                  },
+                  pattern: {
+                    value:
+                      /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
+                    message: `${
+                      lang === "sv" ? "Ogiltig epost" : "Invalid email"
+                    }`,
+                  },
+                })}
               />
-              <label htmlFor="email">Email</label>
+              <label htmlFor="email">
+                <div style={{ display: "flex", color: "white" }}>
+                  Email
+                  <p className={styles.error}> {errors.email?.message}</p>
+                </div>
+              </label>
             </div>
             <div className={styles.contactitem}>
-              <input type="tel" id="tel" placeholder=" " {...register("tel")} />
-              <label htmlFor="tel">Tel</label>
+              <input
+                type="tel"
+                id="tel"
+                placeholder=" "
+                {...register("tel", {
+                  required: {
+                    value: true,
+                    message: `${lang === "sv" ? " *" : " *"}`,
+                  },
+                })}
+              />
+              <label htmlFor="tel">
+                <div style={{ display: "flex", color: "white" }}>
+                  Tel
+                  <p className={styles.error}> {errors.tel?.message}</p>
+                </div>
+              </label>
             </div>
             <div className={styles.contactitem}>
               <input
                 type="text"
                 id="description"
                 placeholder=" "
-                {...register("description")}
+                {...register("description", {
+                  required: {
+                    value: true,
+                    message: `${lang === "sv" ? " *" : " *"}`,
+                  },
+                })}
               />
+
               <label htmlFor="description">
-                {lang === "sv"
-                  ? "Beskrivning av företag för app och hemsida"
-                  : "Description of company for app and websire"}
+                <div style={{ display: "flex", color: "white" }}>
+                  {lang === "sv"
+                    ? "Beskrivning av företag för app och hemsida"
+                    : "Description of company for app and websire"}
+                  <p className={styles.error}> {errors.description?.message}</p>
+                </div>
               </label>
             </div>
           </div>
@@ -534,8 +608,20 @@ export default function BookingForm() {
                           <input
                             type="text"
                             placeholder=" "
-                            {...register(`mässkost.${index}.kost`)}
+                            {...register(`mässkost.${index}.kost`, {
+                              required: {
+                                value: true,
+                                message: `${
+                                  lang === "sv"
+                                    ? "Obligatoriskt"
+                                    : "Must be filled in"
+                                }`,
+                              },
+                            })}
                           />
+                          <p className={styles.error}>
+                            {errors.mässkost?.message}
+                          </p>
                         </div>
                       );
                     })}
@@ -751,8 +837,16 @@ export default function BookingForm() {
                 type="text"
                 id="elenhet"
                 placeholder=" "
-                {...register("elenhet")}
+                {...register("elenhet", {
+                  required: {
+                    value: true,
+                    message: `${
+                      lang === "sv" ? "Obligatoriskt" : "Must be filled in"
+                    }`,
+                  },
+                })}
               />
+              <p className={styles.error}>{errors.elenhet?.message}</p>
               <label htmlFor="elenhet" />
             </div>
             <h3>
@@ -810,7 +904,7 @@ export default function BookingForm() {
                 {...register("tjänst")}
               />
               <label htmlFor="anställning">
-                {lang === "sv" ? "Antsällning" : "Employment"}
+                {lang === "sv" ? "Anställning" : "Employment"}
               </label>
             </div>
           </div>
@@ -865,8 +959,20 @@ export default function BookingForm() {
                           <input
                             type="text"
                             placeholder=" "
-                            {...register(`bankettkost.${index}.kost`)}
+                            {...register(`bankettkost.${index}.kost`, {
+                              required: {
+                                value: true,
+                                message: `${
+                                  lang === "sv"
+                                    ? "Obligatoriskt"
+                                    : "Must be filled in"
+                                }`,
+                              },
+                            })}
                           />
+                          <p className={styles.error}>
+                            {errors.bankettkost?.message}
+                          </p>
                         </div>
                       );
                     })}
@@ -890,9 +996,16 @@ export default function BookingForm() {
                 style={{ color: "#fff" }}
                 type="file"
                 id="logotyp"
-                {...register("logotyp", {})}
+                {...register("logotyp", {
+                  required: {
+                    value: true,
+                    message: `${
+                      lang === "sv" ? "Obligatoriskt" : "Must be filled in"
+                    }`,
+                  },
+                })}
               />
-              <p>{errors.logotyp?.message}</p>
+              <p className={styles.error}>{errors.logotyp?.message}</p>
             </div>
             <div style={{ display: "flex", flexFlow: "column" }}>
               <h3>
@@ -910,9 +1023,22 @@ export default function BookingForm() {
                   id="fakturering"
                   placeholder=" "
                   {...register("fakturering", {
-                    required: "hej",
+                    required: {
+                      value: true,
+                      message: `${
+                        lang === "sv" ? "Obligatoriskt" : "Must be filled in"
+                      }`,
+                    },
+                    pattern: {
+                      value:
+                        /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
+                      message: `${
+                        lang === "sv" ? "Ogiltig epost" : "Invalid email"
+                      }`,
+                    },
                   })}
                 />
+                <p className={styles.error}>{errors.fakturering?.message}</p>
               </div>
               <h3>
                 {lang === "sv"
@@ -920,7 +1046,6 @@ export default function BookingForm() {
                   : "Eventual Company Signatory"}
               </h3>
               <span>
-                {" "}
                 {lang === "sv"
                   ? "Fyll i nedan namn och position på eventuell firmatecknare eller annan ansvarig som kommer att skriva på kommande avtal."
                   : "Enter the name and role of eventual company signatory or another responsible who will sign upcoming contract"}
@@ -932,9 +1057,15 @@ export default function BookingForm() {
                   id="firmateknare"
                   placeholder=" "
                   {...register("firmateknare", {
-                    required: "hej",
+                    required: {
+                      value: true,
+                      message: `${
+                        lang === "sv" ? "Obligatoriskt" : "Must be filled in"
+                      }`,
+                    },
                   })}
                 />
+                <p className={styles.error}>{errors.firmateknare?.message}</p>
               </div>
             </div>
           </div>
@@ -944,6 +1075,16 @@ export default function BookingForm() {
               {!loading && <p>{lang === "sv" ? "Boka" : "Book"}</p>}
             </button>
           </div>
+          {bookSuccess && (
+            <p style={{ marginTop: "2rem" }}>
+              {lang === "sv" ? "Bookning skickad!" : "Registration sent!"}
+            </p>
+          )}
+          {bookFailed && (
+            <p style={{ marginTop: "2rem" }}>
+              {lang === "sv" ? "Bookning misslyckad!" : "Registration failed!"}
+            </p>
+          )}
         </form>
       </div>
     </>

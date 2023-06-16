@@ -67,6 +67,7 @@ function MyApp({ Component, pageProps }) {
           name="google-site-verification"
           content="RxmIo5rnOM-a2ckA5J2GeYpMcYoOOqurhNqn9pYd2hs"
         />
+        <title>Medieteknikdagen</title>
       </Head>
       <AcceptPolicy />
       <StickyContact />

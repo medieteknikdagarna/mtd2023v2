@@ -1,4 +1,5 @@
 import { firebaseApp } from "@/firebase/clientApp";
+import { getStorage } from "firebase/storage";
 import {
   collection,
   addDoc,
@@ -28,6 +29,8 @@ export async function getReservations() {
 export async function addRegistration(data) {
   console.log(data);
   try {
+    //Add logo
+    //Add data
     const docRef = await addDoc(collection(db, "companies"), {
       data,
     });
@@ -44,21 +47,33 @@ export async function addRegistration(data) {
 }
 
 export default async function handler(req, res) {
+  const data = await getReservations();
   if (req.method === "POST") {
-    try {
-      const insert_data = req.body;
-      const response = await addRegistration(insert_data);
-      res
-        .status(response.status)
-        .json({ message: response.message, success: response.success });
-      return;
-    } catch (error) {
-      res.status(409).json({ error: "Bruh" });
-      return;
+    let foundDuplicate = false;
+    data.data.forEach((booking) => {
+      if (booking.seat == req.body.seat && booking.floor == req.body.floor) {
+        foundDuplicate = true;
+      }
+    });
+    if (foundDuplicate) {
+      return res
+        .status(409)
+        .json({ message: "This seat is already reserved", success: false });
+    } else {
+      try {
+        const insert_data = req.body;
+        const response = await addRegistration(insert_data);
+        res
+          .status(response.status)
+          .json({ message: response.message, success: response.success });
+        return;
+      } catch (error) {
+        res.status(409).json({ error: "Bruh" });
+        return;
+      }
     }
   } else if (req.method === "GET") {
     //console.log("GETTING DATA");
-    const data = await getReservations();
     return res.status(data.status).json(data.data);
   } else {
     res.status(401).json({ message: "Method not allowed" });

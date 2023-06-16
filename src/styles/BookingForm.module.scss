@@ -61,6 +61,9 @@ $anim-speed: 0.85; // in seconds
     text-decoration: underline;
     color: white;
   }
+  .error {
+    color: #9e3636;
+  }
   .topPart {
     display: flex;
     width: 70%;
