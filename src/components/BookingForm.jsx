@@ -9,11 +9,12 @@ import { DevTool } from "@hookform/devtools";
 import { firebaseApp } from "@/firebase/clientApp";
 import { collection, addDoc, getFirestore } from "firebase/firestore";
 import { ref, uploadBytes } from "firebase/storage";
-
+import Link from "next/link";
 import { getStorage } from "firebase/storage";
 import styles from "../styles/BookingForm.module.scss";
 import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
 import SeatMap from "./utilities/SeatMap";
+const formContent = require("../../public/content/form.json");
 import { isReserved } from "./utilities/SeatMap";
 import WingLeft from "../../public/images/WingLeft.svg";
 import { languageContext } from "../pages/_app";
@@ -1083,6 +1084,12 @@ export default function BookingForm() {
               {lang === "sv" ? "Bookning misslyckad!" : "Registration failed!"}
             </p>
           )}
+          <span>
+            {formContent[lang].accept}
+            <Link href="/policy" legacyBehavior>
+              {formContent[lang].link}
+            </Link>
+          </span>
         </form>
       </div>
     </>

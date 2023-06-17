@@ -61,6 +61,10 @@ $anim-speed: 0.85; // in seconds
     text-decoration: underline;
     color: white;
   }
+  a {
+    color: $MTDorange;
+    margin-top: 1rem;
+  }
   .error {
     color: #9e3636;
   }

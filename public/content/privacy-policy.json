@@ -20,7 +20,7 @@
     },
     "thirdParty": {
       "title": "Datahanterare från tredje part",
-      "body": "Vi använder ett antal tjänster i vår verksamhet som underlättar den dagliga driften av Medieteknikdagen. Dessa tredje parter har valts ut noggrant och de har bekräftat att de följer GDPR reglerna.  <br/><br/><b>Google</b><br/> Tillhandahållande av epost, kalender och arbetsverktyg så som Google Docs, Google Drive, Google Sheets. <br/><br/><b>Facebook / Instagram / LinkedIn</b><br/> Leverantör av digital plattform Medieteknikdagen använder sig av för att marknadsföra sig till företag samt marknadsföra mässan. <br/><br/><b>Github</b><br/> Leverantör av kommunikation på Medieteknikdagens hemsida. <br/><br/><b>Slack:</b><br/> Leverantör av intern kommunikation. För mer information om användingen av cookies på medieteknikdagen.se, se \"Cookies\"."
+      "body": "Vi använder ett antal tjänster i vår verksamhet som underlättar den dagliga driften av Medieteknikdagen. Dessa tredje parter har valts ut noggrant och de har bekräftat att de följer GDPR reglerna.  <br/><br/><b>Google</b><br/> Tillhandahållande av epost, kalender och arbetsverktyg så som Google Docs, Google Drive, Google Sheets samt Firebase. <br/><br/><b>Facebook / Instagram / LinkedIn</b><br/> Leverantör av digital plattform Medieteknikdagen använder sig av för att marknadsföra sig till företag samt marknadsföra mässan. <br/><br/><b>Github</b><br/> Leverantör av kommunikation på Medieteknikdagens hemsida. <br/><br/><b>Slack:</b><br/> Leverantör av intern kommunikation. För mer information om användingen av cookies på medieteknikdagen.se, se \"Cookies\"."
     },
     "cookies": {
       "title": "Cookies",
@@ -65,7 +65,6 @@
       "body": "<p>Ansvarig utgivare samt ansvarig hanterare av data på denna webbplats är: <b>Medieteknikdagen, Medietekniksektionen, Organisationsnummer:</b> 825003-5279 <b>Postadress:</b> Kårhuset Trappan, Universitetet, 601 74 Norrköping <b>Kontakt:</b> <a href\"tel:+46725799874\">+46 725 799 874</a>, <a href=\"mailto:info@medieteknikdagen.se\">info@medieteknikdagen.se</a></p>"
     }
   },
-
   "en": {
     "title": "Privacy policy",
     "ingress": "<p>On this page you will find our policy that we follow to protect your personal information and privacy. They comply with the guidelines of the Data Protection Regulation GDPR. If you're wondering about anything, please contact <a href=\"mailto:info@medieteknikdagen.se\">info@medieteknikdagen.se</a> and we'll answer your questions.</p>",
