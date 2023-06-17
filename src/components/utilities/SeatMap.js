@@ -57,7 +57,7 @@ export default function SeatMap({ seats, reservations, activeFloor, type }) {
         var color = "#E07979";
         element.classList.remove("seat-active");
       } else if (seat.type === "Brons") {
-        var color = "#8eadc5";
+        var color = "#345f80";
         element.classList.remove("seat-active");
       } else {
         var color = "#89E17B";

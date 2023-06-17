@@ -326,7 +326,7 @@ export default function BookingForm() {
               <h4>{lang === "sv" ? "Reserverad" : "Resarverad"}</h4>
               <div
                 className={styles.indicator}
-                style={{ backgroundColor: "#8eadc5" }}
+                style={{ backgroundColor: "#345f80" }}
               ></div>
               <h4>{lang === "sv" ? "Tilldelad" : "Assigned"}</h4>
             </div>
@@ -619,9 +619,7 @@ export default function BookingForm() {
                               },
                             })}
                           />
-                          <p className={styles.error}>
-                            {errors.mässkost?.message}
-                          </p>
+                          <p className={styles.error}></p>
                         </div>
                       );
                     })}
@@ -668,8 +666,8 @@ export default function BookingForm() {
             <div style={{ display: "flex", flexFlow: "column" }}>
               <span>
                 {lang === "sv"
-                  ? " Behöver ni transport inom Norköping t.ex från Resecentrum till Campus på mässdagen"
-                  : "Are you in need of transportation in Norrköping, for example from the central station to campus on the day of the fair"}
+                  ? " Behöver ni transport inom Norrköping t.ex från Resecentrum till Campus på mässdagen?"
+                  : "Are you in need of transportation in Norrköping, for example from the central station to campus on the day of the fair?"}
               </span>
               <div className={styles.option}>
                 <input
@@ -696,7 +694,7 @@ export default function BookingForm() {
             <div style={{ display: "flex", flexFlow: "column" }}>
               <span>
                 {lang === "sv"
-                  ? "Alla företag erbjuds ett ståbord. Utöver det kan fler ståbord beställas för 300kr/st. Fyll i antalet bord ni vill ha utöver det som ingår. (Vill ni inte ha nåot extra fyller ni i 0)"
+                  ? "Alla företag erbjuds ett ståbord. Utöver det kan fler ståbord beställas för 300kr/st. Fyll i antalet bord ni vill ha utöver det som ingår. (Vill ni inte ha något extra fyller ni i 0)"
                   : "All companies are provided with one standing desk. Additional desks can be ordered for 300SEK/each. Enter the number of additional desks wanted. (If no additional desks are wanted, enter 0)"}
               </span>
               <div className={styles.counterContainer}>
@@ -730,7 +728,7 @@ export default function BookingForm() {
             <div style={{ display: "flex", flexFlow: "column" }}>
               <span>
                 {lang === "sv"
-                  ? "100kr/st - 2st barstolar ingår för Silver och Guldsponsor"
+                  ? "100kr/st - 2st barstolar ingår för Silver- och Guldsponsor"
                   : "100SEK/each - 2 barstools are included for Silver and Gold sponsors"}
               </span>
 
@@ -797,7 +795,7 @@ export default function BookingForm() {
             </div>
             <h3>
               {lang === "sv"
-                ? "Uppskattat antel enheter som behöver trådlöst nätverk?"
+                ? "Uppskattat antal enheter som behöver trådlöst nätverk?"
                 : "Estimated number of devices in need of wireless network"}
             </h3>
             <div className={styles.counterContainer}>

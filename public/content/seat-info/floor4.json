@@ -11,14 +11,14 @@
     "status": "available",
     "seat": 2,
     "floor": 4,
-    "type": "Silver"
+    "type": "Guld"
   },
   {
     "id": "platsbokning_svg___3",
     "status": "available",
     "seat": 3,
     "floor": 4,
-    "type": "Silver"
+    "type": "Guld"
   },
   {
     "id": "platsbokning_svg___4",
@@ -164,6 +164,6 @@
     "status": "available",
     "seat": 24,
     "floor": 4,
-    "type": "Brons"
+    "type": "Silver"
   }
 ]

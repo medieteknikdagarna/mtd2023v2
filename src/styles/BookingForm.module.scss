@@ -66,9 +66,9 @@ $anim-speed: 0.85; // in seconds
   }
   .topPart {
     display: flex;
-    width: 70%;
-    justify-content: space-around;
+    width: 90%;
     height: 40rem;
+    justify-content: center;
     .floorInfo {
       display: flex;
       margin-top: 1rem;
