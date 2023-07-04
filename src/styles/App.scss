@@ -83,6 +83,9 @@ html {
     rgba(0, 0, 0, 1) 100%
   );
   width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 body {
   width: 100%;

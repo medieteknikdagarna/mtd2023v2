@@ -33,6 +33,7 @@ $anim-speed: 0.85; // in seconds
   padding-top: 20vh;
   padding-left: 100px;
   width: 100%;
+
   h3,
   h2,
   p,
@@ -73,6 +74,20 @@ $anim-speed: 0.85; // in seconds
     width: 90%;
     height: 40rem;
     justify-content: center;
+    @media screen and (max-width: 400px) {
+      flex-direction: column;
+      margin-bottom: 10rem;
+      .floorText {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+      }
+      span {
+        display: flex;
+        justify-content: center;
+      }
+    }
+
     .floorInfo {
       display: flex;
       margin-top: 1rem;
@@ -103,6 +118,9 @@ $anim-speed: 0.85; // in seconds
   .floorContainer {
     width: 35rem;
     margin-right: 5rem;
+    @media screen and (max-width: 400px) {
+      margin-top: 4rem;
+    }
   }
   .paket {
     display: flex;

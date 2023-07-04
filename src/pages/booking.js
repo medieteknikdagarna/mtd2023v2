@@ -14,7 +14,6 @@ export default function BookingPage() {
         <Header changeOnScroll />
         <BookingForm />
       </div>
-      <Footer />
     </>
   );
 }
