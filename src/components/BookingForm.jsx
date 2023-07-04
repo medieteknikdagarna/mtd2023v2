@@ -1134,8 +1134,8 @@ export default function BookingForm() {
             </span>
           </form>
         </div>
-        <Footer />
       </ResponsiveContainer>
+      <Footer />
     </>
   );
 }

@@ -21,7 +21,6 @@ import "../styles/Menu.scss";
 import "../styles/StarAnimation.scss";
 import "../styles/App.scss";
 import "../styles/Policy.scss";
-import "../styles/Book.scss";
 import "../styles/SeatBooker.scss";
 import "../styles/PressAndMedia.scss";
 import "../styles/DownloadButton.scss";
