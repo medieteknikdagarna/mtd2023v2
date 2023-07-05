@@ -1,0 +1,56 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Lato:100,200,300,400,500,600,700,800,900&display=swap");
+
+label,
+span,
+div,
+h1 {
+  color: white;
+}
+
+h4 {
+  color: orange;
+}
+.admin_login {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  margin-top: 10rem;
+}
+
+.admin_form {
+  background-color: rgba(1, 1, 1, 0.2);
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+}
+
+.admin_container {
+  display: flex;
+}
+
+.admin_sidebar {
+  background-color: rgba(255, 255, 255, 0.09);
+  float: left;
+  min-width: 20%;
+}
+.admin_sidebar_list {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-rows: (2, 1fr);
+  gap: 2rem;
+}
+
+.admin_companylist {
+  display: flex;
+  width: 46ch;
+  margin-left: 5rem;
+  padding-bottom: 2rem;
+  span {
+    font-size: 1rem;
+  }
+}
+
+#admin_listitem {
+  display: flex;
+  gap: 0.5rem;
+}
