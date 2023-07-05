@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Lato:100,200,300,400,500,600,700,800,900&display=swap");
 .icons {
   display: flex;
   align-content: center;
@@ -26,6 +28,8 @@
 
 .header h2,
 .header-light h2 {
+  font-family: "Barlow", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   font-size: 2.75rem;
   align-self: center;
   color: var(--color-light);
