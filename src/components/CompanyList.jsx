@@ -29,7 +29,10 @@ export default function CompanyList({ setCurrentComp }) {
             {companyNames.map((company, index) => {
               return (
                 <li key={index}>
-                  <div onClick={() => fetchDetails(company.name)}>
+                  <div
+                    onClick={() => fetchDetails(company.name)}
+                    className="admin_sidebar_item"
+                  >
                     <span>{company.name}</span>
                   </div>
                 </li>

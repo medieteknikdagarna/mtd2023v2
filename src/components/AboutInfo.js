@@ -11,7 +11,7 @@ export default function AboutInfo() {
     <div className="about-info">
       <div className="about-info--mtd">
         <div className="about-info--img-container">
-          <Image src={MTDSvg} className="header-logo" alt="MTD" />
+          <MTDSvg />
         </div>
         <div>
           <h3>{content[lang].about_info.title1}</h3>
@@ -22,7 +22,7 @@ export default function AboutInfo() {
       </div>
       <div className="about-info--mt">
         <div className="about-info--img-container">
-          <Image src={MTSvg} className="header-logo" alt="MTD" />
+          <MTSvg />
         </div>
         <div>
           <h3>{content[lang].about_info.title2}</h3>

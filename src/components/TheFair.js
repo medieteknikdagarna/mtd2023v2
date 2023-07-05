@@ -44,7 +44,7 @@ export default function TheFair() {
         </InfoSection>
       </div>
       <div className="mtd-img">
-        <Image src={MTD} className="header-logo" alt="MTD" />
+        <MTD />
       </div>
     </div>
   );

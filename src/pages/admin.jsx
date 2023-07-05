@@ -32,7 +32,9 @@ export default function AdminPage() {
             <div className="admin_form">
               <label>Lösenord</label>
               <input type="text" {...register("password")} />
-              <button type="submit">Login</button>
+              <button type="submit" style={{ color: "black" }}>
+                Login
+              </button>
             </div>
           </form>
         </div>

@@ -26,6 +26,8 @@ ul {
   background-color: rgba(1, 1, 1, 0.2);
   display: grid;
   grid-template-rows: repeat(2, 1fr);
+  gap: 1rem;
+  padding: 3rem 3rem 3rem 3rem;
 }
 
 .admin_container {
@@ -37,11 +39,20 @@ ul {
   float: left;
   min-width: 20%;
 }
+.admin_sidebar_item {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  width: 100%;
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.012);
+    color: orange;
+  }
+}
 .admin_sidebar_list {
   margin-top: 2rem;
   display: grid;
   grid-template-rows: (2, 1fr);
-  gap: 2rem;
+  gap: 1rem;
 }
 
 .admin_companylist {

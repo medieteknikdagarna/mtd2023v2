@@ -1,156 +1,145 @@
 [
   {
-    "namn": "Filip Bägen",
+    "namn": "Sebastian Lindgren",
     "post": {
       "sv": "Projektledare",
       "en": "Project manager"
     },
-    "email": "filip.bagen@medieteknikdagen.se",
+    "email": "sebastian.lindgren@medieteknikdagen.se",
     "tel": "760 91 55 63",
-    "linkedin": "https://www.linkedin.com/in/filipbagen/",
-    "img": "../images/members/Filipb.jpeg"
+    "linkedin": "https://www.linkedin.com/in/sebastian-lindgren-72bb99180/",
+    "img": "../images/members/besse.png"
   },
   {
-    "namn": "Dennis Moradkhani",
+    "namn": "Andreas Ekberg",
     "post": {
       "sv": "Webb",
       "en": "Web"
     },
-    "email": "dennis.moradkhani@medieteknikdagen.se",
-    "tel": "704 75 72 78",
-    "linkedin": "https://www.linkedin.com/in/dennis-moradkhani-5386a8181/",
-    "img": "../images/members/Dennis.jpeg"
+    "email": "andreas.ekberg@medieteknikdagen.se",
+    "tel": "767 65 68 07",
+    "linkedin": "https://www.linkedin.com/in/andreas-ekberg-91bba0259/",
+    "img": "../images/members/ekberg.png"
   },
   {
-    "namn": "Clara Lennartsson",
+    "namn": "Joel Hellberg",
     "post": {
       "sv": "Företag",
       "en": "Business"
     },
-    "email": "clara.lennartsson@medieteknikdagen.se",
+    "email": "joel.hellberg@medieteknikdagen.se",
     "tel": "733 74 31 83",
-    "linkedin": "https://www.linkedin.com/in/clara-tarina-lennartsson/",
-    "img": "../images/members/Clara.jpeg"
+    "linkedin": "https://www.linkedin.com/in/joel-hellberg-633767220/",
+    "img": "../images/members/hellberg.png"
   },
   {
-    "namn": "Alice Helander",
+    "namn": "Rickard Fuks",
     "post": {
       "sv": "Kassör",
       "en": "Economy"
     },
-    "email": "alice.helander@medieteknikdagen.se",
+    "email": "rickard.fuks@medieteknikdagen.se",
     "tel": "739 41 51 11",
-    "linkedin": "https://www.linkedin.com/in/alice-helander-849417233/",
-    "img": "../images/members/Alice.jpeg"
+    "linkedin": "https://www.linkedin.com/in/rickard-fuks-719a32259/",
+    "img": "../images/members/fuks.png"
   },
   {
-    "namn": "Hassan Mustafa",
+    "namn": "Jovan Tan",
     "post": {
       "sv": "Projektassistent",
       "en": "Project assistant"
     },
-    "email": "hassan.mustafa@medieteknikdagen.se",
+    "email": "jovan.tan@medieteknikdagen.se",
     "tel": "735 33 35 03",
-    "linkedin": "https://www.linkedin.com/in/hassan-mustafa-3b82a0139/",
-    "img": "../images/members/Hassan.jpeg"
+    "linkedin": "https://www.linkedin.com/in/jovan-tan-16a82a278/",
+    "img": "../images/members/tan.png"
   },
   {
-    "namn": "Mila Shahnavaz",
-    "post": {
-      "sv": "Pre-MTD",
-      "en": "Pre-MTD"
-    },
-    "email": "mila.shahnavaz@medieteknikdagen.se",
-    "tel": "709 44 25 15",
-    "linkedin": "https://www.linkedin.com/in/mila-shahnavaz-090837192/",
-    "img": "../images/members/Mila.jpeg"
-  },
-  {
-    "namn": "Julia Ronnefalk",
+    "namn": "Emil Wik",
     "post": {
       "sv": "Koordinator",
       "en": "Coordinator"
     },
-    "email": "julia.ronnefalk@medieteknikdagen.se",
+    "email": "emil.wik@medieteknikdagen.se",
     "tel": "705 82 60 06",
-    "linkedin": "https://www.linkedin.com/in/julia-r-9a341b167/",
-    "img": "../images/members/Julia.jpeg"
+    "linkedin": "https://www.linkedin.com/in/emil-wik-b01092246/",
+    "img": "../images/members/emil.png"
   },
   {
-    "namn": "Anna Granberg",
+    "namn": "Ivar Gavelin",
     "post": {
       "sv": "PR",
       "en": "PR"
     },
-    "email": "anna.granberg@medieteknikdagen.se",
+    "email": "ivar.gavelin@medieteknikdagen.se",
     "tel": "707 66 68 52",
-    "linkedin": "https://www.linkedin.com/in/annagranberg00/",
-    "img": "../images/members/Anna.jpeg"
+    "linkedin": "https://www.linkedin.com/in/ivar-gavelin-bb890517a/",
+    "img": "../images/members/ivr.png"
   },
   {
-    "namn": "Oliver Lundin",
+    "namn": "Viktor Persson",
     "post": {
       "sv": "Tryck",
       "en": "Print"
     },
-    "email": "oliver.lundin@medieteknikdagen.se",
+    "email": "viktor.persson@medieteknikdagen.se",
     "tel": "705 73 18 34",
-    "linkedin": "https://www.linkedin.com/in/oliver-lundin-84549a225/",
-    "img": "../images/members/Oliver.jpeg"
+    "linkedin": "https://www.linkedin.com/in/victor-persson-0335a7259/",
+    "img": "../images/members/vicke.png"
   },
   {
-    "namn": "Vilma Lundholm",
+    "namn": "Molly Bengtsson",
     "post": {
       "sv": "Mässa",
       "en": "Fair"
     },
-    "email": "vilma.lundholm@medieteknikdagen.se",
+    "email": "molly.bengtsson@medieteknikdagen.se",
     "tel": "761 70 50 25",
-    "linkedin": "https://www.linkedin.com/in/vilma-lundholm-328023235/",
-    "img": "../images/members/Vilma.jpeg"
+    "linkedin": "https://www.linkedin.com/in/molly-bengtsson-83346b256/",
+    "img": "../images/members/molly.png"
   },
   {
-    "namn": "Erik Dahlström",
+    "namn": "Albin Tillas",
     "post": {
       "sv": "Teknik",
       "en": "Technology"
     },
-    "email": "erik.dahlstrom@medieteknikdagen.se",
+    "email": "albin.tillas@medieteknikdagen.se",
     "tel": "703 33 04 31",
-    "linkedin": "https://www.linkedin.com/in/erik-dahlstr%C3%B6m-418792233/",
-    "img": "../images/members/Erik.jpeg"
+    "linkedin": "https://www.linkedin.com/in/albin-tillas-358881219/",
+    "img": "../images/members/tillas.png"
   },
   {
-    "namn": "Richard Gotthard",
+    "namn": "Gustav Johansson",
     "post": {
       "sv": "App",
       "en": "App"
     },
-    "email": "richard.gotthard@medieteknikdagen.se",
+    "email": "gustav.johansson@medieteknikdagen.se",
     "tel": "707 36 57 80",
-    "linkedin": "https://www.linkedin.com/in/richard-gotthard-225147128/",
-    "img": "../images/members/Richard_.jpeg"
+    "linkedin": "https://www.linkedin.com/in/gustav-johansson-3a6351261/",
+    "img": "../images/members/johansson.png"
   },
   {
-    "namn": "Filip Hamrelius",
+    "namn": "Marcus Sjöblom",
     "post": {
       "sv": "Företag",
       "en": "Business"
     },
-    "email": "filip.hamrelius@medieteknikdagen.se",
+    "email": "marcus.sjoblom@medieteknikdagen.se",
     "tel": "762 09 03 35",
-    "linkedin": "https://www.linkedin.com/in/filip-hamrelius/",
-    "img": "../images/members/Filiph.jpeg"
+    "linkedin": "https://www.linkedin.com/in/marcus-sj%C3%B6blom-a04ab725b/",
+    "img": "../images/members/marcus.png"
   },
   {
-    "namn": "Andreas Engberg",
+    "namn": "Andrea Åstrand",
     "post": {
       "sv": "Bankett",
       "en": "Banquet"
     },
-    "email": "andreas.engberg@medieteknikdagen.se",
+    "email": "andrea.astrand@medieteknikdagen.se",
     "tel": "763 08 91 40",
-    "linkedin": "https://www.linkedin.com/in/andreas-engberg/",
-    "img": "../images/members/Andreas.jpeg"
+    "linkedin": "https://www.linkedin.com/in/andrea-%C3%A5strand-926065243//",
+    "img": "../images/members/åstrand.png"
   }
 ]

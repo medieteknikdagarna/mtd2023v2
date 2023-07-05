@@ -5,7 +5,7 @@ import React, { useState, useContext } from "react";
 import { languageContext } from "../pages/_app";
 
 export function ClipboardButton(
-  { textToCopy, style, fontColor = "var(--color-dark)" },
+  { textToCopy, style, fontColor = "var(--color-light)" },
   backgroundColors = ["#ffecdf", "transparent"]
 ) {
   const [copied, setCopied] = useState(false);
