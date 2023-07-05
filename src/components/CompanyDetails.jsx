@@ -8,10 +8,10 @@ export default function CompanyDetails({ currentComp }) {
           console.log(data.data.mässkost[0].kost);
           return (
             <div
-              index={index}
+              key={index}
               style={{ display: "flex", flexFlow: "column", gap: "1rem" }}
             >
-              <h1>{data.data.company}</h1>
+              <h1 key={index}>{data.data.company}</h1>
 
               <span id="admin_listitem">
                 <h4>Sponsor: </h4>
