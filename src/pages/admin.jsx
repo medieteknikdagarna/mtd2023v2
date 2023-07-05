@@ -3,7 +3,7 @@ import { set, useForm } from "react-hook-form";
 import CompanyList from "@/components/CompanyList";
 import CompanyDetails from "@/components/CompanyDetails";
 
-export default function adminPage() {
+export default function AdminPage() {
   const [currentComp, setCurrentComp] = useState([]);
   const changeCompany = (name) => {
     setCurrentComp(name);
