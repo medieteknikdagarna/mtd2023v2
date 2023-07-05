@@ -10,12 +10,14 @@ import InfoWithStars from "../components/InfoWithIcons";
 import { languageContext } from "./_app";
 import ResponsiveContainer from "../components/ResponsiveContainer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import MTBALL100 from "../../public/images/MTBALL100.png";
 import {
   faMapPin,
   faCalendar,
   faClock,
 } from "@fortawesome/free-solid-svg-icons";
 import { NextSeo } from "next-seo";
+import Image from "next/image";
 
 const content = require("../../public/content/landing.json");
 
@@ -70,10 +72,11 @@ export default function LandingPage() {
                     </div>
                   </div>
                 </div>
+                {/* <Image src={MTBALL100} alt="mtdball" width={500} height={500} /> */}
               </section>
             </ResponsiveContainer>
           </div>
-          <ResponsiveContainer>
+          <ResponsiveContainer className={"welcome-background"}>
             <section className="welcome-section">
               <InfoSection
                 className="welcome-info"
@@ -88,7 +91,11 @@ export default function LandingPage() {
                       <span>{lang === "sv" ? "6:e Dec" : "Dec 6th"} 2022</span>
                     </div>
                     <div className="landing-fair-info--row">
-                      <FontAwesomeIcon icon={faClock} />
+                      <FontAwesomeIcon
+                        icon={faClock}
+                        className="landning-fair-icon"
+                        color="white"
+                      />
                       <span>09:00 - 16:00</span>
                     </div>
                     <div className="landing-fair-info--row">
@@ -101,7 +108,9 @@ export default function LandingPage() {
                   {lang === "sv" ? "Läs mer" : "Read more"}
                 </Button>
               </InfoSection>
-              <div className="calendar">{/*FUNKAR EJJJJ  <ExpoSvg />*/}</div>
+              <div className="calendar">
+                <ExpoSvg />
+              </div>
             </section>
           </ResponsiveContainer>
 
@@ -129,7 +138,7 @@ export default function LandingPage() {
           } */}
 
           <InfoWithStars />
-          <ResponsiveContainer>
+          <ResponsiveContainer className="after-movie-background">
             <section className="after-movie-section">
               <div className="after-movie-title">
                 <InfoSection

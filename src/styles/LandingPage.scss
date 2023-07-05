@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Lato:100,200,300,400,500,600,700,800,900&display=swap");
 #background-video {
   width: 100vw;
   height: 100vh;
@@ -76,6 +78,7 @@
     flex-direction: column;
   }
 }
+
 .landing-fair-info {
   &--row {
     width: 100%;
@@ -94,11 +97,11 @@
   }
 
   span {
-    color: black;
+    color: white;
     font-weight: 300;
   }
   path {
-    fill: black;
+    fill: #ec6610;
   }
   svg {
     font-size: 1.5rem;
@@ -135,6 +138,7 @@
 
 .infosection {
   margin-bottom: 4rem;
+  color: white;
 }
 
 .intro {
@@ -150,8 +154,16 @@
   }
 }
 /*----- SECTIOn 2 ------- */
+.welcome-background {
+  background-color: rgba(255, 255, 255, 0.07);
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
 .welcome-section {
-  background-color: #fafafa;
+  p,
+  h2 {
+    color: white;
+  }
 
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -161,7 +173,9 @@
     display: flex;
     flex-direction: column;
   }
-
+  .welcome-info {
+    color: white;
+  }
   @media screen and (min-width: 950px) {
     .welcome-info {
       grid-column: 1/2;
@@ -229,6 +243,15 @@ video {
 }
 
 /*---SECTION 3 ---*/
+.after-movie-background {
+  background-color: rgba(255, 255, 255, 0.07);
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  p,
+  h2 {
+    color: white;
+  }
+}
 .after-movie-section {
   display: grid;
   gap: 3rem;
@@ -239,8 +262,6 @@ video {
   .video-responsive {
     grid-column: 1/3;
   }
-
-  background-color: var(--color-light);
 }
 .after-movie-title {
   display: grid;
@@ -263,6 +284,9 @@ video {
 
 .after-movie {
   grid-column: 2/3;
+}
+.infosection {
+  color: white;
 }
 
 /*SHAPE DIVIDER */

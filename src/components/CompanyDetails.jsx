@@ -1,6 +1,4 @@
 export default function CompanyDetails({ currentComp }) {
-  // console.log(currentComp[0]);
-
   return (
     <>
       <div className="admin_companylist">
