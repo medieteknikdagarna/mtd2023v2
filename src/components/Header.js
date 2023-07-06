@@ -103,7 +103,7 @@ export default function Header({
       </div>
       <div className="menu-icon">
         <i className="menu-icon--icon" onClick={() => setMenuActive(true)}>
-          {/*<MenuIcon />*/}
+          <MenuIcon />
         </i>
       </div>
     </header>

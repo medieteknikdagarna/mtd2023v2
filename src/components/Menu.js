@@ -141,7 +141,7 @@ export default function Menu({ onExit, style, className, show }) {
                         {content[lang].fair}
                       </Link>
                     </li>
-                    <li
+                    {/*  <li
                       className={
                         router.asPath === "/foretag" ? "selected-page" : ""
                       }
@@ -149,7 +149,7 @@ export default function Menu({ onExit, style, className, show }) {
                       <Link onClick={onExit} href="/foretag" legacyBehavior>
                         {content[lang].companies}
                       </Link>
-                    </li>
+                    </li> */}
                     {/* <li
                       className={
                         router.asPath === "/jobbportalen" ? "selected-page" : ""
@@ -159,7 +159,7 @@ export default function Menu({ onExit, style, className, show }) {
                         {content[lang].jobportal}
                       </Link>
                     </li> */}
-                    {/* <li
+                    <li
                       className={
                         router.asPath === "/Bokning" ? "selected-page" : ""
                       }
@@ -168,7 +168,7 @@ export default function Menu({ onExit, style, className, show }) {
                         {lang === "sv" ? "Boka" : "Booking"}
                       </Link>
                     </li>
-                    <li
+                    {/* <li
                       className={
                         router.asPath === "/Intresseanmälan"
                           ? "selected-page"

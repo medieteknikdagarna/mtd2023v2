@@ -52,9 +52,9 @@ export default function LandingPage() {
                       {content[lang].section1.body[1]}
                     </p>
                     <div className="landing-section--buttons">
-                      {/* <Button href="/booking" type="primary" size="large">
+                      <Button href="/booking" type="primary" size="large">
                         {lang === "sv" ? "Boka" : "Booking"}
-                      </Button> */}
+                      </Button>
                       <Button href="/kontakt" type="primary" size="large">
                         {lang === "sv" ? "Kontakt" : "Contact"}
                       </Button>
