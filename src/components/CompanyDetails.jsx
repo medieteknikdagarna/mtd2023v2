@@ -84,7 +84,7 @@ export default function CompanyDetails({ currentComp }) {
               <span id="admin_listitem">
                 {" "}
                 <h4>Storlek på beställd TV(Om tomt så är det ingen): </h4>
-                {data.data.TV}
+                {data.data.TV}"
               </span>
               <span id="admin_listitem">
                 <h4>Enheter som drar extra mycket el: </h4>

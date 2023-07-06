@@ -21,6 +21,8 @@ import { languageContext } from "../pages/_app";
 import { Transition } from "react-spring";
 import ResponsiveContainer from "./ResponsiveContainer";
 import Footer from "@/components/Footer";
+//import { Document, Page } from "react-pdf";
+import MTDSponspaket from "../../public/content/MTDSamarbetspaket.pdf";
 
 const floor4_all = require("../../public/content/seat-info/floor4.json");
 const floor5_all = require("../../public/content/seat-info/floor5.json");
@@ -311,6 +313,16 @@ export default function BookingForm() {
                 >
                   {watch("sponsor")}
                 </h1>
+                <h1 className={styles.paketpris}>
+                  {" "}
+                  {watch("sponsor") === "Brons"
+                    ? "7 999:-"
+                    : watch("sponsor") === "Silver"
+                    ? "24 999:-"
+                    : watch("sponsor") === "Guld"
+                    ? "34 999:-"
+                    : ""}
+                </h1>
               </div>
               <div className={styles.floorInfo}>
                 <div
@@ -403,6 +415,12 @@ export default function BookingForm() {
                   </label>
                 </div>
               </div>
+              <span>
+                För mer information om vad som ingår i paketen ladda ner vårt
+              </span>
+              <a href="/content/MTDSamarbetspaket.pdf" download>
+                {lang === "sv" ? " samarbetspaket" : " partnership package"}
+              </a>
             </div>
           </div>
           <div

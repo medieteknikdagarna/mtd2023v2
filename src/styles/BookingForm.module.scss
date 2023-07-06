@@ -117,7 +117,7 @@ $anim-speed: 0.85; // in seconds
     }
   }
   .floorContainer {
-    width: 35rem;
+    min-width: 30rem;
     margin-right: 5rem;
     @media screen and (max-width: 400px) {
       margin-top: 4rem;
@@ -130,6 +130,15 @@ $anim-speed: 0.85; // in seconds
     h2 {
       font-size: 2rem;
       color: #fff;
+    }
+  }
+  .sponsContainer {
+    display: flex;
+    align-items: baseline;
+    .paketpris {
+      padding-left: 2rem;
+      color: white;
+      font-size: 3rem;
     }
   }
   .wingLeft {
