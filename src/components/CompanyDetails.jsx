@@ -84,7 +84,7 @@ export default function CompanyDetails({ currentComp }) {
               <span id="admin_listitem">
                 {" "}
                 <h4>Storlek på beställd TV(Om tomt så är det ingen): </h4>
-                {data.data.TV}"
+                {data.data.TV}
               </span>
               <span id="admin_listitem">
                 <h4>Enheter som drar extra mycket el: </h4>
@@ -94,7 +94,7 @@ export default function CompanyDetails({ currentComp }) {
                 <h4 style={{ marginRight: "0.5rem" }}>Erbjuder tjänster: </h4>
                 {data.data.tjänst.map((item, itemIndex) => (
                   <span id="admin_listitem" key={itemIndex}>
-                    {item},{" "}
+                    {item},
                   </span>
                 ))}
               </div>
