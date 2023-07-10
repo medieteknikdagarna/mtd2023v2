@@ -26,11 +26,11 @@ export default function PressAndMedia() {
       </div>
 
       <MemberCard
-        name="Viktor Persson"
+        name="Ivar Gavelin"
         post="PR"
-        email="viktor.persson@medieteknikdagen.se"
+        email="ivar.gavelin@medieteknikdagen.se"
         phone="+46 707 66 68 52"
-        src={`images/members/vicke.png`}
+        src={`/images/members/ivr.png`}
         linkedin={"https://www.linkedin.com/in/victor-persson-0335a7259/"}
       />
     </div>

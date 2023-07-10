@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow&display=swap");
 .member-card {
   max-width: 18rem;
   box-shadow: 0px 0px 16px -10px black;
@@ -14,7 +15,7 @@
     font-size: 1.3rem;
     letter-spacing: 0.15rem;
     color: var(--color-primary);
-    font-family: "Barlow";
+    font-family: "Barlow", sans-serif;
     font-weight: 400;
   }
 

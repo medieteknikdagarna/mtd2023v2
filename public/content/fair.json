@@ -3,7 +3,7 @@
     "title": "Vad är MTD?",
     "ingress": "Medieteknikdagen är en arbetsmarknadsdag för medieteknikprogrammet på Linköpings universitet. Ännu ett år förenar vi hundratals studenter och företag i industrin. Här hittar du all information och alla kontaktuppgifter du kan tänkas behöva",
     "about_info": {
-      "title1": "Medieteknikdagen 2022",
+      "title1": "Medieteknikdagen 2023",
       "body1": [
         "Medieteknikdagen är ett ideellt arrangemang drivet av och för studenter. Syftet är att knyta kontakter mellan studenter, medietekniker ute i arbetslivet och företagen inom branschen. I år har vi bytt namn från Medieteknikdagarna till Medieteknikdagen.",
         "MTD är ett tillfälle för företag och studenter att inspirera, informera och integrera med varandra. Såväl företag som studenter får här en chans att visa det allra senaste inom medieteknik."
@@ -64,7 +64,6 @@
       }
     ]
   },
-
   "en": {
     "title": "What is MTD2022?",
     "ingress": "The Media Technology Day is a day full with inspiration, a fair and hundreds of students and companies from the industry. Here, you'll find everything you need to know about the day",
