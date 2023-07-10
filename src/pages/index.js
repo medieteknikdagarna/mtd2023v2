@@ -42,7 +42,7 @@ export default function LandingPage() {
                   <h1>MTD</h1>
                   <div className="date-landing">
                     <span>
-                      {lang === "sv" ? "6:e December" : "December 6th"} 2022
+                      {lang === "sv" ? "6:e December" : "December 6th"} 2023
                     </span>
                   </div>
                   <div className="welcome">
