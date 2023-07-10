@@ -8,7 +8,7 @@
     "email": "sebastian.lindgren@medieteknikdagen.se",
     "tel": "760 91 55 63",
     "linkedin": "https://www.linkedin.com/in/sebastian-lindgren-72bb99180/",
-    "img": "../images/members/besse.png"
+    "img": "/images/members/besse.png"
   },
   {
     "namn": "Andreas Ekberg",
@@ -19,7 +19,7 @@
     "email": "andreas.ekberg@medieteknikdagen.se",
     "tel": "767 65 68 07",
     "linkedin": "https://www.linkedin.com/in/andreas-ekberg-91bba0259/",
-    "img": "../images/members/ekberg.png"
+    "img": "/images/members/ekberg.png"
   },
   {
     "namn": "Joel Hellberg",
@@ -30,7 +30,7 @@
     "email": "joel.hellberg@medieteknikdagen.se",
     "tel": "733 74 31 83",
     "linkedin": "https://www.linkedin.com/in/joel-hellberg-633767220/",
-    "img": "../images/members/hellberg.png"
+    "img": "/images/members/hellberg.png"
   },
   {
     "namn": "Rickard Fuks",
@@ -41,7 +41,7 @@
     "email": "rickard.fuks@medieteknikdagen.se",
     "tel": "739 41 51 11",
     "linkedin": "https://www.linkedin.com/in/rickard-fuks-719a32259/",
-    "img": "../images/members/fuks.png"
+    "img": "/images/members/fuks.png"
   },
   {
     "namn": "Jovan Tan",
@@ -52,7 +52,7 @@
     "email": "jovan.tan@medieteknikdagen.se",
     "tel": "735 33 35 03",
     "linkedin": "https://www.linkedin.com/in/jovan-tan-16a82a278/",
-    "img": "../images/members/tan.png"
+    "img": "/images/members/tan.png"
   },
   {
     "namn": "Emil Wik",
@@ -63,7 +63,7 @@
     "email": "emil.wik@medieteknikdagen.se",
     "tel": "705 82 60 06",
     "linkedin": "https://www.linkedin.com/in/emil-wik-b01092246/",
-    "img": "../images/members/emil.png"
+    "img": "/images/members/emil.png"
   },
   {
     "namn": "Ivar Gavelin",
@@ -74,7 +74,7 @@
     "email": "ivar.gavelin@medieteknikdagen.se",
     "tel": "707 66 68 52",
     "linkedin": "https://www.linkedin.com/in/ivar-gavelin-bb890517a/",
-    "img": "../images/members/ivr.png"
+    "img": "/images/members/ivr.png"
   },
   {
     "namn": "Viktor Persson",
@@ -85,7 +85,7 @@
     "email": "viktor.persson@medieteknikdagen.se",
     "tel": "705 73 18 34",
     "linkedin": "https://www.linkedin.com/in/victor-persson-0335a7259/",
-    "img": "../images/members/vicke.png"
+    "img": "/images/members/vicke.png"
   },
   {
     "namn": "Molly Bengtsson",
@@ -96,7 +96,7 @@
     "email": "molly.bengtsson@medieteknikdagen.se",
     "tel": "761 70 50 25",
     "linkedin": "https://www.linkedin.com/in/molly-bengtsson-83346b256/",
-    "img": "../images/members/molly.png"
+    "img": "/images/members/molly.png"
   },
   {
     "namn": "Albin Tillas",
@@ -107,7 +107,7 @@
     "email": "albin.tillas@medieteknikdagen.se",
     "tel": "703 33 04 31",
     "linkedin": "https://www.linkedin.com/in/albin-tillas-358881219/",
-    "img": "../images/members/tillas.png"
+    "img": "/images/members/tillas.png"
   },
   {
     "namn": "Gustav Johansson",
@@ -118,7 +118,7 @@
     "email": "gustav.johansson@medieteknikdagen.se",
     "tel": "707 36 57 80",
     "linkedin": "https://www.linkedin.com/in/gustav-johansson-3a6351261/",
-    "img": "../images/members/johansson.png"
+    "img": "/images/members/johansson.png"
   },
   {
     "namn": "Marcus Sjöblom",
@@ -129,7 +129,7 @@
     "email": "marcus.sjoblom@medieteknikdagen.se",
     "tel": "762 09 03 35",
     "linkedin": "https://www.linkedin.com/in/marcus-sj%C3%B6blom-a04ab725b/",
-    "img": "../images/members/marcus.png"
+    "img": "/images/members/marcus.png"
   },
   {
     "namn": "Andrea Åstrand",
@@ -140,6 +140,6 @@
     "email": "andrea.astrand@medieteknikdagen.se",
     "tel": "763 08 91 40",
     "linkedin": "https://www.linkedin.com/in/andrea-%C3%A5strand-926065243//",
-    "img": "../images/members/åstrand.png"
+    "img": "/images/members/åstrand.png"
   }
 ]

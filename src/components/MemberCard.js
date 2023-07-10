@@ -2,6 +2,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope, faPhone } from "@fortawesome/free-solid-svg-icons";
 import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import React from "react";
+import Image from "next/image";
 
 export default function MemberCard({
   src,
@@ -14,7 +15,9 @@ export default function MemberCard({
 }) {
   return (
     <div className="member-card">
-      <div className="member-card--top">{<img alt={alt} src={src}></img>}</div>
+      <div className="member-card--top">
+        <Image alt={alt} src={src} width={1600} height={1600} />
+      </div>
       <div className="member-card--bottom">
         <div className="member-card--content">
           <h3>{name}</h3>
