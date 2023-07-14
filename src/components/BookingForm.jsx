@@ -235,6 +235,8 @@ export default function BookingForm() {
     }
   };
 
+  async function sendMail() {}
+
   const [colorload, setColorload] = useState(false);
   return (
     <>

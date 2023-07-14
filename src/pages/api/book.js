@@ -1,3 +1,5 @@
+import { mailOptions, transporter } from "./sendMail";
+
 import { firebaseApp } from "@/firebase/clientApp";
 import { getStorage } from "firebase/storage";
 import {
@@ -51,10 +53,17 @@ export default async function handler(req, res) {
   if (req.method === "POST") {
     let foundDuplicate = false;
     data.data.forEach((booking) => {
-      if (booking.seat == req.body.seat && booking.floor == req.body.floor) {
+      console.log(req.body.sponsor);
+
+      if (
+        req.body.sponsor !== "Brons" &&
+        booking.seat == req.body.seat &&
+        booking.floor == req.body.floor
+      ) {
         foundDuplicate = true;
       }
     });
+
     if (foundDuplicate) {
       return res
         .status(409)
@@ -62,13 +71,19 @@ export default async function handler(req, res) {
     } else {
       try {
         const insert_data = req.body;
+        /*  await transporter.sendMail({
+          from: "webb@medieteknikdagarna.se",
+          to: req.body.email,
+          subject: "Tack för din bokning till Medieteknikdagen",
+          text: "Test",
+        }); */
         const response = await addRegistration(insert_data);
         res
           .status(response.status)
           .json({ message: response.message, success: response.success });
         return;
       } catch (error) {
-        res.status(409).json({ error: "Bruh" });
+        res.status(409).json({ error: "Error while booking" });
         return;
       }
     }
