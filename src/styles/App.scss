@@ -79,18 +79,17 @@ h4 {
   font-weight: 400;
   color: white;
 }
-
+div {
+  border: 1px solid red;
+}
 html {
   background: linear-gradient(
     -45deg,
     rgba(29, 46, 55, 1) 0%,
     rgba(0, 0, 0, 1) 100%
   );
-  width: 100vw;
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
-}
-body {
-  width: 100%;
+  min-width: 100%;
 }

@@ -1,0 +1,48 @@
+$MTDorange: #ec6610;
+
+.counterContainer {
+  position: relative;
+  margin: 0.5rem 0 0 0;
+
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-self: center;
+  div {
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+  }
+  .counterDecrement {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $MTDorange;
+    height: 2rem;
+    width: 2rem;
+    transition: background-color 0.15s ease-out, transform 0.15s ease-out;
+    &:hover {
+      background-color: #e97730;
+      transform: scale(1.1);
+    }
+  }
+  .counterIncrement {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $MTDorange;
+    height: 2rem;
+    width: 2rem;
+    transition: background-color 0.15s ease-out, transform 0.15s ease-out;
+    &:hover {
+      background-color: #e97730;
+      transform: scale(1.1);
+    }
+  }
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+}

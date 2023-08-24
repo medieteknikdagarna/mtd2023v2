@@ -70,7 +70,7 @@ function MyApp({ Component, pageProps }) {
         <title>Medieteknikdagen</title>
       </Head>
       <AcceptPolicy />
-      <StickyContact />
+      {/*  <StickyContact /> */}
       <Component {...pageProps} />
     </languageContext.Provider>
   );

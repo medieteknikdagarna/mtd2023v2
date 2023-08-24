@@ -9,10 +9,8 @@ export default function BookingPage() {
   return (
     <>
       <NextSeo noindex={true} />
-      <div style={{ width: "100vw" }}>
-        <Header changeOnScroll />
-        <BookingForm />
-      </div>
+      <Header changeOnScroll />
+      <BookingForm />
     </>
   );
 }
