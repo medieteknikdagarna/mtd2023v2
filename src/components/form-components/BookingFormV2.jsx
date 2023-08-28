@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { SplitScreen } from "@/utilities/SplitScreen";
 import FloorMap from "./FloorMap";
 import Sponsor from "./Sponsor";
 import ContactInfo from "./ContactInfo";
 import { useForm } from "react-hook-form";
 import MTDSponspaket from "@/public/content/MTDSamarbetspaket.pdf";
+import { languageContext } from "@/pages/_app";
 
 const floor4_all = require("@/public/content/seat-info/floor4.json");
 const floor5_all = require("@/public/content/seat-info/floor5.json");
@@ -43,6 +44,8 @@ export default function BookingFormV2() {
         trådlösaenheter: 0,
       },
     });
+  const { errors } = formState;
+  const [lang, setLang] = useContext(languageContext);
 
   const [type, setType] = useState("Brons");
   const [activeLevel, setLevel] = useState(5);
@@ -56,6 +59,41 @@ export default function BookingFormV2() {
     setLevel(floor);
   };
 
+  const onSubmit = (formValues) => {
+    setLoading(true);
+
+    console.log(formValues);
+    const requestOptions = {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        TV: formValues.TV,
+        antalpåmässa: formValues.antalpåmässa,
+        bankettbiljetter: formValues.bankettbiljetter,
+        bankettkost: formValues.bankettkost,
+        company: formValues.company,
+        companyadress: formValues.companyadress,
+        contact: formValues.contact,
+        description: formValues.description,
+        elenhet: formValues.elenhet,
+        email: formValues.email,
+        extrabord: formValues.extrabord,
+        extrastol: formValues.extrastol,
+        fakturering: formValues.fakturering,
+        firmatecknare: formValues.firmateknare,
+        floor: formValues.floor,
+        seat: selectedSeat.seat,
+        mässkost: formValues.mässkost,
+        persontransport: formValues.persontransport,
+        sponsor: formValues.sponsor,
+        tel: formValues.tel,
+        tjänst: formValues.tjänst,
+        montertransport: formValues.transport,
+        trådlösaenheter: formValues.trådlösaenheter,
+      }),
+    };
+  };
+
   return (
     <>
       <SplitScreen>
@@ -67,7 +105,9 @@ export default function BookingFormV2() {
           setType={setType}
         />
       </SplitScreen>
-      <ContactInfo />
+      <form onSubmit={handleSubmit(onSubmit)} noValidate>
+        <ContactInfo register={register} lang={lang} errors={errors} />
+      </form>
     </>
   );
 }
