@@ -3,6 +3,7 @@ import { NextSeo } from "next-seo";
 import Header from "../components/Header";
 import BookingForm from "@/components/BookingForm";
 import SeatBooker from "@/components/SeatBooker";
+import BookingFormV2 from "@/components/form-components/BookingFormV2";
 
 export default function BookingPage() {
   const [type, setType] = useState("Mässplats");
@@ -10,7 +11,8 @@ export default function BookingPage() {
     <>
       <NextSeo noindex={true} />
       <Header changeOnScroll />
-      <BookingForm />
+      <BookingFormV2 />
+      {/*  <BookingForm /> */}
     </>
   );
 }

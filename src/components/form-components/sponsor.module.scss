@@ -1,0 +1,211 @@
+$SPONSBronze: #804a00;
+$SPONSSilver: #c0c0c0;
+$SPONSGold: #b3a34d;
+
+$anim-duration: 2; // in seconds
+$anim-speed: 0.85; // in seconds
+@mixin hideInput {
+  width: 0;
+  height: 0;
+  position: absolute;
+  left: -9999px;
+}
+.sponsContainer {
+  display: flex;
+  align-items: baseline;
+  .paketpris {
+    padding-left: 2rem;
+    color: white;
+    font-size: 3rem;
+  }
+}
+.paketpris {
+  padding-left: 2rem;
+  color: white;
+  font-size: 3rem;
+}
+.paket {
+  display: flex;
+  width: 100%;
+  padding-bottom: 4vh;
+  h2 {
+    font-size: 2rem;
+    color: #fff;
+  }
+}
+
+.floorInfo {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+  .indicator {
+    width: 1rem;
+    height: 1rem;
+    border-radius: 100%;
+  }
+  h4 {
+    margin: 0 1rem 0 1rem;
+  }
+}
+.floorSelect {
+  margin-top: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: center;
+  label {
+    margin: 0 1rem 0 1rem;
+    color: #fff;
+  }
+  input {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+}
+.sponsor {
+  padding-bottom: 2rem;
+  box-sizing: border-box;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: stretch;
+
+  input {
+    @include hideInput;
+    position: relative;
+    overflow: hidden;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -15rem;
+      width: 60px;
+      height: 200px;
+      z-index: 1;
+      background-color: rgba(255, 255, 255, 0.7);
+      transform: skewX(-30deg);
+      filter: blur(30px);
+    }
+  }
+  input + label {
+    margin: 0;
+    padding: 1rem 4rem;
+    box-sizing: border-box;
+    position: relative;
+    display: inline-block;
+    font-size: 1rem;
+    color: #fff;
+    line-height: 140%;
+    font-weight: 600;
+    text-align: center;
+    border: 1px hidden black;
+    box-shadow: 0 0 0 rgba(255, 255, 255, 0);
+    transition: border-color 0.15s ease-out, color 0.25s ease-out,
+      background-color 0.15s ease-out, box-shadow 0.15s ease-out;
+  }
+  input:hover + label {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+
+  .bronze {
+    label {
+      position: relative;
+      overflow: hidden;
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -15rem;
+        width: 60px;
+        height: 200px;
+        z-index: 1;
+        background-color: rgba(255, 255, 255, 1);
+        transform: skewX(-30deg);
+        filter: blur(30px);
+      }
+    }
+    input:checked + label {
+      background-color: $SPONSBronze;
+      border-color: $SPONSBronze;
+      z-index: 1;
+    }
+    input:checked + label::before {
+      animation: slide #{$anim-duration}s ease infinite;
+    }
+  }
+  .gold {
+    label {
+      position: relative;
+      overflow: hidden;
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -15rem;
+        width: 60px;
+        height: 200px;
+        z-index: 1;
+        background-color: rgba(255, 255, 255, 1);
+        transform: skewX(-30deg);
+        filter: blur(30px);
+      }
+    }
+    input:checked + label {
+      background-color: $SPONSGold;
+      border-color: $SPONSGold;
+      z-index: 1;
+    }
+    input:checked + label::before {
+      animation: slide #{$anim-duration}s ease infinite;
+    }
+  }
+  .silver {
+    label {
+      position: relative;
+      overflow: hidden;
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -15rem;
+        width: 60px;
+        height: 200px;
+        z-index: 1;
+        background-color: rgba(255, 255, 255, 1);
+        transform: skewX(-30deg);
+        filter: blur(30px);
+      }
+    }
+    input:checked + label {
+      background-color: $SPONSSilver;
+      color: black;
+      z-index: 1;
+    }
+    input:checked + label::before {
+      animation: slide #{$anim-duration}s ease infinite;
+    }
+  }
+
+  @keyframes slide {
+    0% {
+      left: -100%;
+      transition-property: left;
+    }
+    #{($anim-speed / ($anim-duration + $anim-speed) * 100%)},
+    100% {
+      left: 110%;
+      transition-property: left;
+    }
+  }
+  @keyframes flyIn {
+    0% {
+      left: -10%;
+      transition-property: left;
+    }
+
+    100% {
+      left: 0%;
+      transition-property: left;
+    }
+  }
+}

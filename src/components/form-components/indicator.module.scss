@@ -1,0 +1,12 @@
+.indicatorContainer {
+  display: flex;
+  align-items: baseline;
+  .indicator {
+    width: 1rem;
+    height: 1rem;
+    border-radius: 100%;
+  }
+  h4 {
+    margin: 0 1rem 0 1rem;
+  }
+}

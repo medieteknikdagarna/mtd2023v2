@@ -33,7 +33,8 @@
     "react-image-gallery": "^1.2.11",
     "react-pdf": "^7.1.2",
     "react-spring": "^9.7.1",
-    "sass": "^1.62.1"
+    "sass": "^1.62.1",
+    "styled-components": "^6.0.7"
   },
   "devDependencies": {
     "@hookform/devtools": "^4.3.1",
