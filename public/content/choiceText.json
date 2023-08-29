@@ -1,0 +1,52 @@
+{
+    "sv": {
+        "montertransport": {
+            "op1": {
+                "text": "Skicka i förväg via godsmottagningen",
+                "id": "T_op1",
+                "value": "sendWithGods"
+            },
+            "op2": {
+                "text": "Tar med själv till mässdagen",
+                "id": "T_op2",
+                "value": "takeWithUs"
+            }
+        },
+        "persontransport": {
+            "op1": {
+                "text": "Ja",
+                "id": "persontransport-ja",
+                "value": "Ja"
+            },
+            "op2": {
+                "text": "Nej",
+                "id": "persontransport-nej",
+                "value": "Nej"
+            }
+        }
+    },
+    "en": {
+        "montertransport": {
+            "op1": {
+                "text": "Will be sent in advance through goods reception",
+                "id": "T_op1"
+            },
+            "op2": {
+                "text": "Will be brought with us on the day of the fair",
+                "id": "T_op2"
+            }
+        },
+        "persontransport": {
+            "op1": {
+                "text": "Yes",
+                "id": "persontransport-ja",
+                "value": "Ja"
+            },
+            "op2": {
+                "text": "No",
+                "id": "persontransport-nej",
+                "value": "Nej"
+            }
+        }
+    }
+}

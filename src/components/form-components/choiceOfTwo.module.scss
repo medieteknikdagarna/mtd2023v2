@@ -1,0 +1,44 @@
+$MTDorange: #ec6610;
+@mixin hideInput {
+  width: 0;
+  height: 0;
+  position: absolute;
+  left: -9999px;
+}
+
+.option {
+  margin-top: 1rem;
+  display: flex;
+  flex-flow: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  border-radius: 10px;
+  border: hidden 1px;
+  max-width: 40rem;
+  input {
+    @include hideInput;
+    box-shadow: 0 0 10px black;
+  }
+  input + label {
+    padding: 1.5rem 1rem;
+    min-width: 5rem;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.2);
+    border: hidden 1px;
+    transition: border-color 0.15s ease-out, color 0.25s ease-out,
+      background-color 0.15s ease-out, box-shadow 0.15s ease-out;
+  }
+  input:checked + label {
+    color: $MTDorange;
+    border: solid 1px;
+    border-color: $MTDorange;
+    box-shadow: 0 0 10px rgba($MTDorange, 0.2);
+    z-index: 1;
+  }
+  input:hover + label {
+    color: $MTDorange;
+  }
+  label {
+    color: #fff;
+  }
+}

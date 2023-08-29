@@ -3,7 +3,6 @@ import Wing from "@/components/form-components/Wing";
 import ContactInput from "./ContactInput";
 
 export default function ContactInfo({ register, lang, errors }) {
-  console.log(errors);
   return (
     <>
       <Wing />

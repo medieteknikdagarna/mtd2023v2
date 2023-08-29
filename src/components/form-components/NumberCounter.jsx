@@ -1,43 +1,31 @@
 import styles from "@/components/form-components/numberCounter.module.scss";
 import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
 
-export default function NumberCounter(formValue, watch) {
-  console.log(formValue, "antal ", watch("antalpåmässa"));
-  const changeNumber = (value, target) => {
-    const newVal = getValues(formValue) + value;
-    if (newVal >= 0) {
-      setValue(formValue, newVal, {
-        shouldDirty: true,
-        shouldValidate: true,
-        shouldTouch: true,
-      });
-    }
-  };
-
+export default function NumberCounter({ register, changeNumber, id, target }) {
   return (
     <div>
       <div className={styles.counterContainer}>
         <div
           className={styles.counterDecrement}
-          onClick={() => changeNumber(-1, "fair")}
+          onClick={() => changeNumber(-1, target)}
         >
           <AiOutlineMinus size={24} style={{ fill: "white" }} />
         </div>
         <div className={styles.counter}>
-          <label htmlFor="antalpåmässa" />
+          <label htmlFor={id} />
           <input
             className={styles.numberInput}
             type="number"
-            id="antalpåmässa"
+            id={id}
             readOnly
-            {...register("antalpåmässa", {
+            {...register(id, {
               valueAsNumber: true,
             })}
           />
         </div>
         <div
           className={styles.counterIncrement}
-          onClick={() => changeNumber(1, "fair")}
+          onClick={() => changeNumber(1, target)}
         >
           <AiOutlinePlus size={24} style={{ fill: "white" }} />
         </div>

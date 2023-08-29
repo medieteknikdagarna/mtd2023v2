@@ -3,7 +3,8 @@ import { SplitScreen } from "@/utilities/SplitScreen";
 import FloorMap from "./FloorMap";
 import Sponsor from "./Sponsor";
 import ContactInfo from "./ContactInfo";
-import { useForm } from "react-hook-form";
+import Additions from "./Additions";
+import { useForm, useFieldArray } from "react-hook-form";
 import MTDSponspaket from "@/public/content/MTDSamarbetspaket.pdf";
 import { languageContext } from "@/pages/_app";
 
@@ -94,6 +95,83 @@ export default function BookingFormV2() {
     };
   };
 
+  const {
+    fields: bankettField,
+    append: bankettAppend,
+    remove: bankettRemove,
+  } = useFieldArray({
+    name: "bankettkost",
+    control,
+  });
+
+  const {
+    fields: mässField,
+    append: mässAppend,
+    remove: mässRemove,
+  } = useFieldArray({
+    name: "mässkost",
+    control,
+  });
+
+  const changeNumber = (value, target) => {
+    if (target == "bankett") {
+      const newVal = watch("bankettbiljetter") + value;
+      if (newVal >= 0) {
+        setValue("bankettbiljetter", newVal, {
+          shouldDirty: true,
+          shouldValidate: true,
+          shouldTouch: true,
+        });
+      }
+      if (value === 1) {
+        bankettAppend({ kost: "" });
+      } else if (newVal >= 0) {
+        bankettRemove(watch("bankettbiljetter"));
+      }
+    } else if (target == "fair") {
+      const newVal = watch("antalpåmässa") + value;
+      if (newVal >= 0) {
+        setValue("antalpåmässa", newVal, {
+          shouldDirty: true,
+          shouldValidate: true,
+          shouldTouch: true,
+        });
+      }
+      if (value === 1) {
+        mässAppend({ kost: "" });
+      } else if (newVal >= 0) {
+        mässRemove(watch("antalpåmässa"));
+      }
+    } else if (target == "bord") {
+      const newVal = watch("extrabord") + value;
+      if (newVal >= 0) {
+        setValue("extrabord", newVal, {
+          shouldDirty: true,
+          shouldValidate: true,
+          shouldTouch: true,
+        });
+      }
+    } else if (target == "stol") {
+      const newVal = watch("extrastol") + value;
+      if (newVal >= 0) {
+        setValue("extrastol", newVal, {
+          shouldDirty: true,
+          shouldValidate: true,
+          shouldTouch: true,
+        });
+      }
+    } else if (target == "enheter") {
+      const newVal = watch("trådlösaenheter") + value;
+      if (newVal >= 0) {
+        setValue("trådlösaenheter", newVal, {
+          shouldDirty: true,
+          shouldValidate: true,
+          shouldTouch: true,
+        });
+      }
+    }
+  };
+
   return (
     <>
       <SplitScreen>
@@ -107,6 +185,13 @@ export default function BookingFormV2() {
       </SplitScreen>
       <form onSubmit={handleSubmit(onSubmit)} noValidate>
         <ContactInfo register={register} lang={lang} errors={errors} />
+        <Additions
+          lang={lang}
+          register={register}
+          changeNumber={changeNumber}
+          watch={watch}
+          mässField={mässField}
+        />
       </form>
     </>
   );

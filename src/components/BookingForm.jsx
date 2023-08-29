@@ -319,7 +319,6 @@ export default function BookingForm() {
                 {watch("sponsor")}
               </h1>
               <h1 className={styles.paketpris}>
-                {" "}
                 {watch("sponsor") === "Brons"
                   ? "7 999:-"
                   : watch("sponsor") === "Silver"
@@ -661,7 +660,6 @@ export default function BookingForm() {
                 : "Transportation of fair booth"}
             </h3>
             <span>
-              {" "}
               {lang === "sv"
                 ? "MTD står inte för några fraktkostnader från eller till mässan, adress till godsmottagning: Sandgatan 31, 602 47 Norrköping"
                 : "MTD doesn't pay for any shippingcost to or from the fair, adress to tge goods reception: Sandgatan 31, 602 47 Norrköping"}
