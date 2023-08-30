@@ -10,6 +10,7 @@ export default function Additions({
   changeNumber,
   watch,
   mässField,
+  errors,
 }) {
   return (
     <>
@@ -122,6 +123,124 @@ export default function Additions({
             target="stol"
             id="extrastol"
           />
+          <h3>{lang === "sv" ? "Lägg till TV-skärm" : "Order TV-screens"}</h3>
+          <span>
+            {lang === "sv"
+              ? "Det ingår inte en TV-skärm i något av paketen"
+              : "No TV-screens are included in any of the sponsor packages"}
+          </span>
+          <div className={styles.option} id={styles.TV}>
+            <input type="radio" id="TV-op1" value="32" {...register("TV")} />
+            <label htmlFor="TV-op1">
+              {lang === "sv"
+                ? '32" TV-skärm med stativ 2500kr/st'
+                : '32" TV-screen with stand 2500SEK/each'}
+            </label>
+            <input type="radio" id="TV-op2" value="40" {...register("TV")} />
+            <label htmlFor="TV-op2">
+              {lang === "sv"
+                ? '40" TV-skärm med stativ 3200kr/st'
+                : '40" TV-screen with stand 3200SEK/each'}
+            </label>
+            <input type="radio" id="TV-op3" value="47" {...register("TV")} />
+            <label htmlFor="TV-op3">
+              {lang === "sv"
+                ? '47" TV-skärm med stativ 3900kr/st'
+                : '47" TV-screen with stand 3900SEK/each'}
+            </label>
+            <input type="radio" id="TV-op4" value="55" {...register("TV")} />
+            <label htmlFor="TV-op4">
+              {lang === "sv"
+                ? '55" TV-skärm med stativ 4300kr/st'
+                : '55" TV-screen with stand 4300SEK/each'}
+            </label>
+          </div>
+          <h3>
+            {lang === "sv"
+              ? "Uppskattat antal enheter som behöver trådlöst nätverk?"
+              : "Estimated number of devices in need of wireless network"}
+          </h3>
+          <NumberCounter
+            register={register}
+            changeNumber={changeNumber}
+            id={"trådlösaenheter"}
+            target={"enheter"}
+          />
+          <h3>
+            {lang === "sv"
+              ? "Har ni någon elutrustning som drar särskilt mycket ström, i så fall vad?"
+              : "Do you have any electrical equipment with high electrical consumption?"}
+          </h3>
+          <div className={styles.textinput}>
+            <input
+              type="text"
+              id="elenhet"
+              placeholder=" "
+              {...register("elenhet", {
+                required: {
+                  value: true,
+                  message: `${
+                    lang === "sv" ? "Obligatoriskt" : "Must be filled in"
+                  }`,
+                },
+              })}
+            />
+            <p className={styles.error}>{errors.elenhet?.message}</p>
+            <label htmlFor="elenhet" />
+          </div>
+          <h3>
+            {lang === "sv"
+              ? "Erbjuder ni tjänster för besökarna?"
+              : "Are you offerring any services for visitors?"}
+          </h3>
+          <div
+            className={styles.option}
+            style={{ paddingTop: "1rem", paddingBottom: ".5rem" }}
+          >
+            <input
+              type="checkbox"
+              id="exjobb"
+              value="exjobb"
+              {...register("tjänst")}
+            />
+            <label htmlFor="exjobb">{lang === "sv" ? "Exjobb" : "Exjob"}</label>
+            <input
+              type="checkbox"
+              id="praktik"
+              value="praktik"
+              {...register("tjänst")}
+            />
+            <label htmlFor="praktik">
+              {lang === "sv" ? "Praktik" : "Internship"}
+            </label>
+            <input
+              type="checkbox"
+              id="trainee"
+              value="trainee"
+              {...register("tjänst")}
+            />
+            <label htmlFor="trainee">
+              {lang === "sv" ? "Trainee" : "Trainee"}
+            </label>
+            <input
+              type="checkbox"
+              id="sommarjobb"
+              value="sommarjobb"
+              {...register("tjänst")}
+            />
+            <label htmlFor="sommarjobb">
+              {lang === "sv" ? "Sommarjobb" : "Summerjob"}
+            </label>
+            <input
+              type="checkbox"
+              id="anställning"
+              value="anställning"
+              {...register("tjänst")}
+            />
+            <label htmlFor="anställning">
+              {lang === "sv" ? "Anställning" : "Employment"}
+            </label>
+          </div>
         </div>
       </div>
     </>

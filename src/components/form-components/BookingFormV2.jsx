@@ -191,6 +191,7 @@ export default function BookingFormV2() {
           changeNumber={changeNumber}
           watch={watch}
           mässField={mässField}
+          errors={errors}
         />
       </form>
     </>
