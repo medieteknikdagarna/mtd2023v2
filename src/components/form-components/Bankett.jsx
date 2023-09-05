@@ -14,7 +14,7 @@ export default function Bankett({
     <div>
       <h2 id={styles.underLine}>{lang === "sv" ? "Bankett" : "Banquet"}</h2>
       <div>
-        <div>
+        <div style={{ color: "white" }}>
           <h3>{lang === "sv" ? "Bankettbiljetter" : "Banquest Tickets"}</h3>
           <span>
             {lang === "sv"
