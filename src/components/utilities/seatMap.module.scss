@@ -1,0 +1,6 @@
+.seatmap {
+  height: 25rem;
+  @media (max-width: 500px) {
+    height: 15rem;
+  }
+}

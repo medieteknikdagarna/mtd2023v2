@@ -2,9 +2,10 @@ import React, { useContext, useEffect } from "react";
 import BookerSVG from "../../../public/images/platsbokaren.svg";
 import Floor4 from "../../../public/images/platsbokning.svg";
 import Floor5 from "../../../public/images/platsbokning_p5.svg";
-import { selectedContext } from "../BookingForm";
+import { selectedContext } from "../BookingFormV2";
 import { useTransition, animated } from "react-spring";
 import { languageContext } from "../../pages/_app";
+import styles from "./seatMap.module.scss";
 import Image from "next/image";
 
 export function isReserved(seat, listOfReserved) {
@@ -87,10 +88,7 @@ export default function SeatMap({ seats, reservations, activeFloor, type }) {
   }, [selectedSeat]);
 
   return (
-    <div style={{ height: "28rem" }}>
-      <h2 style={{ fontSize: "3rem" }}>
-        {lang === "sv" ? "Plan" : "Floor"} {activeFloor}
-      </h2>
+    <div className={styles.seatmap}>
       {floor4Transition(
         (styles, item) =>
           item && (

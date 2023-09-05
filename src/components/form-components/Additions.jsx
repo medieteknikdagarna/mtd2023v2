@@ -14,13 +14,7 @@ export default function Additions({
 }) {
   return (
     <>
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          width: "100%",
-        }}
-      >
+      <div style={{ display: "flex", justifyContent: "center" }}>
         <h2 style={{ color: "#ec6610" }}>
           {lang === "sv" ? "Tillägg" : "Additions"}
         </h2>

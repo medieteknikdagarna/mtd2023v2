@@ -1,0 +1,28 @@
+$MTDorange: #ec6610;
+
+.textinput {
+  input {
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.2);
+    margin-top: 1rem;
+    padding-left: 1rem;
+    height: 3rem;
+    width: 100%;
+    color: #fff;
+    border-bottom: 1px solid#fff;
+    border-radius: 5px 5px 0 0;
+    transition: border-color 0.15s ease-out, background-color 0.15s ease-out;
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.12);
+    }
+    &:focus,
+    &:not(:placeholder-shown) {
+      border-bottom: 1px solid $MTDorange;
+      outline: none;
+    }
+  }
+}
+#underLine {
+  text-decoration: underline;
+  color: white;
+}

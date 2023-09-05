@@ -29,7 +29,7 @@ import FloorMap from "./form-components/FloorMap";
 const floor4_all = require("../../public/content/seat-info/floor4.json");
 const floor5_all = require("../../public/content/seat-info/floor5.json");
 
-export const selectedContext = React.createContext();
+//export const selectedContext = React.createContext();
 
 const storage = getStorage(firebaseApp);
 

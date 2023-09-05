@@ -13,10 +13,16 @@ $anim-speed: 0.85; // in seconds
 .sponsContainer {
   display: flex;
   align-items: baseline;
+  @media (max-width: 500px) {
+    flex-direction: column;
+  }
   .paketpris {
     padding-left: 2rem;
     color: white;
     font-size: 3rem;
+    @media (max-width: 500px) {
+      padding-left: 0;
+    }
   }
 }
 .paketpris {
@@ -31,6 +37,9 @@ $anim-speed: 0.85; // in seconds
   h2 {
     font-size: 2rem;
     color: #fff;
+    @media (max-width: 500px) {
+      margin-top: 2rem;
+    }
   }
 }
 
@@ -69,11 +78,15 @@ $anim-speed: 0.85; // in seconds
   flex-flow: row wrap;
   justify-content: center;
   align-items: stretch;
+  @media (max-width: 500px) {
+    flex-flow: column-reverse;
+  }
 
   input {
     @include hideInput;
     position: relative;
     overflow: hidden;
+
     &::before {
       content: "";
       position: absolute;

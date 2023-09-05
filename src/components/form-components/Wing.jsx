@@ -7,9 +7,9 @@ export default function Wing(lang) {
     <div
       style={{
         display: "flex",
-        alignItems: "center",
-        marginBottom: "7rem",
         justifyContent: "center",
+        maxWidth: "100%",
+        marginTop: "6rem",
       }}
     >
       {/*  <WingLeft

@@ -4,10 +4,9 @@
     "name": "Kontaktperson",
     "company": "Företag",
     "message": "Meddelande",
-    "accept": "Genom att klicka på Skicka så accepterar du vår",
+    "accept": "Genom att klicka på Skicka så accepterar du vår ",
     "link": "integritetspolicy"
   },
-
   "en": {
     "hi": "What can we do for you?",
     "name": "Name",

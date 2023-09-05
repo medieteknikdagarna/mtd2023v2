@@ -131,7 +131,7 @@ export default function Sponsor({
         <a
           href="/content/MTDSamarbetspaket.pdf"
           download
-          style={{ color: "orange" }}
+          style={{ color: "#ec6610" }}
         >
           {lang === "sv" ? " samarbetspaket" : " partnership package"}
         </a>
