@@ -20,7 +20,7 @@ export default function ContactInfo({ register, lang, errors }) {
           lang={lang}
           errors={errors.company}
           type={"text"}
-          id={"compnay"}
+          id={"company"}
           text={lang === "sv" ? "Företag" : "Company name"}
         />
         <ContactInput
@@ -28,7 +28,7 @@ export default function ContactInfo({ register, lang, errors }) {
           lang={lang}
           errors={errors.companyadress}
           type={"text"}
-          id={"compnayadress"}
+          id={"companyadress"}
           text={lang === "sv" ? "Företagsadress" : "Company adress"}
         />
         <ContactInput
