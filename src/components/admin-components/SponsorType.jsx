@@ -1,8 +1,12 @@
 import React from "react";
 import axios from "axios";
 import { useState, useEffect } from "react";
+import AdminModal from "./AdminModal";
 
 export default function SponsorType({ sponsor, setTotal }) {
+  const [shouldShow, setShouldShow] = useState(false);
+  const [currentComp, setCurrentComp] = useState(null);
+
   const [companyNames, setCompanyNames] = useState([]);
   const fetchData = async () => {
     axios.get(`/api/company`).then((response) => {
@@ -10,7 +14,6 @@ export default function SponsorType({ sponsor, setTotal }) {
         (company) => company.sponsor === sponsor
       );
       setCompanyNames(filteredCompanies);
-      console.log(response);
       setTotal(response.data.length);
     });
   };
@@ -19,6 +22,22 @@ export default function SponsorType({ sponsor, setTotal }) {
     fetchData();
   }, []);
 
+  const fetchDetails = async (companyName) => {
+    try {
+      const response = await axios.get("/api/companyDetail", {
+        params: { currentComp: companyName },
+      });
+      setCurrentComp(response.data);
+      setShouldShow(true); // Set shouldShow after the response has been received
+    } catch (error) {
+      // Handle any potential errors here
+      console.error("Error fetching details:", error);
+    }
+  };
+
+  const handleClose = () => {
+    setShouldShow(false);
+  };
   return (
     <div className="admin_sponsor">
       <h2>{sponsor}</h2>
@@ -42,6 +61,9 @@ export default function SponsorType({ sponsor, setTotal }) {
           );
         })}
       </div>
+      {shouldShow && (
+        <AdminModal currentComp={currentComp} handleClose={handleClose} />
+      )}
     </div>
   );
 }
