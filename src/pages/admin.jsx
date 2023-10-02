@@ -9,7 +9,7 @@ export default function AdminPage() {
   const changeCompany = (name) => {
     setCurrentComp(name);
   };
-  const [logedIn, setlogedIn] = useState(true);
+  const [logedIn, setlogedIn] = useState(false);
   const { register, handleSubmit } = useForm({
     defaultValues: {
       password: "",
