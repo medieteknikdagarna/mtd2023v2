@@ -17,6 +17,7 @@ export async function getReservations() {
     const allName = querySnapshot.docs.map((doc) => {
       return {
         name: doc.data().data.company,
+        sponsor: doc.data().data.sponsor,
       };
     });
     return { status: 200, data: allName };

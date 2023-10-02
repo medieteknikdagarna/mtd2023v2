@@ -1,14 +1,15 @@
 import { useState, useEffect } from "react";
 import { set, useForm } from "react-hook-form";
-import CompanyList from "@/components/CompanyList";
-import CompanyDetails from "@/components/CompanyDetails";
-
+import CompanyList from "@/components/admin-components/CompanyList";
+import CompanyDetails from "@/components/admin-components/CompanyDetails";
+import SponsorType from "@/components/admin-components/SponsorType";
 export default function AdminPage() {
+  const [totalNumberOfCompanies, setNumber] = useState(0);
   const [currentComp, setCurrentComp] = useState([]);
   const changeCompany = (name) => {
     setCurrentComp(name);
   };
-  const [logedIn, setlogedIn] = useState(false);
+  const [logedIn, setlogedIn] = useState(true);
   const { register, handleSubmit } = useForm({
     defaultValues: {
       password: "",
@@ -40,9 +41,19 @@ export default function AdminPage() {
         </div>
       ) : (
         <>
+          <div className="admin_title">
+            <h1 style={{ fontSize: "5rem" }}>MTD 2023</h1>
+            <div style={{ display: "flex", alignItems: "baseline" }}>
+              <h2>Antal företag - </h2>
+              <span>{totalNumberOfCompanies}</span>
+            </div>
+          </div>
           <div className="admin_container">
-            <CompanyList setCurrentComp={changeCompany} />
-            <CompanyDetails currentComp={currentComp} />
+            {/*  <CompanyList setCurrentComp={changeCompany} />
+            <CompanyDetails currentComp={currentComp} /> */}
+            <SponsorType sponsor="Guld" setTotal={setNumber} />
+            <SponsorType sponsor="Silver" setTotal={setNumber} />
+            <SponsorType sponsor="Brons" setTotal={setNumber} />
           </div>
         </>
       )}
