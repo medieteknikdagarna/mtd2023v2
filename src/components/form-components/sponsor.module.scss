@@ -198,6 +198,9 @@ $anim-speed: 0.85; // in seconds
       animation: slide #{$anim-duration}s ease infinite;
     }
   }
+  .floorText {
+    color: white;
+  }
 
   @keyframes slide {
     0% {

@@ -3,7 +3,7 @@ import styles from "@/components/form-components/other.module.scss";
 
 export default function Other({ register, lang, errors }) {
   return (
-    <div>
+    <div style={{ marginTop: "2rem" }}>
       <h2 id={styles.underLine}>{lang === "sv" ? "Övrigt" : "Other"}</h2>
       <div style={{ display: "flex", flexFlow: "column" }}>
         <span>
@@ -84,6 +84,31 @@ export default function Other({ register, lang, errors }) {
             })}
           />
           <p className={styles.error}>{errors.firmateknare?.message}</p>
+        </div>
+        <h3 style={{ color: "white" }}>
+          {lang === "sv" ? "Organisationsnummer" : "Organization number"}
+        </h3>
+        <span>
+          {lang === "sv"
+            ? "Fyll i organisationsnummer."
+            : "Enter the organization number."}
+        </span>
+        <div className={styles.textinput}>
+          <label htmlFor="organisationsnummer" />
+          <input
+            type="text"
+            id="organisationsnummer"
+            placeholder=" "
+            {...register("organisationsnummer", {
+              required: {
+                value: true,
+                message: `${
+                  lang === "sv" ? "Obligatoriskt" : "Must be filled in"
+                }`,
+              },
+            })}
+          />
+          <p className={styles.error}>{errors.organisationsnummer?.message}</p>
         </div>
       </div>
     </div>

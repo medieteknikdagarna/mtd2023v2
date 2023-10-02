@@ -50,6 +50,7 @@ export default function BookingFormV2() {
         tjänst: "",
         transport: "takeWithUs",
         trådlösaenheter: 0,
+        organisationsnummer: "",
       },
     });
   const { errors } = formState;
@@ -69,10 +70,7 @@ export default function BookingFormV2() {
     setLevel(floor);
   };
   const successMessage = () => {
-    setBookSuccess(true);
-    setTimeout(() => {
-      setBookSuccess(false);
-    }, 5000);
+    alert("Tack för din anmälan!");
   };
 
   const onSubmit = (formValues) => {
@@ -106,6 +104,7 @@ export default function BookingFormV2() {
         tjänst: formValues.tjänst,
         montertransport: formValues.transport,
         trådlösaenheter: formValues.trådlösaenheter,
+        organisationsnummer: formValues.organisationsnummer,
       }),
     };
     const logoRef = ref(storage, `logotype/${formValues.logotyp[0].name}`);
@@ -242,21 +241,13 @@ export default function BookingFormV2() {
               />
             </selectedContext.Provider>
           </div>
-          <div className={styles.floorText}>
-            {watch("sponsor") === "Brons" ? (
-              <span>
-                Bronssponsorer blir tilldelade en av de blå platserna!
-              </span>
-            ) : (
-              <span>Klicka på en ledig ruta för att välja plats!</span>
-            )}
-          </div>
         </div>
         <Sponsor
           currentSponsor={type}
           changeFloor={changeFloor}
           register={register}
           setType={setType}
+          watch={watch}
         />
       </SplitScreen>
       <div style={{ display: "flex", marginLeft: "5rem", marginRight: "5rem" }}>

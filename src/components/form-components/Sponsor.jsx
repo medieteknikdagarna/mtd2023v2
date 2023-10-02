@@ -9,6 +9,7 @@ export default function Sponsor({
   changeFloor,
   register,
   setType,
+  watch,
 }) {
   const [lang, setLang] = useContext(languageContext);
   return (
@@ -39,6 +40,13 @@ export default function Sponsor({
               ? "34 999:-"
               : ""}
           </h1>
+        </div>
+        <div className={styles.floorText}>
+          {watch("sponsor") === "Brons" ? (
+            <span>Bronssponsorer blir tilldelade en av de blå platserna</span>
+          ) : (
+            <span>Klicka på en ledig ruta för att välja plats</span>
+          )}
         </div>
         <div className={styles.floorInfo}>
           <Indicator

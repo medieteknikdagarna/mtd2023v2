@@ -11,11 +11,13 @@ export default function Bankett({
   errors,
 }) {
   return (
-    <div>
+    <div style={{ color: "white" }}>
       <h2 id={styles.underLine}>{lang === "sv" ? "Bankett" : "Banquet"}</h2>
       <div>
-        <div style={{ color: "white" }}>
-          <h3>{lang === "sv" ? "Bankettbiljetter" : "Banquest Tickets"}</h3>
+        <div>
+          <h3 style={{ color: "white" }}>
+            {lang === "sv" ? "Bankettbiljetter" : "Banquest Tickets"}
+          </h3>
           <span>
             {lang === "sv"
               ? "Hur många bankettbiljetter vill ni ha inför banketten som hålls efter MTD (ca 600kr/st). Guld sponsorer får 3st biljetter"
@@ -29,7 +31,7 @@ export default function Bankett({
           />
           {watch("bankettbiljetter") > 0 && (
             <div>
-              <h3>Specialkost</h3>
+              <h3 style={{ color: "white" }}>Specialkost</h3>
               <div>
                 {bankettField.map((kost, index) => {
                   return (

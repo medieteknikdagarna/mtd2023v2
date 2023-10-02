@@ -28,7 +28,7 @@
       "en": "Business"
     },
     "email": "joel.hellberg@medieteknikdagen.se",
-    "tel": "733 74 31 83",
+    "tel": "702 94 40 05",
     "linkedin": "https://www.linkedin.com/in/joel-hellberg-633767220/",
     "img": "/images/members/hellberg.png"
   },
@@ -39,7 +39,7 @@
       "en": "Economy"
     },
     "email": "rickard.fuks@medieteknikdagen.se",
-    "tel": "739 41 51 11",
+    "tel": "739 55 20 10",
     "linkedin": "https://www.linkedin.com/in/rickard-fuks-719a32259/",
     "img": "/images/members/fuks.png"
   },
@@ -50,7 +50,7 @@
       "en": "Project assistant"
     },
     "email": "jovan.tan@medieteknikdagen.se",
-    "tel": "735 33 35 03",
+    "tel": "738 13 41 68",
     "linkedin": "https://www.linkedin.com/in/jovan-tan-16a82a278/",
     "img": "/images/members/tan.png"
   },
@@ -61,7 +61,7 @@
       "en": "Coordinator"
     },
     "email": "emil.wik@medieteknikdagen.se",
-    "tel": "705 82 60 06",
+    "tel": "707 70 59 98",
     "linkedin": "https://www.linkedin.com/in/emil-wik-b01092246/",
     "img": "/images/members/emil.png"
   },
@@ -77,13 +77,13 @@
     "img": "/images/members/ivr.png"
   },
   {
-    "namn": "Viktor Persson",
+    "namn": "Victor Persson",
     "post": {
       "sv": "Tryck",
       "en": "Print"
     },
-    "email": "viktor.persson@medieteknikdagen.se",
-    "tel": "705 73 18 34",
+    "email": "victor.persson@medieteknikdagen.se",
+    "tel": "760 16 13 61",
     "linkedin": "https://www.linkedin.com/in/victor-persson-0335a7259/",
     "img": "/images/members/vicke.png"
   },
@@ -94,7 +94,7 @@
       "en": "Fair"
     },
     "email": "molly.bengtsson@medieteknikdagen.se",
-    "tel": "761 70 50 25",
+    "tel": "793 41 80 15",
     "linkedin": "https://www.linkedin.com/in/molly-bengtsson-83346b256/",
     "img": "/images/members/molly.png"
   },
@@ -105,7 +105,7 @@
       "en": "Technology"
     },
     "email": "albin.tillas@medieteknikdagen.se",
-    "tel": "703 33 04 31",
+    "tel": "768 26 87 60",
     "linkedin": "https://www.linkedin.com/in/albin-tillas-358881219/",
     "img": "/images/members/tillas.png"
   },
@@ -116,9 +116,20 @@
       "en": "App"
     },
     "email": "gustav.johansson@medieteknikdagen.se",
-    "tel": "707 36 57 80",
+    "tel": "709 93 04 69",
     "linkedin": "https://www.linkedin.com/in/gustav-johansson-3a6351261/",
     "img": "/images/members/johansson.png"
+  },
+  {
+    "namn": "Emil Larsgärde",
+    "post": {
+      "sv": "Föreläsning",
+      "en": "Lecture"
+    },
+    "email": "emil.larsgarde@medieteknikdagen.se",
+    "tel": "722 43 11 33",
+    "linkedin": "https://www.linkedin.com/in/emil-larsg%C3%A4rde-544966185/",
+    "img": "/images/members/larsgärde.png"
   },
   {
     "namn": "Marcus Sjöblom",
@@ -127,7 +138,7 @@
       "en": "Business"
     },
     "email": "marcus.sjoblom@medieteknikdagen.se",
-    "tel": "762 09 03 35",
+    "tel": "703 64 58 06",
     "linkedin": "https://www.linkedin.com/in/marcus-sj%C3%B6blom-a04ab725b/",
     "img": "/images/members/marcus.png"
   },

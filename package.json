@@ -20,6 +20,7 @@
     "google-spreadsheet": "^3.3.0",
     "mp4": "^0.5.2",
     "next": "13.4.3",
+    "next-fonts": "^1.5.1",
     "next-seo": "^6.0.0",
     "next-videos": "^1.4.1",
     "nodemailer": "^6.9.3",
