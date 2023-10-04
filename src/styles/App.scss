@@ -3,10 +3,16 @@
 
 @font-face {
   font-family: "Barlow";
-  src: url("../../public/content/fonts/Barlow-Regular.ttf");
+  font-style: normal;
+  font-weight: 100;
+  font-display: swap;
+  src: url("../../public/content/fonts/Barlow-Medium.ttf");
 }
 @font-face {
   font-family: "Lato";
+  font-style: normal;
+  font-weight: 100;
+  font-display: swap;
   src: url("../../public/content/fonts/Lato-Regular.ttf");
 }
 
