@@ -52,6 +52,15 @@ ul {
     color: white;
   }
 }
+.admin_sponsor_top {
+  display: flex;
+  gap: 2rem;
+  align-items: baseline;
+  justify-content: space-between;
+}
+.admin_sponsor_top_item {
+  flex: 1;
+}
 .admin_sponsor {
   flex: 1;
   display: flex;

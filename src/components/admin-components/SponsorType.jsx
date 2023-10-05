@@ -3,7 +3,8 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import AdminModal from "./AdminModal";
 
-export default function SponsorType({ sponsor, setTotal }) {
+export default function SponsorType({ sponsor, setTotal, maxAmount }) {
+  const [totalNumberOfSponsorType, setTotalNumberOfSponsorType] = useState(0);
   const [shouldShow, setShouldShow] = useState(false);
   const [currentComp, setCurrentComp] = useState(null);
 
@@ -15,6 +16,7 @@ export default function SponsorType({ sponsor, setTotal }) {
       );
       setCompanyNames(filteredCompanies);
       setTotal(response.data.length);
+      setTotalNumberOfSponsorType(filteredCompanies.length);
     });
   };
 
@@ -40,7 +42,14 @@ export default function SponsorType({ sponsor, setTotal }) {
   };
   return (
     <div className="admin_sponsor">
-      <h2>{sponsor}</h2>
+      <div className="admin_sponsor_top">
+        <h2 className="admin_sponsor_top_item">{sponsor}</h2>
+        <div className="admin_sponsor_top_item">
+          <h2 style={{ color: "white", fontSize: "2rem" }}>
+            {totalNumberOfSponsorType}/{maxAmount}
+          </h2>
+        </div>
+      </div>
       <div
         style={{
           display: "flex",

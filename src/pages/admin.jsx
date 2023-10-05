@@ -51,9 +51,9 @@ export default function AdminPage() {
           <div className="admin_container">
             {/*  <CompanyList setCurrentComp={changeCompany} />
             <CompanyDetails currentComp={currentComp} /> */}
-            <SponsorType sponsor="Guld" setTotal={setNumber} />
-            <SponsorType sponsor="Silver" setTotal={setNumber} />
-            <SponsorType sponsor="Brons" setTotal={setNumber} />
+            <SponsorType sponsor="Guld" setTotal={setNumber} maxAmount={5} />
+            <SponsorType sponsor="Silver" setTotal={setNumber} maxAmount={10} />
+            <SponsorType sponsor="Brons" setTotal={setNumber} maxAmount={32} />
           </div>
         </>
       )}
