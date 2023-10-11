@@ -18,6 +18,17 @@ module.exports = withVideos({
         },
       },
     });
+    config.module.rules.push({
+      test: /\.(fbx)$/,
+      use: [
+        {
+          loader: "file-loader",
+          options: {
+            name: "static/models/[name].[hash].[ext]",
+          },
+        },
+      ],
+    });
 
     return config;
   },

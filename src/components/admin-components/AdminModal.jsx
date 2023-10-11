@@ -1,27 +1,118 @@
 import React from "react";
 
 export default function AdminModal({ currentComp, handleClose }) {
-  console.log(currentComp);
   return (
     <div className="modal-overlay">
       <div className="modal">
         <span className="close" onClick={handleClose}>
           &times;
         </span>
-        <div className="admin_companylist">
+        <div className="admin_company_details">
           {currentComp.map((data, index) => {
-            console.log(data.data.mässkost[0].kost);
             return (
               <div
                 key={index}
-                style={{ display: "flex", flexFlow: "column", gap: "1rem" }}
+                style={{
+                  display: "flex",
+                  flexFlow: "column",
+                  gap: "1rem",
+                  alignItems: "center",
+                }}
               >
-                <h1 key={index}>{data.data.company}</h1>
-
-                <span id="admin_listitem">
-                  <h4>Sponsor: </h4>
-                  {data.data.sponsor}
-                </span>
+                <div
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                  }}
+                >
+                  <h1 key={index}>{data.data.company}</h1>
+                  <h3
+                    style={{
+                      fontSize: "2rem",
+                      color: "white",
+                      marginLeft: "1rem",
+                      marginTop: "0",
+                    }}
+                  >
+                    - {data.data.sponsor}
+                  </h3>
+                </div>
+                <div className="modal_column_container">
+                  <div className="modal_item">
+                    <h2>Kontakt</h2>
+                    <div className="modal_company_info">
+                      <p> {data.data.contact}</p>
+                      <p> {data.data.tel}</p>
+                      <p> {data.data.email}</p>
+                      <p> {data.data.companyadress}</p>
+                      <p style={{ color: "orange" }}>Fakturering</p>
+                      <p> {data.data.fakturering}</p>
+                      <p> {data.data.firmatecknare}</p>
+                      {data.data.organisationsnummer !== null && (
+                        <p>{data.data.organisationsnummer}</p>
+                      )}
+                    </div>
+                    <h2 style={{ marginTop: "1rem" }}>Bankett</h2>
+                    <div className="modal_company_info">
+                      <p>
+                        Antal bankettbiljetter: {data.data.bankettbiljetter}
+                      </p>
+                      <div>
+                        {data.data.bankettkost.map((item, itemIndex) => (
+                          <span
+                            id="admin_listitem"
+                            key={itemIndex}
+                            style={{ marginLeft: "1rem" }}
+                          >
+                            <p>Kost: {item.kost}</p>
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                  <div className="modal_item">
+                    <h2>Mässinfo</h2>
+                    <div className="modal_company_info">
+                      <p> Antal på mässdagen: {data.data.antalpåmässa}</p>
+                      <div>
+                        {data.data.mässkost.map((item, itemIndex) => (
+                          <span
+                            id="admin_listitem"
+                            key={itemIndex}
+                            style={{ marginLeft: "1rem" }}
+                          >
+                            <p>Kost: {item.kost}</p>
+                          </span>
+                        ))}
+                      </div>
+                      <p>Mässtransport: {data.data.montertransport}</p>
+                      <p>Persontransport: {data.data.persontransport}</p>
+                      <p>Trådlösa enheter: {data.data.trådlösaenheter}</p>
+                      <p>Antal extrabord: {data.data.extrabord}</p>
+                      <p>Antal extrastolar: {data.data.extrastol}</p>
+                      <p>Bokad TV: {data.data.TV}</p>
+                      <p>Drar mycket ström: {data.data.elenhet}</p>
+                    </div>
+                    <div style={{ display: "flex" }}>
+                      <p style={{ marginRight: "0.5rem" }}>Tjänster:</p>
+                      {data.data.tjänst.map((item, itemIndex) => (
+                        <span
+                          id="admin_listitem"
+                          key={itemIndex}
+                          style={{ marginLeft: "1rem" }}
+                        >
+                          <p>{item.tjänst}</p>
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+                <div style={{ width: "50rem" }}>
+                  <p>Beskrivning av företaget </p>
+                  <p>{data.data.description}</p>
+                </div>
+                {/*
 
                 <div>
                   <span id="admin_listitem">
@@ -29,98 +120,10 @@ export default function AdminModal({ currentComp, handleClose }) {
                     {data.data.floor},{data.data.seat}
                   </span>
                 </div>
-
-                <span id="admin_listitem">
-                  <h4>Kontaktperson: </h4>
-                  {data.data.contact}
-                </span>
-                <span id="admin_listitem">
-                  <h4>Företagsadress: </h4>
-                  {data.data.companyadress}
-                </span>
-                <span id="admin_listitem">
-                  <h4>Epost: </h4>
-                  {data.data.email}
-                </span>
-                <span id="admin_listitem">
-                  <h4>Faktureringsepost: </h4>
-                  {data.data.fakturering}
-                </span>
-                <span id="admin_listitem">
-                  <h4>Firmatecknare: </h4>
-                  {data.data.firmatecknare}
-                </span>
-                <span id="admin_listitem">
-                  <h4>Telefon: </h4>
-                  {data.data.tel}
-                </span>
-                <span id="admin_listitem">
-                  <h4>Antal som kommer på mässdagen: </h4>
-                  {data.data.antalpåmässa}
-                </span>
-                <div>
-                  {data.data.mässkost.map((item, itemIndex) => (
-                    <span id="admin_listitem" key={itemIndex}>
-                      <h4>Kost: </h4>
-                      {item.kost},{" "}
-                    </span>
-                  ))}
-                </div>
-                <span id="admin_listitem">
-                  <h4>Montertransport: </h4>
-                  {data.data.montertransport}
-                </span>
-                <span id="admin_listitem">
-                  <h4>Persontransport: </h4>
-                  {data.data.persontransport}
-                </span>
-                <span id="admin_listitem">
-                  <h4>Antalet trådlösa enhter: </h4>
-                  {data.data.trådlösaenheter}
-                </span>
-                <span id="admin_listitem">
-                  {" "}
-                  <h4>Antal extrabord: </h4>
-                  {data.data.extrabord}
-                </span>
-                <span id="admin_listitem">
-                  {" "}
-                  <h4>Antal extrastolar: </h4>
-                  {data.data.extrastol}
-                </span>
-                <span id="admin_listitem">
-                  {" "}
-                  <h4>Storlek på beställd TV(Om tomt så är det ingen): </h4>
-                  {data.data.TV}
-                </span>
-                <span id="admin_listitem">
-                  <h4>Enheter som drar extra mycket el: </h4>
-                  {data.data.elenhet}
-                </span>
-                <div style={{ display: "flex" }}>
-                  <h4 style={{ marginRight: "0.5rem" }}>Erbjuder tjänster: </h4>
-                  {data.data.tjänst.map((item, itemIndex) => (
-                    <span id="admin_listitem" key={itemIndex}>
-                      {item},
-                    </span>
-                  ))}
-                </div>
-                <span id="admin_listitem">
-                  <h4>Antal bankettbiljetter: </h4>
-                  {data.data.bankettbiljetter}
-                </span>
-                <div>
-                  {data.data.bankettkost.map((item, itemIndex) => (
-                    <span id="admin_listitem" key={itemIndex}>
-                      <h4>Kost: </h4>
-                      {item.kost},{" "}
-                    </span>
-                  ))}
-                </div>
                 <span id="admin_listitem" style={{ fontSize: "0.8rem" }}>
                   <h4>Beskrivning</h4>
                   {data.data.description}
-                </span>
+                </span> */}
               </div>
             );
           })}

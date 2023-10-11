@@ -11,6 +11,7 @@ import { languageContext } from "./_app";
 import ResponsiveContainer from "../components/ResponsiveContainer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import MTBALL100 from "../../public/images/MTBALL100.png";
+import SphereCanvas from "@/components/render-components/SphereCanvas";
 import {
   faMapPin,
   faCalendar,
@@ -73,6 +74,7 @@ export default function LandingPage() {
                   </div>
                 </div>
                 {/* <Image src={MTBALL100} alt="mtdball" width={500} height={500} /> */}
+                <SphereCanvas />
               </section>
             </ResponsiveContainer>
           </div>

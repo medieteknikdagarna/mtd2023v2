@@ -13,6 +13,8 @@
     "@fortawesome/free-solid-svg-icons": "^6.4.0",
     "@fortawesome/react-fontawesome": "^0.2.0",
     "@react-spring/web": "^9.7.2",
+    "@react-three/drei": "^9.88.0",
+    "@react-three/fiber": "^8.14.5",
     "axios": "^1.4.0",
     "eslint": "8.41.0",
     "eslint-config-next": "13.4.3",
