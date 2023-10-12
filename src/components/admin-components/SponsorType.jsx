@@ -2,6 +2,8 @@ import React from "react";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import AdminModal from "./AdminModal";
+import { AiOutlineCheck } from "react-icons/ai";
+import { IconContext } from "react-icons";
 
 export default function SponsorType({ sponsor, setTotal, maxAmount }) {
   const [totalNumberOfSponsorType, setTotalNumberOfSponsorType] = useState(0);
@@ -65,7 +67,15 @@ export default function SponsorType({ sponsor, setTotal, maxAmount }) {
               onClick={() => fetchDetails(company.name)}
               className="admin_sponsor_item"
             >
-              <span>{company.name}</span>
+              <span>
+                {company.name}
+                {company.signed && (
+                  <AiOutlineCheck
+                    fill="white"
+                    style={{ marginLeft: "0.3rem" }}
+                  />
+                )}
+              </span>
             </div>
           );
         })}

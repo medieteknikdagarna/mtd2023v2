@@ -18,6 +18,7 @@ export async function getReservations() {
       return {
         name: doc.data().data.company,
         sponsor: doc.data().data.sponsor,
+        signed: doc.data().data.signed,
       };
     });
     return { status: 200, data: allName };

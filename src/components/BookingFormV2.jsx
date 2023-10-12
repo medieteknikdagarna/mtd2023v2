@@ -105,6 +105,7 @@ export default function BookingFormV2() {
         montertransport: formValues.transport,
         trådlösaenheter: formValues.trådlösaenheter,
         organisationsnummer: formValues.organisationsnummer,
+        signed: false,
       }),
     };
     const logoRef = ref(storage, `logotype/${formValues.logotyp[0].name}`);
