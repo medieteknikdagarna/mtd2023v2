@@ -96,15 +96,19 @@ export default function AdminModal({ currentComp, handleClose }) {
                     </div>
                     <div style={{ display: "flex" }}>
                       <p style={{ marginRight: "0.5rem" }}>Tjänster:</p>
-                      {data.data.tjänst.map((item, itemIndex) => (
-                        <span
-                          id="admin_listitem"
-                          key={itemIndex}
-                          style={{ marginLeft: "1rem" }}
-                        >
-                          <p>{item.tjänst}</p>
-                        </span>
-                      ))}
+                      {data.data.tjänst !== "" && (
+                        <>
+                          {data.data.tjänst.map((item, itemIndex) => (
+                            <span
+                              id="admin_listitem"
+                              key={itemIndex}
+                              style={{ marginLeft: "1rem" }}
+                            >
+                              <p>{item.tjänst}</p>
+                            </span>
+                          ))}
+                        </>
+                      )}
                     </div>
                   </div>
                 </div>
