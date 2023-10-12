@@ -74,7 +74,7 @@ export default function LandingPage() {
                   </div>
                 </div>
                 {/* <Image src={MTBALL100} alt="mtdball" width={500} height={500} /> */}
-                <SphereCanvas />
+                {/*  <SphereCanvas /> */}
               </section>
             </ResponsiveContainer>
           </div>

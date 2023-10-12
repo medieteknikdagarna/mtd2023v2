@@ -30,7 +30,7 @@ const Sphere = () => {
   return (
     <mesh>
       <hemisphereLight intensity={0.15} groundColor="black" />
-      <primitive object={sphere2} scale={0.02} />
+      <primitive object={sphere} scale={0.02} />
     </mesh>
   );
 };
@@ -44,7 +44,7 @@ const SphereCanvas = () => {
       gl={{ preserveDrawingBuffer: true }}
     >
       <Suspense fallback={<CanvasLoader />}>
-        {/*  <OrbitControls autoRotate /> */}
+        <OrbitControls autoRotate />
         <Sphere />
       </Suspense>
       <Preload all />
