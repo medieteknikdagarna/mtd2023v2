@@ -90,7 +90,7 @@ export default function LandingPage() {
                   <div className="landing-fair-info-row-container">
                     <div className="landing-fair-info--row">
                       <FontAwesomeIcon size="2x" icon={faCalendar} />
-                      <span>{lang === "sv" ? "6:e Dec" : "Dec 6th"} 2022</span>
+                      <span>{lang === "sv" ? "6:e Dec" : "Dec 6th"} 2023</span>
                     </div>
                     <div className="landing-fair-info--row">
                       <FontAwesomeIcon
@@ -98,7 +98,7 @@ export default function LandingPage() {
                         className="landning-fair-icon"
                         color="white"
                       />
-                      <span>09:00 - 16:00</span>
+                      <span>09:00 - 15:00</span>
                     </div>
                     <div className="landing-fair-info--row">
                       <FontAwesomeIcon size="xs" icon={faMapPin} />
