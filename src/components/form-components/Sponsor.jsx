@@ -41,13 +41,7 @@ export default function Sponsor({
               : ""}
           </h1>
         </div>
-        <div className={styles.floorText}>
-          {watch("sponsor") === "Brons" ? (
-            <span>Bronssponsorer blir tilldelade en av de blå platserna</span>
-          ) : (
-            <span>Klicka på en ledig ruta för att välja plats</span>
-          )}
-        </div>
+
         <div className={styles.floorInfo}>
           <Indicator
             color={"#89E17B"}
@@ -63,8 +57,24 @@ export default function Sponsor({
           />
           <Indicator
             color={"#345f80"}
-            text={lang === "sv" ? "Tilldelad" : "Assigned"}
+            text={lang === "sv" ? "Tilldelas" : "Assigns"}
           />
+        </div>
+        <div className={styles.floorText} style={{ marginTop: "1rem" }}>
+          {watch("sponsor") === "Brons" ? (
+            <>
+              <span style={{ color: "white" }}> Bronssponsorer får </span>
+              <span style={{ color: "red" }}>inte välja en plats </span>
+              <span style={{ color: "white" }}>
+                utan blir tilldelad en av de blå platserna. Det finns få
+                bronsplatser kvar!
+              </span>
+            </>
+          ) : (
+            <span style={{ color: "white" }}>
+              Klicka på en ledig ruta för att välja plats.
+            </span>
+          )}
         </div>
         <p className="seat-information-p">
           {lang === "sv"
