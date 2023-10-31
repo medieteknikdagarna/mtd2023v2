@@ -39,7 +39,7 @@ const CompanyCard = ({ name, index, type, width, height }) => {
   const [modalOpen, setModalOpen] = useState(false);
   const close = () => setModalOpen(false);
   const open = () => setModalOpen(true);
-  const handleOpen = () => {
+  const HandleOpen = () => {
     if (modalOpen) {
       close();
     } else {
@@ -53,7 +53,7 @@ const CompanyCard = ({ name, index, type, width, height }) => {
         <motion.div
           options={{ max: 45, scale: 1, speed: 450 }}
           className="card_container"
-          onClick={handleOpen}
+          onClick={HandleOpen}
           variants={{
             hidden: { opacity: 0, y: 75 },
             visible: { opacity: 1, y: 0 },
