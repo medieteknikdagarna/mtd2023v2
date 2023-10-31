@@ -1,16 +1,6 @@
-import { mailOptions, transporter } from "./sendMail";
+import { getStorage, ref, getDownloadURL } from "firebase/storage";
 
-import { firebaseApp } from "@/firebase/clientApp";
-import { getStorage } from "firebase/storage";
-import {
-  collection,
-  addDoc,
-  getDocs,
-  getFirestore,
-  query,
-} from "firebase/firestore";
-
-const db = getFirestore(firebaseApp);
+const db = getStorage(firebaseApp);
 
 export async function getReservations() {
   try {
