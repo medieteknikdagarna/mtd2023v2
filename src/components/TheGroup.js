@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import MemberCard from "./MemberCard";
 const memberInfo = require("../../public/content/members.json");
-import { shuffleArray } from "../pages/foretagPrev";
+//import { shuffleArray } from "../pages/foretagPrev";
 import { languageContext } from "../pages/_app";
 
 export default function TheGroup() {
@@ -10,7 +10,7 @@ export default function TheGroup() {
 
   useEffect(() => {
     let newArray = [memberInfo[0]];
-    setMembers(newArray.concat(shuffleArray(memberInfo.slice(1))));
+    setMembers(memberInfo.slice(1));
   }, []);
 
   return (
