@@ -6,7 +6,7 @@ import LoadingSpinner from "../components/LoadingSpinner";
 import ResponsiveContainer from "../components/ResponsiveContainer";
 import { importAll } from "./massan";
 import { languageContext } from "./_app";
-const content = require("../../public/content/companies.json");
+//const content = require("../../public/content/companies.json");
 import { NextSeo } from "next-seo";
 export function shuffleArray(array) {
   let currentIndex = array.length,

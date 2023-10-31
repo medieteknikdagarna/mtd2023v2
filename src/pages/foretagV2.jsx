@@ -126,7 +126,7 @@ const CompanyCard = ({ name, index, type, width, height }) => {
   );
 };
 
-export default function foretagV2() {
+export default function ForetagV2() {
   const [goldCompanies, setGoldCompanies] = useState();
   const [silverCompanies, setSilverCompanies] = useState();
   const [bronsCompanies, setBronsCompanies] = useState();
