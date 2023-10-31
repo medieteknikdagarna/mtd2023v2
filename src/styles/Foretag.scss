@@ -66,6 +66,8 @@
 }
 .foretag_card_offer {
   display: flex;
+  flex-wrap: wrap;
+  row-gap: 2vh;
   margin-top: 2vh;
   margin-bottom: 2vh;
   p {
@@ -80,7 +82,7 @@
     justify-content: center;
     background-color: rgba(0, 0, 0, 0.15);
     border-radius: 20px;
-    margin-right: 2vw;
+    margin-right: 1vw;
   }
 }
 .foretag_backdrop {

@@ -28,15 +28,20 @@ const Modal = ({ handleClose, currentComp, imageLink, isLoaded }) => {
         animate="visable"
         exit="exit"
       >
-        <motion.span
-          className="close"
-          onClick={handleClose}
-          whileHover={{ scale: 1.3 }}
-        >
-          &times;
-        </motion.span>
         {isLoaded && (
-          <>
+          <motion.div
+            variants={{ hidden: { opacity: 0 }, visable: { opacity: 1 } }}
+            initial="hidden"
+            animate="visable"
+            transition={{ duration: 0.25 }}
+          >
+            <motion.span
+              className="close"
+              onClick={handleClose}
+              whileHover={{ scale: 1.3 }}
+            >
+              &times;
+            </motion.span>
             <div className="foretag_modal_image">
               <Image
                 src={imageLink}
@@ -54,7 +59,7 @@ const Modal = ({ handleClose, currentComp, imageLink, isLoaded }) => {
                 </div>
               );
             })}
-          </>
+          </motion.div>
         )}
       </motion.div>
     </ForetagBackdrop>

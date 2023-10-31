@@ -96,7 +96,7 @@ export default function AdminModal({ currentComp, handleClose }) {
                     </div>
                     <div style={{ display: "flex" }}>
                       <p style={{ marginRight: "0.5rem" }}>Tjänster:</p>
-                      {data.data.tjänst !== "" && (
+                      {data.data.tjänst.length > 0 ? (
                         <>
                           {data.data.tjänst.map((item, itemIndex) => (
                             <span
@@ -104,10 +104,12 @@ export default function AdminModal({ currentComp, handleClose }) {
                               key={itemIndex}
                               style={{ marginLeft: "1rem" }}
                             >
-                              <p>{item.tjänst}</p>
+                              <p>{item}</p>
                             </span>
                           ))}
                         </>
+                      ) : (
+                        <></>
                       )}
                     </div>
                   </div>
