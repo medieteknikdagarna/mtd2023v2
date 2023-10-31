@@ -98,8 +98,8 @@ const CompanyCard = ({ name, index, type, width, height }) => {
                   <div className="foretag_card_offer">
                     {CompanyText.sv.companies[type][index].offer.map(
                       (data, index) => (
-                        <div className="offer_circle">
-                          <p key={index}>{data}</p>
+                        <div className="offer_circle" key={index}>
+                          <p>{data}</p>
                         </div>
                       )
                     )}

@@ -48,7 +48,7 @@ const Modal = ({ handleClose, currentComp, imageLink, isLoaded }) => {
 
             {currentComp.map((data, index) => {
               return (
-                <div className="foretag_modal_info">
+                <div className="foretag_modal_info" key={index}>
                   <h2> {data.data.company}</h2>
                   <span>{data.data.description}</span>
                 </div>
