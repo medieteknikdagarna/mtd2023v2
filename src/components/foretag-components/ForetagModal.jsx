@@ -28,7 +28,7 @@ const Modal = ({ handleClose, currentComp, imageLink, isLoaded }) => {
         animate="visable"
         exit="exit"
       >
-        {isLoaded && (
+        {isLoaded ? (
           <motion.div
             variants={{ hidden: { opacity: 0 }, visable: { opacity: 1 } }}
             initial="hidden"
@@ -76,6 +76,22 @@ const Modal = ({ handleClose, currentComp, imageLink, isLoaded }) => {
               );
             })}
           </motion.div>
+        ) : (
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              height: "20vh",
+            }}
+          >
+            <div class="lds-ring">
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+          </div>
         )}
       </motion.div>
     </ForetagBackdrop>

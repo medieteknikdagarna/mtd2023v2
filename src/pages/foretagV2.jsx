@@ -172,7 +172,7 @@ export default function ForetagV2() {
       <div className="container">
         <h1>Företag Medieteknikdagen 2023</h1>
         <h3>Nedan listas alla företag som deltar på Medieteknikdagen i år.</h3>
-        {doneLoading && (
+        {doneLoading ? (
           <>
             <div className="card_div">
               {goldCompanies.map((företag, index) => (
@@ -211,6 +211,21 @@ export default function ForetagV2() {
               ))}
             </div>
           </>
+        ) : (
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              marginTop: "20vh",
+            }}
+          >
+            <div class="lds-ring">
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+          </div>
         )}
       </div>
 
