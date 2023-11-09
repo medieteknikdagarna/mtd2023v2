@@ -47,14 +47,6 @@
           "logo": "voyado.png"
         },
         {
-          "company": "SICK IVP AB",
-          "partner": "SILVERSPONSOR",
-          "information": [
-            "SICK is an innovation center for Machine Vision, and we are 90 committed employees with a big interest in image processing and visualization. For more than 35 years, our team at SICK Linköping has successfully developed and delivered software for technically leading products within the field of 2D and 3D vision, as well as system solutions, e.g. robot guidance and quality control."
-          ],
-          "logo": "sick.svg"
-        },
-        {
           "company": "Sectra AB",
           "partner": "SILVERSPONSOR",
           "information": [
@@ -175,6 +167,14 @@
             "We are DICE, the award-winning studio with locations in Stockholm and Gothenburg, Sweden, best known for creating the phenomenally successful Battlefield franchise. We are now part of a set of global studios building a connected Battlefield universe, developing Battlefield's one-of-a-kind multiplayer suite, while also building a team to support our new Seattle-based studio, Ridgeline Games, who are leading the development of a single-player narrative campaign. Our people are the backbone and driving force to our creative products, and are always looking for diverse game creators to join us in Stockholm, Gothenburg, or working remotely, to help us build the best Battlefield experiences and make our studio the best in the industry."
           ],
           "logo": "Electronic-Arts-Logo.svg"
+        },
+        {
+          "company": "SICK IVP AB",
+          "partner": "SILVERSPONSOR",
+          "information": [
+            "SICK is an innovation center for Machine Vision, and we are 90 committed employees with a big interest in image processing and visualization. For more than 35 years, our team at SICK Linköping has successfully developed and delivered software for technically leading products within the field of 2D and 3D vision, as well as system solutions, e.g. robot guidance and quality control."
+          ],
+          "logo": "sick.svg"
         },
         {
           "company": "Migrationsverket",

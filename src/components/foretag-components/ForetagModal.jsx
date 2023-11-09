@@ -55,6 +55,22 @@ const Modal = ({ handleClose, currentComp, imageLink, isLoaded }) => {
               return (
                 <div className="foretag_modal_info" key={index}>
                   <h2> {data.data.company}</h2>
+                  {data.data.tjänst.length > 0 ? (
+                    <>
+                      <div
+                        className="foretag_card_offer"
+                        style={{ marginBottom: "4vh" }}
+                      >
+                        {data.data.tjänst.map((item, itemIndex) => (
+                          <span className="offer_circle" key={itemIndex}>
+                            <p>{item}</p>
+                          </span>
+                        ))}
+                      </div>
+                    </>
+                  ) : (
+                    <></>
+                  )}
                   <span>{data.data.description}</span>
                 </div>
               );
