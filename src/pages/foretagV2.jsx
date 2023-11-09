@@ -168,51 +168,51 @@ export default function ForetagV2() {
         lightContrast
         changeOnScroll
       />
-      {doneLoading && (
-        <div className="container">
-          <h1>Företag Medieteknikdagen 2023</h1>
-          <h3>
-            Nedan listas alla företag som deltar på Medieteknikdagen i år.
-          </h3>
 
-          <div className="card_div">
-            {goldCompanies.map((företag, index) => (
-              <CompanyCard
-                key={företag.name}
-                index={index}
-                name={företag.name}
-                type="gold"
-                width="30vw"
-                height="70vh"
-              />
-            ))}
-          </div>
-          <div className="card_div_silver">
-            {silverCompanies.map((företag, index) => (
-              <CompanyCard
-                key={företag.name}
-                index={index}
-                name={företag.name}
-                type="silver"
-                width="20vw"
-                height="60vh"
-              />
-            ))}
-          </div>
-          <div className="card_div_silver">
-            {bronsCompanies.map((företag, index) => (
-              <CompanyCard
-                key={företag.name}
-                index={index}
-                name={företag.name}
-                type="bronze"
-                width="20vw"
-                height="50vh"
-              />
-            ))}
-          </div>
-        </div>
-      )}
+      <div className="container">
+        <h1>Företag Medieteknikdagen 2023</h1>
+        <h3>Nedan listas alla företag som deltar på Medieteknikdagen i år.</h3>
+        {doneLoading && (
+          <>
+            <div className="card_div">
+              {goldCompanies.map((företag, index) => (
+                <CompanyCard
+                  key={företag.name}
+                  index={index}
+                  name={företag.name}
+                  type="gold"
+                  width="30vw"
+                  height="70vh"
+                />
+              ))}
+            </div>
+            <div className="card_div_silver">
+              {silverCompanies.map((företag, index) => (
+                <CompanyCard
+                  key={företag.name}
+                  index={index}
+                  name={företag.name}
+                  type="silver"
+                  width="20vw"
+                  height="60vh"
+                />
+              ))}
+            </div>
+            <div className="card_div_silver">
+              {bronsCompanies.map((företag, index) => (
+                <CompanyCard
+                  key={företag.name}
+                  index={index}
+                  name={företag.name}
+                  type="bronze"
+                  width="20vw"
+                  height="50vh"
+                />
+              ))}
+            </div>
+          </>
+        )}
+      </div>
 
       {/*  <Footer /> */}
     </div>
