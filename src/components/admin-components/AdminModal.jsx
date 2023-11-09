@@ -73,6 +73,12 @@ export default function AdminModal({ currentComp, handleClose }) {
                   </div>
                   <div className="modal_item">
                     <h2>Mässinfo</h2>
+                    <div>
+                      <span id="admin_listitem">
+                        <h4>Monter (våning, plats):</h4>
+                        {data.data.floor},{data.data.seat}
+                      </span>
+                    </div>
                     <div className="modal_company_info">
                       <p> Antal på mässdagen: {data.data.antalpåmässa}</p>
                       <div>
@@ -118,14 +124,8 @@ export default function AdminModal({ currentComp, handleClose }) {
                   <p>Beskrivning av företaget </p>
                   <p>{data.data.description}</p>
                 </div>
-                {/*
 
-                <div>
-                  <span id="admin_listitem">
-                    <h4>Monter (våning, plats):</h4>
-                    {data.data.floor},{data.data.seat}
-                  </span>
-                </div>
+                {/*
                 <span id="admin_listitem" style={{ fontSize: "0.8rem" }}>
                   <h4>Beskrivning</h4>
                   {data.data.description}
