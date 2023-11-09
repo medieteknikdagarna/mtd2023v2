@@ -15,7 +15,6 @@ import ReservSuccess from "./ReservSuccess";
 const formContent = require("../../public/content/form.json");
 import Link from "next/link";
 import { Router } from "next/router";
-import BookingSuccess from "../pages/BookingSuccess";
 import Image from "next/image";
 
 const floor4_all = require("../../public/content/seat-info/floor4.json");
