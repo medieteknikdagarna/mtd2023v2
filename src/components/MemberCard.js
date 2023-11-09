@@ -16,7 +16,7 @@ export default function MemberCard({
   return (
     <div className="member-card">
       <div className="member-card--top">
-        <Image alt={alt} src={src} width={600} height={600} />
+        <Image alt={alt} src={src} width={600} height={600} sharp />
       </div>
       <div className="member-card--bottom">
         <div className="member-card--content">

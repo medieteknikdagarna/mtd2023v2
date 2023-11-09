@@ -39,6 +39,7 @@
     "react-pdf": "^7.1.2",
     "react-spring": "^9.7.1",
     "sass": "^1.62.1",
+    "sharp": "^0.32.6",
     "styled-components": "^6.0.7"
   },
   "devDependencies": {
