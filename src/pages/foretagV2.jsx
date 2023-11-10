@@ -194,7 +194,7 @@ export default function ForetagV2() {
                   name={företag.name}
                   type="silver"
                   width="20vw"
-                  height="60vh"
+                  height="25rem"
                 />
               ))}
             </div>
@@ -206,7 +206,7 @@ export default function ForetagV2() {
                   name={företag.name}
                   type="bronze"
                   width="20vw"
-                  height="50vh"
+                  height="20rem"
                 />
               ))}
             </div>

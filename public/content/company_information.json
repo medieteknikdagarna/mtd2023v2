@@ -8,7 +8,7 @@
           "information": [
             "Vi är ett renodlat mjukvaruföretag med ett tydligt tillväxtfokus. Med ett globalt team om ca 100 personer bygger vi ett snabbväxande och effektivt företag. Upsales är en arbetsplats där vi tror på stort personligt ansvar och gillar när det händer saker, samtidigt som man är en lagspelare som lämnar prestigen bakom sig."
           ],
-          "logo": "upsales-logo-black.svg",
+          "logo": "upsales-logo-white.svg",
           "offer": [
             "Exjobb",
             "Sommarjobb",
@@ -44,7 +44,7 @@
           "information": [
             "Voyado is the ultimate solution for personalization and relevance across all channels—online and offline. Used by retailers and e-commerce companies worldwide, the Voyado customer experience cloud makes it possible for every brand to engage customers, elevate shopping experiences, and evolve their own businesses."
           ],
-          "logo": "voyado.png"
+          "logo": "Voyado_white.png"
         },
         {
           "company": "Sectra AB",
@@ -52,7 +52,7 @@
           "information": [
             "Sectra erbjuder lösningar för medicinsk IT och cybersäkerhet. Vi hjälper sjukhus och de som utbildar framtidens vårdpersonal att öka sin effektivitet så att patienter kan få bättre vård. Vi stöttar även försvar, andra myndigheter och olika kritiska samhällsfunktioner. Vi hjälper dem att säkra sin kommunikation mot avlyssning och skydda sina system mot intrång. Det är på så sätt vi skapar förutsättningar för friskare och tryggare samhällen."
           ],
-          "logo": "sectra.svg"
+          "logo": "Sectra-logo-white.svg"
         },
         {
           "company": "SMHI",
@@ -60,7 +60,7 @@
           "information": [
             "SMHI är en svensk expertmyndighet med globalt perspektiv och en livsviktig uppgift i att förutse förändringar i väder, vatten och klimat. Med vetenskaplig grund och genom kunskap, forskning och tjänster bidrar vi till att öka hela samhällets hållbarhet. Varje dag, dygnet runt, året om."
           ],
-          "logo": "SMHI.eps"
+          "logo": "SMHI.svg"
         }
       ],
       "bronze": [
@@ -94,7 +94,7 @@
           "information": [
             "LEAD är Östergötlands företagsinkubator som hjälper och stöttar innovativa startup-bolag att skala upp säkrare och snabbare."
           ],
-          "logo": "MISSING"
+          "logo": "lead_vit_rgb.svg"
         },
         {
           "company": "TaxiCaller Nordic AB",
@@ -110,7 +110,7 @@
           "information": [
             "NOSP creates waves of growth, competitiveness, and attractiveness in Norrköping with entrepreneurship, research-driven solutions, and societal impact at heart."
           ],
-          "logo": "nosp.svg"
+          "logo": "Nosp_logo-vit.svg"
         },
         {
           "company": "Cygni part of Accenture",
@@ -118,7 +118,7 @@
           "information": [
             "Redan från starten hade vi på Cygni en tydlig vision, vi ville vara den bästa arbetsgivaren för skickliga och ambitiösa systemutvecklare! Våra konsulter är fullstackutvecklare, frontendare, mobilutvecklare, UX-designers, embeddedutvecklare, digitala designers, och projektledare. Vi har alla kompetenser som krävs för att hjälpa våra kunder med att bygga de bästa digitala lösningarna. På vår kundlista finns företag och organisationer inom ett flertal branscher såsom media, finans, telekom, spel och retail. De flesta är ledande i sin bransch men vi jobbar även med mindre företag och organisationer. Idag finns vi i Stockholm, Göteborg, Linköping, Luleå, Malmö, Östersund, Umeå och Köpenhamn. Vid sju tillfällen har vi vunnit den fantastiskt fina utmärkelsen Sveriges Bästa Arbetsplats av Great Place To Work. Utmärkelsen baseras på världens största medarbetarundersökning som omfattar 10 miljoner personer i 50 länder."
           ],
-          "logo": "cygni.svg"
+          "logo": "CYGNI_white.svg"
         },
         {
           "company": "CTEK",
@@ -134,7 +134,7 @@
           "information": [
             "As the Nordic region's largest media company, our mission is to help citizens and organizations function in a democratic society. Our journalists report, review and tell about the important issues of our time. We inspire and create business through meetings, products and services. At Bonnier News, we safeguard free speech and make a difference through journalism that reaches and touches many. We are Sweden's leading media house and with brands such as Dagens Nyheter, Expressen and Dagens industri, we reach millions of readers and users every day. Through Bonnier News Local, we have a large local presence. In addition to this, we also publish industry-specific magazines such as Dagens Media, Resumé, Dagens medicin and Fastighetsnytt, and also a number of lifestyle magazines such as Damernas Värld, Sköna Hem and Allt om Mat. By constantly driving digital development forward, we are constantly reaching further - and as an employee, you can influence the direction."
           ],
-          "logo": "MISSING"
+          "logo": "bonnier_news.pdf"
         },
         {
           "company": "Voysys AB",
@@ -142,7 +142,7 @@
           "information": [
             "Software for safe teleoperation. Video communication solutions over unreliable public 4G/LTE networks. For monitoring and remote control of autonomous vehicles, machines and robots."
           ],
-          "logo": "voysys.svg"
+          "logo": "VoysysLogo.png"
         },
         {
           "company": "Sogeti",
@@ -158,7 +158,7 @@
           "information": [
             "Polismyndigheten tillsammans med övriga myndigheter inom och utom rättsväsendet bidrar genom sina insatser till målet för kriminalpolitiken – att minska brottsligheten och öka människors trygghet. Vid Nationellt forensiskt centrum bedrivs forensik och IT-forensik."
           ],
-          "logo": "MISSING"
+          "logo": "polis.svg"
         },
         {
           "company": "EA Digital Illusions CE AB",
@@ -166,15 +166,7 @@
           "information": [
             "We are DICE, the award-winning studio with locations in Stockholm and Gothenburg, Sweden, best known for creating the phenomenally successful Battlefield franchise. We are now part of a set of global studios building a connected Battlefield universe, developing Battlefield's one-of-a-kind multiplayer suite, while also building a team to support our new Seattle-based studio, Ridgeline Games, who are leading the development of a single-player narrative campaign. Our people are the backbone and driving force to our creative products, and are always looking for diverse game creators to join us in Stockholm, Gothenburg, or working remotely, to help us build the best Battlefield experiences and make our studio the best in the industry."
           ],
-          "logo": "Electronic-Arts-Logo.svg"
-        },
-        {
-          "company": "SICK IVP AB",
-          "partner": "SILVERSPONSOR",
-          "information": [
-            "SICK is an innovation center for Machine Vision, and we are 90 committed employees with a big interest in image processing and visualization. For more than 35 years, our team at SICK Linköping has successfully developed and delivered software for technically leading products within the field of 2D and 3D vision, as well as system solutions, e.g. robot guidance and quality control."
-          ],
-          "logo": "sick.svg"
+          "logo": "DICE.svg"
         },
         {
           "company": "Migrationsverket",
@@ -182,7 +174,15 @@
           "information": [
             "På Migrationsverket arbetar vi med en av vår tids stora samhällsfrågor, och med uppgifter som rör människors liv och framtid. Varje dag söker sig människor till Sverige för att arbeta, studera, bo eller söka skydd här. Migrationsverkets uppdrag är att pröva ansökningar för dem som vill stanna i Sverige. Vi är drygt 400 personer som arbetar med IT inom myndigheten och vårt jobb är att underlätta för dem som söker sig hit i att använda våra tjänster – oavsett vilka de är eller var i världen de befinner sig. Arbetet sker i takt med omvärlden och är varierat och utvecklande. Vi arbetar i tvärfunktionella team och med agil utvecklingsmetodik för att ta fram de bästa lösningarna. Ambitionen är att vara en myndighet i framkant när det gäller digitalisering, e-förvaltning och teknikval. I det större perspektivet bidrar vi till att migrationen till Sverige fungerar och därmed fyller vi en viktig roll i samhället."
           ],
-          "logo": "migrationsverket.svg"
+          "logo": "Migrationsverket_VIT.svg"
+        },
+        {
+          "company": "SICK IVP AB",
+          "partner": "SILVERSPONSOR",
+          "information": [
+            "SICK is an innovation center for Machine Vision, and we are 90 committed employees with a big interest in image processing and visualization. For more than 35 years, our team at SICK Linköping has successfully developed and delivered software for technically leading products within the field of 2D and 3D vision, as well as system solutions, e.g. robot guidance and quality control."
+          ],
+          "logo": "SICK-logo.svg"
         },
         {
           "company": "Image Systems Motion Analysis",
@@ -190,7 +190,7 @@
           "information": [
             "Image Systems Motion Analysis är experter på bildanalys och matematik för test- och mättillämpningar. Vi bygger världsledande mjukvaror för att ge kunderna snabba, exakta och värdefulla mätresultat från bilder där rörelse eller deformation förekommer. Våra mjukvarulösningar TEMA och TrackEye används i hundratals applikationer där ett objekts rörelse, orientering eller form ska mätas och analyseras. Företaget finns i Sverige, USA, Frankrike, Israel och Kina."
           ],
-          "logo": "MISSSING"
+          "logo": "IMSA.svg"
         }
       ]
     }
