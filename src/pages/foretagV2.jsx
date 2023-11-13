@@ -30,11 +30,11 @@ const CompanyCard = ({ name, index, type, width, height }) => {
     }
   };
   const imageSrc = `/images/companies/${type}/${CompanyText.sv.companies[type][index].logo}`;
-  let imgSize = 0;
+  let imgSize = "";
   if (type === "gold") {
-    imgSize = 250;
+    imgSize = "20rem";
   } else {
-    imgSize = 200;
+    imgSize = "18rem";
   }
   const [modalOpen, setModalOpen] = useState(false);
   const close = () => setModalOpen(false);
@@ -64,15 +64,11 @@ const CompanyCard = ({ name, index, type, width, height }) => {
         >
           <div
             className="card_content"
-            style={{ width: width, minHeight: height }}
+            id={type}
+            /*  style={{ width: width, minHeight: height }} */
           >
-            <div className="card_image">
-              <Image
-                src={imageSrc}
-                width={imgSize}
-                height={imgSize}
-                alt="Missing Image"
-              />
+            <div className="card_image" style={{ minHeight: "5rem" }}>
+              <Image src={imageSrc} alt="Missing Image" fill />
             </div>
             <div className="card_info">
               <h2>{name}</h2>
