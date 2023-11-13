@@ -58,7 +58,6 @@ h1 {
   justify-content: flex;
   align-items: flex-start;
   z-index: 3;
-
   @media screen and (max-width: 900px) and (min-width: 550px) {
     padding-top: 0rem;
   }
@@ -158,7 +157,7 @@ h1 {
 }
 /*----- SECTIOn 2 ------- */
 .welcome-background {
-  background-color: rgba(255, 255, 255, 0.07);
+  //background-color: rgba(255, 255, 255, 0.07);
   padding-top: 5rem;
   padding-bottom: 5rem;
 }
@@ -247,7 +246,8 @@ video {
 
 /*---SECTION 3 ---*/
 .after-movie-background {
-  background-color: rgba(255, 255, 255, 0.07);
+  //background-color: rgba(255, 255, 255, 0.07);
+
   padding-top: 4rem;
   padding-bottom: 4rem;
   p,

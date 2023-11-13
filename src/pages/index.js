@@ -37,6 +37,12 @@ export default function LandingPage() {
         <>
           <Header lightContrast changeOnScroll />
           <div className="video-container">
+            <video id="background-video" autoPlay loop muted playsInline>
+              <source
+                src={require("public/images/renders/BOLL-VID2-fixed.mp4")}
+                type="video/mp4"
+              />
+            </video>
             <ResponsiveContainer className="landing-container">
               <section className="landing-section">
                 <div className="intro">
@@ -73,6 +79,7 @@ export default function LandingPage() {
                     </div>
                   </div>
                 </div>
+
                 {/* <Image src={MTBALL100} alt="mtdball" width={500} height={500} /> */}
                 {/*  <SphereCanvas /> */}
               </section>
@@ -115,30 +122,6 @@ export default function LandingPage() {
               </div>
             </section>
           </ResponsiveContainer>
-
-          {/* {
-            <ResponsiveContainer>
-              <section className="booking-section">
-                <div className="stand">
-                  <StandSvg />
-                </div>
-                <InfoSection
-                  className="partner-info"
-                  tag={lang === "sv" ? "Säkra en plats" : "Secure your spot"}
-                  title={lang === "sv" ? "Bli partner" : "Join us"}
-                  body={content[lang].section3.body}
-                >
-                  <Button href="/intresseanmalan" type="primary" size="medium">
-                    {lang === "sv" ? "Intresseanmälan" : "Registration"}
-                  </Button>
-                  <Button href="/massan" type="secondary" size="medium">
-                    {lang === "sv" ? "Om mässan" : "About fair"}
-                  </Button>
-                </InfoSection>
-              </section>
-            </ResponsiveContainer>
-          } */}
-
           <InfoWithStars />
           <ResponsiveContainer className="after-movie-background">
             <section className="after-movie-section">
