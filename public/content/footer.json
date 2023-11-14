@@ -1,26 +1,20 @@
 {
     "sv": {
-       "opensource":{
-           "body": "Detta är ett projekt med öppen källkod. Ni kan klona eller ladda ned koden via vårt Github-repo."
-       },
-       "gdpr":{
-           "body": "Läs mer om GDPR och vår "
-       },
-       "tag": "Open source - Medieteknikdagen 2022"
-
-     
+        "opensource": {
+            "body": "Detta är ett projekt med öppen källkod. Ni kan klona eller ladda ned koden via vårt Github-repo."
+        },
+        "gdpr": {
+            "body": "Läs mer om GDPR och vår "
+        },
+        "tag": "Open source - Medieteknikdagen 2023"
     },
-  
     "en": {
-        "opensource":{
+        "opensource": {
             "body": "This is an open source project. You can clone or download the project via our Github repository."
         },
-        "gdpr":{
+        "gdpr": {
             "body": "Read more about GDPR and our "
         },
-        "tag": "Open source - Media Technology Day 2022"
- 
-     
+        "tag": "Open source - Media Technology Day 2023"
     }
-  }
-  
+}

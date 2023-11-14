@@ -14,7 +14,7 @@ import CompanyText from "@/public/content/company_information.json";
 import Image from "next/image";
 import Modal from "@/components/foretag-components/ForetagModal";
 
-const CompanyCard = ({ name, index, type, width, height }) => {
+const CompanyCard = ({ name, index, type }) => {
   const [currentComp, setCurrentComp] = useState(null);
   const [loading, setLoading] = useState(false);
   const fetchDetails = async (companyName) => {
@@ -53,6 +53,7 @@ const CompanyCard = ({ name, index, type, width, height }) => {
         <motion.div
           options={{ max: 45, scale: 1, speed: 450 }}
           className="card_container"
+          id={type}
           onClick={HandleOpen}
           variants={{
             hidden: { opacity: 0, y: 75 },
@@ -64,7 +65,7 @@ const CompanyCard = ({ name, index, type, width, height }) => {
         >
           <div
             className="card_content"
-            id={type}
+            /*   id={type} */
             /*  style={{ width: width, minHeight: height }} */
           >
             <div className="card_image" style={{ minHeight: "5rem" }}>
@@ -225,7 +226,7 @@ export default function ForetagV2() {
         )}
       </div>
 
-      {/*  <Footer /> */}
+      <Footer />
     </div>
   );
 }
