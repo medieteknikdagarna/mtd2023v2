@@ -1,0 +1,38 @@
+.expo-title {
+  margin-top: 25vh;
+  margin-left: 15vw;
+  margin-right: 15vw;
+  display: flex;
+  justify-content: center;
+}
+
+.expo-cards-container {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+  margin: 10vh 8vw 0 8vw;
+}
+.expo-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.035);
+  box-shadow: inset 0px 0px 20px 10px rgba(255, 255, 255, 0.01);
+  min-height: 50vh;
+  h3,
+  h2 {
+    color: white;
+  }
+  h3 {
+    margin-top: 0;
+  }
+  h2 {
+    margin-top: 2vh;
+  }
+  span {
+    padding: 2vh 4vw 2vh 4vw;
+  }
+}

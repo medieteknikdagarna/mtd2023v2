@@ -22,7 +22,7 @@ const barlow = Barlow({
 export default function Header({
   shadow = false,
   changeOnScroll = false,
-  lightContrast = false,
+  lightContrast = true,
   style = {},
 }) {
   const className = lightContrast ? "header-light" : "header";

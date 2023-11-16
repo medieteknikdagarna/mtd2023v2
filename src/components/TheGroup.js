@@ -10,9 +10,10 @@ export default function TheGroup() {
 
   useEffect(() => {
     let newArray = [memberInfo[0]];
-    setMembers(memberInfo.slice(1));
+    setMembers(memberInfo.slice(0));
   }, []);
 
+  console.log(members);
   return (
     <>
       {members && (
