@@ -30,7 +30,7 @@ const ExpoCard = ({ exhibitor, delay }) => {
       }}
       initial="hidden"
       animate="visible"
-      transition={{ duration: 0.3, delay: delay }}
+      transition={{ duration: 0.5, delay: delay }}
       className="expo-card"
     >
       <div className="expo-card-picture">

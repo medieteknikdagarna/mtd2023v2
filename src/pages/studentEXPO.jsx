@@ -2,7 +2,7 @@ import Header from "../components/Header";
 import ExpoCard from "@/components/EXPO-components/ExpoCard";
 import Content from "public/content/EXPO-content/expo-projects.json";
 import StarsCanvas from "@/components/EXPO-components/StarsCanvas";
-import { useTypewriter } from "react-simple-typewriter";
+import { useTypewriter, Typewriter } from "react-simple-typewriter";
 import { useState } from "react";
 
 const StudentEXPO = () => {
@@ -14,7 +14,7 @@ const StudentEXPO = () => {
     console.log("done");
   };
   const [Text] = useTypewriter({
-    words: ["Årets utställare på studentEXPO"],
+    words: ["Årets utställare på studentEXPO!"],
     onLoopDone: HandleDoneTyping,
   });
   return (
