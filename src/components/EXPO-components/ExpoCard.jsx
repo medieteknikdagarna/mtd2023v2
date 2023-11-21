@@ -1,4 +1,7 @@
 import { motion } from "framer-motion";
+import pic from "public/images/members/andreas.webp";
+import Image from "next/image";
+import { FaRegArrowAltCircleRight } from "react-icons/fa";
 
 const Hover = {
   hidden: { scale: 0, opacity: 0 },
@@ -16,6 +19,9 @@ const Hover = {
 };
 
 const ExpoCard = ({ exhibitor, delay }) => {
+  const handleClick = () => {
+    console.log("open");
+  };
   return (
     <motion.div
       variants={{
@@ -27,9 +33,19 @@ const ExpoCard = ({ exhibitor, delay }) => {
       transition={{ duration: 0.3, delay: delay }}
       className="expo-card"
     >
-      <h2>{exhibitor.titel}</h2>
-      <h3>{exhibitor.name}</h3>
-      <span>{exhibitor.beskrivning}</span>
+      <div className="expo-card-picture">
+        <Image src={pic} alt="hej" width={300} height={300} />
+      </div>
+      <div className="expo-card-content">
+        <h2>{exhibitor.titel}</h2>
+        <h3>{exhibitor.name}</h3>
+        <span>{exhibitor.beskrivning}</span>
+      </div>
+      <div className="expo-card-icon">
+        <motion.span whileHover={{ scale: 1.2 }} onClick={handleClick}>
+          <FaRegArrowAltCircleRight size={60} fill="white" />
+        </motion.span>
+      </div>
     </motion.div>
   );
 };
