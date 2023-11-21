@@ -13,7 +13,7 @@ const StudentEXPO = () => {
     setDoneTyping(true);
     console.log("done");
   };
-  const Text = useTypewriter({
+  const [Text] = useTypewriter({
     words: ["Årets utställare på studentEXPO"],
     onLoopDone: HandleDoneTyping,
   });
