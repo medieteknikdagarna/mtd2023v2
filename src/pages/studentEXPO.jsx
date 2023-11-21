@@ -2,10 +2,10 @@ import Header from "../components/Header";
 import ExpoCard from "@/components/EXPO-components/ExpoCard";
 import Content from "public/content/EXPO-content/expo-projects.json";
 import StarsCanvas from "@/components/EXPO-components/StarsCanvas";
-import { useTypewriter, Cursor, isDone } from "react-simple-typewriter";
+import { useTypewriter } from "react-simple-typewriter";
 import { useState } from "react";
 
-const studentEXPO = () => {
+const StudentEXPO = () => {
   //console.log(Content.sv.uställare[0]);
   const [doneTyping, setDoneTyping] = useState(false);
 
@@ -13,7 +13,7 @@ const studentEXPO = () => {
     setDoneTyping(true);
     console.log("done");
   };
-  const [text] = useTypewriter({
+  const Text = useTypewriter({
     words: ["Årets utställare på studentEXPO"],
     onLoopDone: HandleDoneTyping,
   });
@@ -26,7 +26,7 @@ const studentEXPO = () => {
       />
       <StarsCanvas />
       <div className="expo-title">
-        <h1>{text}</h1>
+        <h1>{Text}</h1>
       </div>
 
       {doneTyping && (
@@ -47,4 +47,4 @@ const studentEXPO = () => {
   );
 };
 
-export default studentEXPO;
+export default StudentEXPO;
