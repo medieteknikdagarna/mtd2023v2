@@ -1,5 +1,5 @@
 .expo-title {
-  margin-top: 25vh;
+  padding-top: 25vh;
   margin-left: 15vw;
   margin-right: 15vw;
   display: flex;
@@ -19,7 +19,13 @@
   flex-direction: row;
   border-radius: 10px;
   margin-bottom: 5vh;
-  //background-color: rgba(255, 255, 255, 0.035);
+  background: linear-gradient(
+    90deg,
+    rgba(29, 44, 52, 0.8) 0%,
+    rgba(29, 44, 52, 0.8) 46%,
+    rgba(22, 29, 33, 0.8) 100%
+  );
+  padding: 2vh 2vw 2vh 2vw;
   //box-shadow: inset 0px 0px 20px 10px rgba(255, 255, 255, 0.01);
   //min-height: 50vh;
 }
@@ -50,4 +56,11 @@
   width: 30%;
   align-items: center;
   padding-left: 10vw;
+}
+
+.expo-stars {
+  position: fixed;
+  z-index: -1;
+  height: 100vh;
+  width: 100vw;
 }
