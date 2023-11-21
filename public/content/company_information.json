@@ -105,6 +105,14 @@
           "logo": "TaxiCaller.svg"
         },
         {
+          "company": "Xamera",
+          "partner": "BRONSSPONSOR",
+          "information": [
+            "Image Systems Motion Analysis är experter på bildanalys och matematik för test- och mättillämpningar. Vi bygger världsledande mjukvaror för att ge kunderna snabba, exakta och värdefulla mätresultat från bilder där rörelse eller deformation förekommer. Våra mjukvarulösningar TEMA och TrackEye används i hundratals applikationer där ett objekts rörelse, orientering eller form ska mätas och analyseras. Företaget finns i Sverige, USA, Frankrike, Israel och Kina."
+          ],
+          "logo": "IMSA.svg"
+        },
+        {
           "company": "Norrköping Science Park",
           "partner": "BRONSSPONSOR",
           "information": [

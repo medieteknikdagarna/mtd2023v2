@@ -1,17 +1,29 @@
 import { getStorage, ref, getDownloadURL } from "firebase/storage";
+import { firebaseApp } from "@/firebase/clientApp";
+import {
+  collection,
+  addDoc,
+  getDocs,
+  getFirestore,
+  query,
+} from "firebase/firestore";
 
-const db = getStorage(firebaseApp);
+//const db = getStorage(firebaseApp);
+const db = getFirestore(firebaseApp);
 
 export async function getReservations() {
   try {
     const q = query(collection(db, "companies"));
     const querySnapshot = await getDocs(q);
     const allSeats = querySnapshot.docs.map((doc) => {
+      //console.log("data", doc.data().data.seat);
+
       return {
         seat: doc.data().data.seat,
         floor: doc.data().data.floor,
       };
     });
+    //console.log(allSeats);
     return { status: 200, data: allSeats };
   } catch (error) {
     return { status: 500, error: error };
@@ -19,7 +31,6 @@ export async function getReservations() {
 }
 
 export async function addRegistration(data) {
-  console.log(data);
   try {
     //Add logo
     //Add data
@@ -43,7 +54,7 @@ export default async function handler(req, res) {
   if (req.method === "POST") {
     let foundDuplicate = false;
     data.data.forEach((booking) => {
-      console.log(req.body.sponsor);
+      //console.log(req.body.sponsor);
 
       if (
         req.body.sponsor !== "Brons" &&
@@ -78,7 +89,8 @@ export default async function handler(req, res) {
       }
     }
   } else if (req.method === "GET") {
-    //console.log("GETTING DATA");
+    //.log("GETTING DATA");
+    //console.log(data);
     return res.status(data.status).json(data.data);
   } else {
     res.status(401).json({ message: "Method not allowed" });
