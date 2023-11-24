@@ -97,6 +97,7 @@ const CompanyCard = ({ name, index, type }) => {
                   <span>
                     {CompanyText.sv.companies[type][index].information}
                   </span>
+
                   <div className="foretag_card_offer">
                     {CompanyText.sv.companies[type][index].offer.map(
                       (data, index) => (
