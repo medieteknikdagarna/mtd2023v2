@@ -68,8 +68,13 @@ const CompanyCard = ({ name, index, type }) => {
             /*   id={type} */
             /*  style={{ width: width, minHeight: height }} */
           >
-            <div className="card_image" style={{ minHeight: "5rem" }}>
-              <Image src={imageSrc} alt="Missing Image" fill />
+            <div className="card_image">
+              <Image
+                src={imageSrc}
+                style={{ objectFit: "scale-down" }}
+                alt="Missing Image"
+                fill
+              />
             </div>
             <div className="card_info">
               <h2>{name}</h2>

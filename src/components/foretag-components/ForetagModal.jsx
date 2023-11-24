@@ -45,8 +45,8 @@ const Modal = ({ handleClose, currentComp, imageLink, isLoaded }) => {
             <div className="foretag_modal_image">
               <Image
                 src={imageLink}
-                width={250}
-                height={250}
+                fill
+                style={{ objectFit: "scale-down" }}
                 alt="Missing Image"
               />
             </div>

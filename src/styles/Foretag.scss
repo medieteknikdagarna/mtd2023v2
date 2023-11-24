@@ -73,7 +73,7 @@
   //flex-wrap: wrap;
   flex-direction: column;
   justify-content: center;
-
+  flex-wrap: wrap;
   //align-items: center;
 }
 
@@ -82,8 +82,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  min-height: 5rem;
   margin: 2vw;
 }
+
 .card_info {
   display: flex;
   flex-wrap: wrap;
@@ -160,10 +162,16 @@
   flex-direction: column;
   //align-items: center;
   z-index: 999;
+  overflow: scroll;
+  max-height: 80vh;
 }
 .foretag_modal_image {
   display: flex;
+  position: relative;
   justify-content: center;
+  margin-top: 12px;
+  margin-bottom: 24px;
+  min-height: 8rem;
 }
 .foretag_modal_info {
   display: flex;

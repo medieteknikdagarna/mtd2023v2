@@ -70,7 +70,7 @@
           "information": [
             "Fackförbund för alla blivande teknologer och ingenjörer"
           ],
-          "logo": "sveriges_ingenjorer.svg"
+          "logo": "Sveriges-ingenjorer.png"
         },
         {
           "company": "HiQ",
@@ -110,7 +110,7 @@
           "information": [
             "Image Systems Motion Analysis är experter på bildanalys och matematik för test- och mättillämpningar. Vi bygger världsledande mjukvaror för att ge kunderna snabba, exakta och värdefulla mätresultat från bilder där rörelse eller deformation förekommer. Våra mjukvarulösningar TEMA och TrackEye används i hundratals applikationer där ett objekts rörelse, orientering eller form ska mätas och analyseras. Företaget finns i Sverige, USA, Frankrike, Israel och Kina."
           ],
-          "logo": "IMSA.svg"
+          "logo": "Xamera.webp"
         },
         {
           "company": "Norrköping Science Park",
@@ -134,7 +134,7 @@
           "information": [
             "www.ctek.com"
           ],
-          "logo": "MISSING"
+          "logo": "CTEK.png"
         },
         {
           "company": "Bonnier News",
@@ -158,7 +158,7 @@
           "information": [
             "Sogeti Sverige, en del av Capgemini-koncernen, med 21 kontor och 1300 medarbetare, skapar affärsvärde med teknologi för organisationer som behöver införa innovation snabbt och som vill ha en lokal partner med global skalbarhet. Med en hands-on-kultur och närhet till kunderna, implementerar Sogeti lösningar som hjälper organisationer att arbeta snabbare, bättre och smartare. Genom att kombinera agilitet och snabb implementation via en DevOps-ansats, levererar Sogeti innovativa lösningar inom test- och kvalitetssäkring, molnet och systemutveckling, förstärkta av AI, data och automation. Capgemini -koncernen är en världsledande samarbetspartner som stöttar kunder att driva och utveckla sina verksamheter genom den potential och de möjligheter som skapas av teknologi. Koncernen har som ledstjärna att med teknikens hjälp frigöra mänsklig energi som kan användas till att bygga en hållbar och inkluderande framtid. Organisationen präglas av mångfald och ansvar och har över 350 000 medarbetare i ca 50 länder. Vision Vår vision är att vi varje dag skapar värden som hämtas från morgondagen. För våra kunder, våra partners och oss själva."
           ],
-          "logo": "MISSING"
+          "logo": "sogeti-logo.svg"
         },
         {
           "company": "Polismyndigheten, NFC",
@@ -190,7 +190,7 @@
           "information": [
             "SICK is an innovation center for Machine Vision, and we are 90 committed employees with a big interest in image processing and visualization. For more than 35 years, our team at SICK Linköping has successfully developed and delivered software for technically leading products within the field of 2D and 3D vision, as well as system solutions, e.g. robot guidance and quality control."
           ],
-          "logo": "SICK-logo.svg"
+          "logo": "SICK_white.svg"
         },
         {
           "company": "Image Systems Motion Analysis",
@@ -198,7 +198,7 @@
           "information": [
             "Image Systems Motion Analysis är experter på bildanalys och matematik för test- och mättillämpningar. Vi bygger världsledande mjukvaror för att ge kunderna snabba, exakta och värdefulla mätresultat från bilder där rörelse eller deformation förekommer. Våra mjukvarulösningar TEMA och TrackEye används i hundratals applikationer där ett objekts rörelse, orientering eller form ska mätas och analyseras. Företaget finns i Sverige, USA, Frankrike, Israel och Kina."
           ],
-          "logo": "IMSA.svg"
+          "logo": "IMSA.png"
         }
       ]
     }
