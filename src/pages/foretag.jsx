@@ -77,7 +77,7 @@ const CompanyCard = ({ name, index, type }) => {
               />
             </div>
             <div className="card_info">
-              <h2>{name}</h2>
+              <h2 style={{ wordBreak: "break-word" }}>{name}</h2>
               <h3
                 style={{
                   color:
