@@ -4,15 +4,21 @@
   margin-right: 15vw;
   display: flex;
   justify-content: center;
+  @media (max-width: 1000px) {
+  }
 }
 
 .expo-cards-container {
   display: grid;
-  grid-template-columns: repeat(1, 1fr);
+  grid-template-columns: 1fr;
   grid-template-rows: 1fr;
   grid-column-gap: 20px;
   grid-row-gap: 20px;
   margin: 10vh 8vw 5vh 8vw;
+  place-items: center;
+  max-width: 80vw;
+  @media (max-width: 1000px) {
+  }
 }
 .expo-card {
   display: flex;
@@ -26,15 +32,18 @@
     rgba(22, 29, 33, 0.8) 100%
   );
   padding: 2vh 2vw 2vh 2vw;
-  //box-shadow: inset 0px 0px 20px 10px rgba(255, 255, 255, 0.01);
-  //min-height: 50vh;
+
+  @media (max-width: 1000px) {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 .expo-card-content {
   display: flex;
   flex-direction: column;
-  width: 50%;
   padding: 0vh 4vw 2vh 4vw;
+  max-width: 50%;
   h3,
   h2 {
     color: white;
@@ -53,9 +62,7 @@
 
 .expo-card-icon {
   display: flex;
-  width: 30%;
   align-items: center;
-  padding-left: 10vw;
 }
 
 .expo-stars {
