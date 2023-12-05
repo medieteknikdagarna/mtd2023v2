@@ -4,30 +4,30 @@
             {
                 "name": "Axel Nielsen",
                 "titel": "Restidkollen",
-                "email": "andreas.ekberg@medieteknikdagen.se",
-                "linkedin": "https://www.linkedin.com/in/andreas-ekberg-91bba0259/",
+                "bild": "axel.jpg",
+                "link": "https://axelnielsen.se/#projects",
                 "beskrivning": "Utforska hur restider till centrala Stockholm varierar från olika områden i mitt senaste projekt: Restidkollen! Denna interaktiva webbapp visualiserar pendlingstider med hjälp av en färgkodad karta. Klicka på ett område och se den exakta restiden, rutten och information om bostadspriser senaste året med data från Booli. Det är ett användbart verktyg för dig som kanske funderar på olika områden att bo i, eller bara är intresserad av att utforska Stockholm. Gå gärna in och testa själv på www.restidkollen.se! (För full funktionalitet använd dator) Läs mer om de tekniska detaljerna på min hemsida: https://axelnielsen.se/#projects"
             },
             {
-                "name": "Simon Henriksson, ",
+                "name": "Emil Wik och Victor Person",
+                "titel": "Slugs & Shells: Unleashed",
+                "bild": "axel.jpg",
+                "link": "https://www.youtube.com/watch?v=ACAuOi9og8g",
+                "beskrivning": "Slugs & Shells: Unleased is a wacky single player top-down shooter where Jerry the snail is tasked to singlehandedly fend off an invasion of his home forest. He is not alone though, and has friends in high, low (and buff) places to help him out in his quest! Take control of Jerry, complete quests, explore the world, buy guns, upgrades and cosmetics for Jerry, and defeat powerful bosses - Only in Slugs & Shells: Unleashed!"
+            },
+            {
+                "name": "Albin Kjellberg",
+                "titel": "Skurkeriets hemsida",
+                "bild": "axel.jpg",
+                "link": "https://www.youtube.com/watch?v=ACAuOi9og8g",
+                "beskrivning": "En informationssida för studentföreningen Skurkeriet. Utvecklad i React/NextJS med TailwindCSS. Sidan innehåller bilder, beskrivningar och olika funktioner för nya studenter att utforska under mottagningen. Allt detta paketerat i en temabaserad layout, anpassad för alla olika enheter. Testa att skriva in lösenorden nedan i fältet en bit ner på sidan: jagskavatyst"
+            },
+            {
+                "name": "Simon Henriksson, Oscar Fyrk, Emil Larsgärde, Viktor P Svensson, Armen Abedi, Isak Karlsson",
                 "titel": "Scholar's mate",
-                "email": "andreas.ekberg@medieteknikdagen.se",
-                "linkedin": "https://www.linkedin.com/in/andreas-ekberg-91bba0259/",
+                "bild": "mate.jpg",
+                "link": "https://www.youtube.com/watch?v=wAktr5WBH_M&ab_channel=ViktorVisuals",
                 "beskrivning": "3D-animation skapad i Blender som projekt i kursen TNM061 (3D Datorgrafik)"
-            },
-            {
-                "name": "Axel Nielsen",
-                "titel": "Restidkollen",
-                "email": "andreas.ekberg@medieteknikdagen.se",
-                "linkedin": "https://www.linkedin.com/in/andreas-ekberg-91bba0259/",
-                "beskrivning": "Utforska hur restider till centrala Stockholm varierar från olika områden i mitt senaste projekt: Restidkollen! Denna interaktiva webbapp visualiserar pendlingstider med hjälp av en färgkodad karta. Klicka på ett område och se den exakta restiden, rutten och information om bostadspriser senaste året med data från Booli. Det är ett användbart verktyg för dig som kanske funderar på olika områden att bo i, eller bara är intresserad av att utforska Stockholm. Gå gärna in och testa själv på www.restidkollen.se! (För full funktionalitet använd dator) Läs mer om de tekniska detaljerna på min hemsida: https://axelnielsen.se/#projects"
-            },
-            {
-                "name": "Axel Nielsen",
-                "titel": "Restidkollen",
-                "email": "andreas.ekberg@medieteknikdagen.se",
-                "linkedin": "https://www.linkedin.com/in/andreas-ekberg-91bba0259/",
-                "beskrivning": "Utforska hur restider till centrala Stockholm varierar från olika områden i mitt senaste projekt: Restidkollen! Denna interaktiva webbapp visualiserar pendlingstider med hjälp av en färgkodad karta. Klicka på ett område och se den exakta restiden, rutten och information om bostadspriser senaste året med data från Booli. Det är ett användbart verktyg för dig som kanske funderar på olika områden att bo i, eller bara är intresserad av att utforska Stockholm. Gå gärna in och testa själv på www.restidkollen.se! (För full funktionalitet använd dator) Läs mer om de tekniska detaljerna på min hemsida: https://axelnielsen.se/#projects"
             }
         ]
     },

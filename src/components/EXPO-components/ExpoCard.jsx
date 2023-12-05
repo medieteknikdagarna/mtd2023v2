@@ -19,7 +19,10 @@ const Hover = {
 };
 
 const ExpoCard = ({ exhibitor, delay }) => {
+  const imageSrc = `/content/EXPO-content/${exhibitor.bild}`;
   const handleClick = () => {
+    const url = exhibitor.link;
+    window.open(url, "_blank");
     console.log("open");
   };
   return (
@@ -34,7 +37,12 @@ const ExpoCard = ({ exhibitor, delay }) => {
       className="expo-card"
     >
       <div className="expo-card-picture">
-        <Image src={pic} alt="hej" width={300} height={300} />
+        <Image
+          src={imageSrc}
+          alt="hej"
+          fill
+          style={{ objectFit: "scale-down" }}
+        />
       </div>
       <div className="expo-card-content">
         <h2>{exhibitor.titel}</h2>
