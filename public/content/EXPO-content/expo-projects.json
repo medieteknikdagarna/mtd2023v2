@@ -11,15 +11,15 @@
             {
                 "name": "Emil Wik och Victor Person",
                 "titel": "Slugs & Shells: Unleashed",
-                "bild": "axel.jpg",
+                "bild": "emvic.jpg",
                 "link": "https://www.youtube.com/watch?v=ACAuOi9og8g",
                 "beskrivning": "Slugs & Shells: Unleased is a wacky single player top-down shooter where Jerry the snail is tasked to singlehandedly fend off an invasion of his home forest. He is not alone though, and has friends in high, low (and buff) places to help him out in his quest! Take control of Jerry, complete quests, explore the world, buy guns, upgrades and cosmetics for Jerry, and defeat powerful bosses - Only in Slugs & Shells: Unleashed!"
             },
             {
                 "name": "Albin Kjellberg",
                 "titel": "Skurkeriets hemsida",
-                "bild": "axel.jpg",
-                "link": "https://www.youtube.com/watch?v=ACAuOi9og8g",
+                "bild": "Albin_Kjellberg.jpg",
+                "link": "https://www.skurkeriet.se/",
                 "beskrivning": "En informationssida för studentföreningen Skurkeriet. Utvecklad i React/NextJS med TailwindCSS. Sidan innehåller bilder, beskrivningar och olika funktioner för nya studenter att utforska under mottagningen. Allt detta paketerat i en temabaserad layout, anpassad för alla olika enheter. Testa att skriva in lösenorden nedan i fältet en bit ner på sidan: jagskavatyst"
             },
             {

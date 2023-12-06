@@ -62,8 +62,8 @@ export default function LandingPage() {
                       <Button href="/foretag" type="primary" size="large">
                         {lang === "sv" ? "Företag" : "Companies"}
                       </Button>
-                      <Button href="/kontakt" type="primary" size="large">
-                        {lang === "sv" ? "Kontakt" : "Contact"}
+                      <Button href="/studentEXPO" type="primary" size="large">
+                        {lang === "sv" ? "StudentEXPO" : "StudentEXPO"}
                       </Button>
                       <Button
                         href="/massan"
